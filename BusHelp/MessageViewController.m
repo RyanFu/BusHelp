@@ -1,0 +1,202 @@
+//
+//  MessageViewController.m
+//  BusHelp
+//
+//  Created by Paul on 15/5/5.
+//  Copyright (c) 2015年 夜枫尘. All rights reserved.
+//
+
+#import "MessageViewController.h"
+#import "FunctionTableViewCell.h"
+#import "DataFetcher.h"
+#import "popoverViewController.h"
+#import "ManagerViewController.h"
+#import "DataRequest.h"
+#import "DataRequest.h"
+#import "CommonFunctionController.h"
+#import "CreatOrJionViewController.h"
+
+@interface MessageViewController ()
+{
+    NSArray *funclist;
+    NSInteger orgMessageNotReadCount;
+    UIBarButtonItem *rightBarButtonItem;
+    BOOL hasadd;
+    popoverViewController *pop;
+    NSString *messagecategory;
+    NSString *tabbarTitle;
+    Org *_org;
+
+}
+@end
+
+@implementation MessageViewController
+@synthesize messageTable;
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self setupNavigationBar];
+    orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
+    [messageTable reloadData];
+    [self setupOrgWithRequest:YES];
+    [CommonFunctionController showAnimateMessageHUD];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    funclist=[NSArray arrayWithObjects:@"系统消息",@"通知", nil];
+    self.messageTable.tableFooterView=[[UIView alloc]init];
+    
+    
+    hasadd=NO;
+    
+    pop=[[popoverViewController alloc]initWithNibName:@"popoverViewController" bundle:nil];
+    [pop.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    __weak id weakself=self;
+    pop.dismiss=^(BOOL flag){
+        hasadd=flag;
+        [weakself performSegueWithIdentifier:@"MessageToTransmitNotification" sender:nil];
+    };
+}
+
+- (void)setupOrgWithRequest:(BOOL)request {
+    if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
+        [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
+            _org = [orgArray firstObject];
+            NSLog(@"组织名称：%@",_org.name);
+            [self setupNavigationBar];
+            [CommonFunctionController hideAllHUD];
+        } failure:^(NSString *message){
+            [CommonFunctionController hideAllHUD];
+
+        }];
+    }
+    else {
+        [CommonFunctionController showHUDWithMessage:@"网络已断开" detail:nil];
+    }
+}
+
+
+- (void)setupNavigationBar {
+    [super setupNavigationBar];
+    rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postMyNotification)];
+
+    if (_org.userType.integerValue==OrgUserTypeCreater||_org.userType.integerValue==OrgUserTypeAdmin) {
+        self.tabBarController.navigationItem.rightBarButtonItem = rightBarButtonItem;
+        self.tabBarController.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    }else
+    {
+        self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
+
+-(void)postMyNotification
+{
+    if (hasadd==YES) {
+        hasadd=NO;
+        [pop.view removeFromSuperview];
+    }else if(hasadd==NO)
+    {
+        hasadd=YES;
+        [self.view addSubview:pop.view];
+    }
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"FunctionTableViewCell";
+    UINib *nib = [UINib nibWithNibName:@"FunctionTableViewCell" bundle:nil];
+    [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+    
+    FunctionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.backgroundColor=[UIColor whiteColor];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.FunctionLabel.text=[funclist objectAtIndex:indexPath.row];
+    cell.FunctionImage.backgroundColor=[UIColor clearColor];
+    switch (indexPath.row) {
+        case 0:
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+            break;
+        case 1:
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+            break;
+            
+        default:
+            break;
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            messagecategory=@"1001,2001,3001";
+            tabbarTitle=@"系统消息";
+            [self performSegueWithIdentifier:@"MessageToManger" sender:self];
+            break;
+        case 1:
+            if (_org != nil && [_org.status integerValue] == OrgStatusJoined) {
+                messagecategory=@"4001";
+                tabbarTitle=@"通知";
+                [self performSegueWithIdentifier:@"MessageToManger" sender:self];
+                break;
+
+            }else
+            {
+                [self CreateOrJoin];
+            }
+            
+        default:
+            break;
+    }
+}
+
+//如果没有加入组织，点击通知跳转至我的团队
+-(void)CreateOrJoin
+{
+    CreatOrJionViewController *createorjoinViewController=[self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([CreatOrJionViewController class])];
+    [self.tabBarController.navigationController pushViewController:createorjoinViewController animated:YES];
+
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"MessageToManger"]) {
+        ManagerViewController *managerVC=segue.destinationViewController;
+        managerVC.MessageCategory=messagecategory;
+        managerVC.TabbarTitle=tabbarTitle;
+    }
+
+}
+
+
+@end

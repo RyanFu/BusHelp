@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileOwner">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="gjd-OW-hni"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomGasStationView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srK-El-LqI">
+                    <rect key="frame" x="15" y="161" width="570" height="179"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义加油站" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-vx-kt2">
+                            <rect key="frame" x="240" y="15" width="90" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEN-dM-MTH">
+                            <rect key="frame" x="15" y="9" width="30" height="30"/>
+                            <state key="normal" title="关闭">
+                                <color key="titleColor" red="0.39607843139999999" green="0.69411764710000001" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancleButtonPrseed:" destination="iN0-l3-epB" eventType="touchUpInside" id="eBz-EE-q0f"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b0-Zt-5ye">
+                            <rect key="frame" x="525" y="9" width="30" height="30"/>
+                            <state key="normal" title="确认">
+                                <color key="titleColor" red="0.39607843139999999" green="0.69411764710000001" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="4tL-UA-VFl"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-Pj-rMS">
+                            <rect key="frame" x="0.0" y="48" width="570" height="1"/>
+                            <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="RbM-CV-15r"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hu8-uZ-tp5">
+                            <rect key="frame" x="15" y="81" width="540" height="35"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入加油站名称" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8vs-HX-GPk">
+                                    <rect key="frame" x="5" y="0.0" width="530" height="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="8vs-HX-GPk" secondAttribute="bottom" id="5zy-rq-KbN"/>
+                                <constraint firstAttribute="trailing" secondItem="8vs-HX-GPk" secondAttribute="trailing" constant="5" id="BqS-hb-dvq"/>
+                                <constraint firstAttribute="height" constant="35" id="YV9-9P-n0r"/>
+                                <constraint firstItem="8vs-HX-GPk" firstAttribute="leading" secondItem="Hu8-uZ-tp5" secondAttribute="leading" constant="5" id="c1F-j3-dZo"/>
+                                <constraint firstItem="8vs-HX-GPk" firstAttribute="top" secondItem="Hu8-uZ-tp5" secondAttribute="top" id="ebB-K5-Jbi"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Hu8-uZ-tp5" firstAttribute="trailing" secondItem="4b0-Zt-5ye" secondAttribute="trailing" id="0ew-3l-02h"/>
+                        <constraint firstItem="ifb-vx-kt2" firstAttribute="centerY" secondItem="4b0-Zt-5ye" secondAttribute="centerY" id="3gM-wh-NMT"/>
+                        <constraint firstAttribute="height" constant="179" id="6Qd-ef-lg0"/>
+                        <constraint firstAttribute="trailing" secondItem="KOk-Pj-rMS" secondAttribute="trailing" id="ASd-RW-fER"/>
+                        <constraint firstItem="jEN-dM-MTH" firstAttribute="leading" secondItem="srK-El-LqI" secondAttribute="leading" constant="15" id="B2f-gt-A25"/>
+                        <constraint firstAttribute="centerX" secondItem="ifb-vx-kt2" secondAttribute="centerX" id="HL5-f7-aOr"/>
+                        <constraint firstItem="KOk-Pj-rMS" firstAttribute="top" secondItem="ifb-vx-kt2" secondAttribute="bottom" constant="15" id="K50-2T-Mw5"/>
+                        <constraint firstItem="ifb-vx-kt2" firstAttribute="top" secondItem="srK-El-LqI" secondAttribute="top" constant="15" id="Xan-S2-gTw"/>
+                        <constraint firstAttribute="trailing" secondItem="4b0-Zt-5ye" secondAttribute="trailing" constant="15" id="Xpa-Rg-n62"/>
+                        <constraint firstItem="Hu8-uZ-tp5" firstAttribute="leading" secondItem="jEN-dM-MTH" secondAttribute="leading" id="hlZ-YN-6F7"/>
+                        <constraint firstItem="KOk-Pj-rMS" firstAttribute="leading" secondItem="srK-El-LqI" secondAttribute="leading" id="qKd-kM-P9N"/>
+                        <constraint firstItem="ifb-vx-kt2" firstAttribute="centerY" secondItem="jEN-dM-MTH" secondAttribute="centerY" id="xde-9o-Y9E"/>
+                        <constraint firstItem="Hu8-uZ-tp5" firstAttribute="top" secondItem="KOk-Pj-rMS" secondAttribute="bottom" constant="32" id="xyH-JP-6Kb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="srK-El-LqI" secondAttribute="trailing" constant="15" id="Vjs-We-mbA"/>
+                <constraint firstItem="srK-El-LqI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="adW-BA-r0n"/>
+                <constraint firstAttribute="centerY" secondItem="srK-El-LqI" secondAttribute="centerY" constant="50" id="wCc-dg-8nY"/>
+            </constraints>
+            <connections>
+                <outlet property="inputFieldView" destination="srK-El-LqI" id="zlb-Xh-7ay"/>
+                <outlet property="nameTextField" destination="8vs-HX-GPk" id="PTa-4A-0se"/>
+                <outlet property="textView" destination="Hu8-uZ-tp5" id="shK-Ge-qjp"/>
+                <outlet property="titleLabel" destination="ifb-vx-kt2" id="Qtw-w9-aVY"/>
+            </connections>
+            <point key="canvasLocation" x="859" y="477"/>
+        </view>
+    </objects>
+</document>

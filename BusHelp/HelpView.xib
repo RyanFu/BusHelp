@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileOwner">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Wte-h4-WX5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HelpView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lT-In-xll" customClass="SwipeView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="EO5-5T-WL9"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="mnD-Y2-XCR"/>
+                    </connections>
+                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="klU-sY-jAx">
+                    <rect key="frame" x="280" y="543" width="39" height="37"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="klU-sY-jAx" secondAttribute="centerX" id="2lz-Wt-61j"/>
+                <constraint firstItem="7lT-In-xll" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="51q-EU-xSb"/>
+                <constraint firstAttribute="trailing" secondItem="7lT-In-xll" secondAttribute="trailing" id="G5O-Ky-lzI"/>
+                <constraint firstAttribute="bottom" secondItem="klU-sY-jAx" secondAttribute="bottom" constant="20" id="Gfn-OG-Lpn"/>
+                <constraint firstAttribute="bottom" secondItem="7lT-In-xll" secondAttribute="bottom" id="cd6-09-752"/>
+                <constraint firstItem="7lT-In-xll" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kM0-wu-B4G"/>
+            </constraints>
+            <connections>
+                <outlet property="helpSwipeView" destination="7lT-In-xll" id="c0b-nX-5Vl"/>
+                <outlet property="pageControl" destination="klU-sY-jAx" id="XVd-ey-7BY"/>
+            </connections>
+        </view>
+    </objects>
+</document>
