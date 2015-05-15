@@ -22,6 +22,7 @@
     Violation *_violation;
     int totalMoney;
     int totalScore;
+    NSMutableArray *_finalArray;//有违章的车辆
     
     BOOL _isSearchViolation;
 }
@@ -32,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _finalArray=[[NSMutableArray alloc]init];
 }
 
 - (void)commonInit {
@@ -70,6 +72,14 @@
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
             _vehicleArray = vehicleArray;
             NSLog(@"%@",_vehicleArray);
+            [_finalArray removeAllObjects];
+            for (int i=0; i<_vehicleArray.count; i++) {
+                _vehicle=[_vehicleArray objectAtIndex:i];
+                if (_vehicle.hasViolation.count>0) {
+                    [_finalArray addObject:_vehicle];
+                }
+            }
+            
             [self.VechicleListTable reloadData];
             [self setupEmptyMessage];
             [self reloadData:YES];
@@ -103,7 +113,7 @@
 
 - (void)setupEmptyMessage {
     BOOL hidden = YES;
-    if ([CommonFunctionController checkValueValidate:_vehicleArray] == nil) {
+    if ([CommonFunctionController checkValueValidate:_finalArray] == nil) {
         hidden = NO;
     }
     self.thumbimage.hidden=hidden;
@@ -123,7 +133,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
-    return _vehicleArray.count;
+    return _finalArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,7 +145,7 @@
     ViolationListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    _vehicle=[_vehicleArray objectAtIndex:indexPath.section];
+    _vehicle=[_finalArray objectAtIndex:indexPath.section];
     cell.VehicleNumber.text=_vehicle.number;
     _violationArray=[_vehicle.hasViolation allObjects];
     totalMoney=0;
@@ -148,13 +158,13 @@
     cell.money.text=[NSString stringWithFormat:@"-%i",totalMoney];
     cell.score.text=[NSString stringWithFormat:@"-%i",totalScore];
     cell.untreatedNumber.text=[NSString stringWithFormat:@"%i",_violationArray.count];
-
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _vehicle=[_vehicleArray objectAtIndex:indexPath.section];
+    _vehicle=[_finalArray objectAtIndex:indexPath.section];
     [self performSegueWithIdentifier:@"ViolationListToDetail" sender:self];
 }
 

@@ -19,6 +19,7 @@
 #import "Vehicle.h"
 #import "NSDate+custom.h"
 #import "MileageDataRequest.h"
+#import "BDUGpsCorrect.h"
 
 @interface MileageViewController ()
 {
@@ -72,22 +73,33 @@
 {
     /* We received the new location */
     
-    //---------------位置反编码----------------
-    CLGeocoder *geocoder=[[CLGeocoder alloc]init];
-    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error){
-        [self.activityindicator stopAnimating];
-        for (CLPlacemark *place in placemarks) {
-            NSLog(@"name=%@",place.name);                         //位置名
-            NSLog(@"thoroughfare=%@",place.thoroughfare);         //街道
-            NSLog(@"subThoroughfare=%@",place.subThoroughfare);   //子街道
-            NSLog(@"locality=%@",place.locality);                 //市
-            NSLog(@"subLocality=%@",place.subLocality);           //区
-            NSLog(@"country=%@",place.country);                   //国家
-            self.AddressLabel.text=place.name;
+    NSDictionary *correctDictionary = [BDUGpsCorrect transformWithOriLat:newLocation.coordinate.latitude withOriLon:newLocation.coordinate.longitude];
+
+    CLLocationCoordinate2D _currentCoordinate = CLLocationCoordinate2DMake([[correctDictionary objectForKey:BDUGPSCORRECT_KEY_DICT_RESULT_LAT] doubleValue], [[correctDictionary objectForKey:BDUGPSCORRECT_KEY_DICT_RESULT_LON] doubleValue]);
+    
+    CLLocation *myloaction=[[CLLocation alloc]initWithLatitude:_currentCoordinate.latitude longitude:_currentCoordinate.longitude];
+    
+    if (CLLocationCoordinate2DIsValid(_currentCoordinate))
+    {
+        //---------------位置反编码----------------
+        CLGeocoder *geocoder=[[CLGeocoder alloc]init];
+        [geocoder reverseGeocodeLocation:myloaction completionHandler:^(NSArray *placemarks, NSError *error){
+            [self.activityindicator stopAnimating];
+            for (CLPlacemark *place in placemarks) {
+                NSLog(@"name=%@",place.name);                         //位置名
+                NSLog(@"thoroughfare=%@",place.thoroughfare);         //街道
+                NSLog(@"subThoroughfare=%@",place.subThoroughfare);   //子街道
+                NSLog(@"locality=%@",place.locality);                 //市
+                NSLog(@"subLocality=%@",place.subLocality);           //区
+                NSLog(@"country=%@",place.country);                   //国家
+                self.AddressLabel.text=place.name;
+            }
+            [locationManager stopUpdatingLocation];
+            
         }
+         ];
 
     }
-     ];
     
 }
 

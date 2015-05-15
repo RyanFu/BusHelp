@@ -16,7 +16,7 @@
 
 
 //公共的方法
-+ (CalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day oil:(NSString *)mile
++ (CalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day mile:(NSString *)mile
 {
     CalendarDayModel *calendarDay = [[CalendarDayModel alloc] init];//初始化自身
     calendarDay.year = year;//年

@@ -186,6 +186,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mileage-select" translatesAutoresizingMaskIntoConstraints="NO" id="H4c-Dk-DYL">
+                                <rect key="frame" x="258" y="68" width="15" height="15"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -205,7 +208,9 @@
                             <constraint firstItem="oDP-2b-cQA" firstAttribute="leading" secondItem="rPy-O2-bC7" secondAttribute="trailing" constant="108" id="JTV-ZW-vXx"/>
                             <constraint firstItem="lk6-KZ-DMO" firstAttribute="leading" secondItem="lOh-9k-HH4" secondAttribute="leadingMargin" constant="6" id="Kdz-KR-hmg"/>
                             <constraint firstItem="oDP-2b-cQA" firstAttribute="top" secondItem="kSs-tD-BQ3" secondAttribute="bottom" constant="8" symbolic="YES" id="Kqu-nG-wN3"/>
+                            <constraint firstItem="H4c-Dk-DYL" firstAttribute="top" secondItem="hqU-eY-pgq" secondAttribute="bottom" constant="68" id="MJh-ee-3LI"/>
                             <constraint firstItem="uo2-Np-7gd" firstAttribute="leading" secondItem="qjg-og-hyq" secondAttribute="leading" id="MsB-FS-mM0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H4c-Dk-DYL" secondAttribute="trailing" constant="31" id="OHU-C8-m9v"/>
                             <constraint firstItem="Y13-G9-1TX" firstAttribute="top" secondItem="2Pk-th-Oro" secondAttribute="bottom" constant="22" id="OHp-Zs-z4i"/>
                             <constraint firstItem="zIH-7Y-g6A" firstAttribute="centerX" secondItem="2Pk-th-Oro" secondAttribute="centerX" id="PWf-qr-pn6"/>
                             <constraint firstItem="iTb-eO-MeS" firstAttribute="trailing" secondItem="kSs-tD-BQ3" secondAttribute="trailing" id="TCX-MW-mEn"/>
@@ -224,6 +229,7 @@
                             <constraint firstItem="kSs-tD-BQ3" firstAttribute="leading" secondItem="2Pk-th-Oro" secondAttribute="leading" id="jc4-zk-uPr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ro9-2o-OAk" secondAttribute="trailing" constant="96" id="kgO-Qt-LOd"/>
                             <constraint firstItem="ro9-2o-OAk" firstAttribute="top" secondItem="lk6-KZ-DMO" secondAttribute="bottom" constant="21" id="mMv-F2-i0j"/>
+                            <constraint firstItem="iTb-eO-MeS" firstAttribute="top" secondItem="H4c-Dk-DYL" secondAttribute="bottom" constant="13" id="nK3-1v-DYL"/>
                             <constraint firstItem="rPy-O2-bC7" firstAttribute="leading" secondItem="GYg-g9-x9N" secondAttribute="leading" id="pCb-9r-PRN"/>
                             <constraint firstItem="SlQ-Lp-ZGc" firstAttribute="top" secondItem="iTb-eO-MeS" secondAttribute="bottom" constant="6" id="pEW-Yj-LaA"/>
                             <constraint firstItem="kSs-tD-BQ3" firstAttribute="trailing" secondItem="GYg-g9-x9N" secondAttribute="trailing" id="qfn-v3-zaX"/>
@@ -232,6 +238,7 @@
                             <constraint firstItem="uo2-Np-7gd" firstAttribute="leading" secondItem="rPy-O2-bC7" secondAttribute="leading" id="rf6-gJ-YfC"/>
                             <constraint firstItem="rPy-O2-bC7" firstAttribute="top" secondItem="kSs-tD-BQ3" secondAttribute="bottom" constant="14" id="s84-lt-ghp"/>
                             <constraint firstItem="uo2-Np-7gd" firstAttribute="centerY" secondItem="SlQ-Lp-ZGc" secondAttribute="centerY" id="slH-4H-q9q"/>
+                            <constraint firstItem="H4c-Dk-DYL" firstAttribute="leading" secondItem="Kj0-TL-wry" secondAttribute="trailing" constant="-17" id="t8E-dR-xD3"/>
                             <constraint firstItem="2Pk-th-Oro" firstAttribute="centerX" secondItem="Y13-G9-1TX" secondAttribute="centerX" id="uex-Cq-3iH"/>
                             <constraint firstItem="2Pk-th-Oro" firstAttribute="top" secondItem="rPy-O2-bC7" secondAttribute="bottom" constant="6" id="vBX-8v-FeX"/>
                             <constraint firstItem="oDP-2b-cQA" firstAttribute="bottom" secondItem="rPy-O2-bC7" secondAttribute="bottom" id="yFz-hw-Ndv"/>
@@ -3783,6 +3790,7 @@
         <image name="login-password" width="20" height="20"/>
         <image name="login-user" width="20" height="20"/>
         <image name="manager-applying" width="33" height="33"/>
+        <image name="mileage-select" width="10" height="10"/>
         <image name="oil-camera" width="60" height="60"/>
         <image name="oil-list" width="24" height="24"/>
         <image name="setting-account" width="25" height="25"/>

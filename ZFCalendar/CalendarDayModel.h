@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, CollectionViewCellDayType) {
 @property (nonatomic, strong) NSString *mile;//历程
 
 
-+ (CalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day oil:(NSString *)mile;
++ (CalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day mile:(NSString *)mile;
 - (NSDate *)date;//返回当前天的NSDate对象
 - (NSString *)toString;//返回当前天的NSString对象
 - (NSString *)getWeek; //返回星期

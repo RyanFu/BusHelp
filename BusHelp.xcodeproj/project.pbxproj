@@ -220,6 +220,7 @@
 		DA7245F91B04D1AB00431299 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245EE1B04D1AB00431299 /* JSONKeyMapper.m */; };
 		DA7245FA1B04D1AB00431299 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245F01B04D1AB00431299 /* JSONValueTransformer.m */; };
 		DA7245FD1B04DA0100431299 /* MileageDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245FC1B04DA0100431299 /* MileageDataRequest.m */; };
+		DA75303D1B05CABA00DE6426 /* BDUGpsCorrect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */; };
 		DA7EE7A21AFDC5FE002532D5 /* NotificationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EE7A11AFDC5FE002532D5 /* NotificationItem.m */; };
 		DA92FFA31AFA0038000AD59F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92FFA21AFA0038000AD59F /* Foundation.framework */; };
 		DA92FFB21AFA01EB000AD59F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFA81AFA01EB000AD59F /* FMDatabase.m */; };
@@ -615,6 +616,8 @@
 		DA7245F01B04D1AB00431299 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		DA7245FB1B04DA0100431299 /* MileageDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MileageDataRequest.h; sourceTree = "<group>"; };
 		DA7245FC1B04DA0100431299 /* MileageDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MileageDataRequest.m; sourceTree = "<group>"; };
+		DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUGpsCorrect.m; sourceTree = "<group>"; };
+		DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDUGpsCorrect.h; sourceTree = "<group>"; };
 		DA7EE7A01AFDC5FE002532D5 /* NotificationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationItem.h; sourceTree = "<group>"; };
 		DA7EE7A11AFDC5FE002532D5 /* NotificationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationItem.m; sourceTree = "<group>"; };
 		DA92FFA21AFA0038000AD59F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -774,6 +777,8 @@
 		B027908F1A9045350079F358 = {
 			isa = PBXGroup;
 			children = (
+				DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */,
+				DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */,
 				DA7245FB1B04DA0100431299 /* MileageDataRequest.h */,
 				DA7245FC1B04DA0100431299 /* MileageDataRequest.m */,
 				DA7245D71B04D1AB00431299 /* JSONModel */,
@@ -1680,6 +1685,7 @@
 				B0E344EB1AB09944005F314F /* OilType.m in Sources */,
 				B03C145F1A9DC0F8008386B8 /* RegisterViewController.m in Sources */,
 				B03C14561A9D9B30008386B8 /* UUChart.m in Sources */,
+				DA75303D1B05CABA00DE6426 /* BDUGpsCorrect.m in Sources */,
 				DA64525F1B031BEA0061F855 /* CalendarDayCell.m in Sources */,
 				B09944341A984F5F00C5C90C /* HomeTabBarController.m in Sources */,
 				B0B944A61A9CAC95006AC7C2 /* OilManagerViewController.m in Sources */,

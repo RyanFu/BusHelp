@@ -39,7 +39,6 @@
     orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
     [messageTable reloadData];
     [self setupOrgWithRequest:YES];
-    [CommonFunctionController showAnimateMessageHUD];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -66,6 +65,7 @@
 }
 
 - (void)setupOrgWithRequest:(BOOL)request {
+    [CommonFunctionController showAnimateMessageHUD];
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
             _org = [orgArray firstObject];

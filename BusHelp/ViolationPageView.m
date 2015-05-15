@@ -81,7 +81,7 @@
 }
 
 - (IBAction)shareButtonPressed:(UIButton *)sender {
-    UIImage *shareImage = [CommonFunctionController captureWithView:self.firstAvailableUIViewController.tabBarController.navigationController.view];
+    UIImage *shareImage = [CommonFunctionController captureWithView:self.firstAvailableUIViewController.navigationController.view];
     id<ISSContent> publishContent = [ShareSDK content:SHARE_CONTENT
                                        defaultContent:SHARE_CONTENT
                                                 image:[ShareSDK jpegImageWithImage:shareImage quality:0.5]

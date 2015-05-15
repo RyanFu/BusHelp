@@ -98,7 +98,7 @@
     
     for (int i = daysCount - partialDaysCount + 1; i < daysCount + 1; ++i) {
         
-        CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i oil:@""];
+        CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i mile:@""];
         calendarDay.style = CellDayTypeEmpty;//不显示
         [array addObject:calendarDay];
     }
@@ -120,7 +120,7 @@
     NSDateComponents *components = [[date dayInTheFollowingMonth] YMDComponents];
     
     for (int i = 1; i < partialDaysCount + 1; ++i) {
-        CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i oil:@""];
+        CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i mile:@""];
         calendarDay.style = CellDayTypeEmpty;
         [array addObject:calendarDay];
     }
@@ -137,7 +137,7 @@
     NSString *mark;
 
     NSDictionary *dic=[[NSUserDefaults standardUserDefaults]objectForKey:@"DailyMile"];
-    
+    NSLog(@"%@",dic);
     if (dic) {
         for (int i = 1; i < daysCount + 1; ++i) {
             if(components.month<10&&i>10)
@@ -155,7 +155,7 @@
                 mark=[NSString stringWithFormat:@"%i-%i-%i",components.year,components.month,i];
                 
             }
-            CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i oil:[dic objectForKey:mark]];
+            CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i mile:[dic objectForKey:mark]];
             
             
             //        calendarDay.Chinese_calendar = [self LunarForSolarYear:components.year Month:components.month Day:i];
@@ -165,6 +165,22 @@
             [self changStyle:calendarDay];
             [array addObject:calendarDay];
 
+            
+        }
+
+    }else
+    {
+        for (int i = 1; i < daysCount + 1; ++i) {
+            CalendarDayModel *calendarDay = [CalendarDayModel calendarDayWithYear:components.year month:components.month day:i mile:[dic objectForKey:mark]];
+            
+            
+            //        calendarDay.Chinese_calendar = [self LunarForSolarYear:components.year Month:components.month Day:i];
+            
+            calendarDay.week = [[calendarDay date]getWeekIntValueWithDate];
+            [self LunarForSolarYear:calendarDay];
+            [self changStyle:calendarDay];
+            [array addObject:calendarDay];
+            
             
         }
 

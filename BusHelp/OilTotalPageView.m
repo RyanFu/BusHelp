@@ -25,7 +25,6 @@ static CGFloat const chartHeight = 167.0f;
 @property (weak, nonatomic) IBOutlet UILabel *mileageLabel;
 
 - (IBAction)shareButtonPressed:(UIButton *)sender;
-- (IBAction)listButtonPressed:(id)sender;
 
 @end
 
@@ -141,7 +140,7 @@ static CGFloat const chartHeight = 167.0f;
 }
 
 - (IBAction)shareButtonPressed:(UIButton *)sender {
-    UIImage *shareImage = [CommonFunctionController captureWithView:self.firstAvailableUIViewController.tabBarController.navigationController.view];
+    UIImage *shareImage = [CommonFunctionController captureWithView:self.firstAvailableUIViewController.navigationController.view];
     id<ISSContent> publishContent = [ShareSDK content:SHARE_CONTENT
                                        defaultContent:SHARE_CONTENT
                                                 image:[ShareSDK jpegImageWithImage:shareImage quality:0.5]

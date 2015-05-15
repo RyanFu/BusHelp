@@ -96,36 +96,46 @@
                 [[NSUserDefaults standardUserDefaults]setObject:resultdic forKey:@"DailyMile"];
                 [[NSUserDefaults standardUserDefaults]synchronize];
                 NSLog(@"%@",resultdic);
-                [self setup];
-                self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
-                self.collectionView.hidden=NO;
+                [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
+                [CommonFunctionController hideAllHUD];
             }else
             {
-                [CommonFunctionController showHUDWithMessage:@"该车还没有记录" detail:nil];
-                self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
-                self.collectionView.hidden=YES;
+                [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
+                [CommonFunctionController hideAllHUD];
 
             }
         } failure:^(NSString *message){
+            [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
             [CommonFunctionController showHUDWithMessage:@"获取数据失败" detail:nil];
         }];
-    }
-
-    
-}
-
--(void)setup
-{
-    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"DailyMile"]) {
-        [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
-        [CommonFunctionController hideAllHUD];
-
     }else
     {
-        [CommonFunctionController showHUDWithMessage:@"该车还没有记录" detail:nil];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
+        [CommonFunctionController hideAllHUD];
     }
+
     
 }
+
+//-(void)setup
+//{
+//    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"DailyMile"]) {
+//        [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
+//        [CommonFunctionController hideAllHUD];
+//
+//    }else
+//    {
+//        [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
+//        [CommonFunctionController showHUDWithMessage:@"该车还没有记录" detail:nil];
+//    }
+//    
+//}
 
 //-(void)fetchVehicleMonthList
 //{
