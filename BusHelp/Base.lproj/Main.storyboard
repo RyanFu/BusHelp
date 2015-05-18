@@ -319,9 +319,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-J8-GSS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-J8-GSS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ONL-Qv-Q9E" id="CQm-Ad-cFL"/>
                                     <outlet property="delegate" destination="ONL-Qv-Q9E" id="BqH-99-Roo"/>
@@ -339,6 +339,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="5mM-Gv-Hre"/>
                                     <constraint firstAttribute="height" constant="36" id="ndK-IF-zIL"/>
+                                    <constraint firstAttribute="width" secondItem="cHA-aj-SeI" secondAttribute="height" multiplier="139:36" id="q3E-lH-u2q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.10643394249472428" green="0.65725663829726844" blue="0.85238259668508287" alpha="1" colorSpace="calibratedRGB"/>
@@ -346,6 +347,9 @@
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有违章记录！                      " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="673-J0-JBE">
                                 <rect key="frame" x="101" y="249" width="139" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="673-J0-JBE" secondAttribute="height" multiplier="139:36" id="dlK-dv-Fwc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1064339425" green="0.65725663830000003" blue="0.85238259670000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -863,8 +867,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-xT-zU9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz3-hN-iR2">
-                                <rect key="frame" x="255" y="156" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz3-hN-iR2">
+                                <rect key="frame" x="255" y="176" width="90" height="90"/>
                                 <state key="normal" image="violation-button-add-car">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -872,8 +876,8 @@
                                     <action selector="addCarButtonPressed:" destination="ZfR-V4-u1f" eventType="touchUpInside" id="lXm-I1-IRM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="您还没有添加车辆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-Gx-GBo">
-                                <rect key="frame" x="232" y="106" width="136" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有添加车辆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-Gx-GBo">
+                                <rect key="frame" x="232" y="126" width="136" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="74L-jM-oeF"/>
                                 </constraints>
@@ -2409,7 +2413,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="NYc-Sx-Pbq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="555"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QTr-bo-RyT" id="Pvo-ao-5Kh"/>
@@ -2422,7 +2426,7 @@
                             <constraint firstItem="NYc-Sx-Pbq" firstAttribute="leading" secondItem="FSd-qs-wdL" secondAttribute="leading" id="1a6-04-CCA"/>
                             <constraint firstItem="NYc-Sx-Pbq" firstAttribute="top" secondItem="8H1-KB-8tf" secondAttribute="bottom" id="2hs-V4-XBL"/>
                             <constraint firstAttribute="trailing" secondItem="NYc-Sx-Pbq" secondAttribute="trailing" id="HDl-ru-dOI"/>
-                            <constraint firstItem="NYc-Sx-Pbq" firstAttribute="bottom" secondItem="xSf-Y7-nRY" secondAttribute="top" constant="100" id="s6d-bL-0qS"/>
+                            <constraint firstItem="NYc-Sx-Pbq" firstAttribute="bottom" secondItem="xSf-Y7-nRY" secondAttribute="top" id="s6d-bL-0qS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="我" image="tabbar-menu-4-normal" id="r6y-rY-all">

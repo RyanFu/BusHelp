@@ -13,10 +13,10 @@
 - (void)awakeFromNib {
     // Initialization code
     self.backgroundColor=[UIColor clearColor];
-    self.baseview.layer.masksToBounds=YES;
-    self.baseview.layer.cornerRadius=5;
-    self.baseview.layer.borderColor=[UIColor lightGrayColor].CGColor;
-    self.baseview.layer.borderWidth=0.8;
+//    self.baseview.layer.masksToBounds=YES;
+//    self.baseview.layer.cornerRadius=5;
+//    self.baseview.layer.borderColor=[UIColor lightGrayColor].CGColor;
+//    self.baseview.layer.borderWidth=0.8;
 
 }
 

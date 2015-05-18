@@ -34,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _finalArray=[[NSMutableArray alloc]init];
+    _VechicleListTable.tableFooterView=[[UIView alloc]init];
 }
 
 - (void)commonInit {
@@ -128,13 +129,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-{
     return _finalArray.count;
 }
+
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+//{
+//    return _finalArray.count;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -143,9 +144,9 @@
     [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
     ViolationListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    _vehicle=[_finalArray objectAtIndex:indexPath.section];
+    _vehicle=[_finalArray objectAtIndex:indexPath.row];
     cell.VehicleNumber.text=_vehicle.number;
     _violationArray=[_vehicle.hasViolation allObjects];
     totalMoney=0;
@@ -164,19 +165,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _vehicle=[_finalArray objectAtIndex:indexPath.section];
+    _vehicle=[_finalArray objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"ViolationListToDetail" sender:self];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 15;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 5;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 15;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return 5;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
