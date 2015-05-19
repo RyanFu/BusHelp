@@ -116,10 +116,11 @@
     BOOL hidden = YES;
     if ([CommonFunctionController checkValueValidate:_finalArray] == nil) {
         hidden = NO;
+        self.thumbimage.hidden=hidden;
+        self.Label1.hidden=hidden;
+        self.Label2.hidden=hidden;
+
     }
-    self.thumbimage.hidden=hidden;
-    self.Label1.hidden=hidden;
-    self.Label2.hidden=hidden;
     
 }
 

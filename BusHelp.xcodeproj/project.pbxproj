@@ -777,10 +777,9 @@
 		B027908F1A9045350079F358 = {
 			isa = PBXGroup;
 			children = (
-				DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */,
-				DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */,
 				DA7245FB1B04DA0100431299 /* MileageDataRequest.h */,
 				DA7245FC1B04DA0100431299 /* MileageDataRequest.m */,
+				DAB703101B09C9C3001C11FF /* BDUGpsCorrect */,
 				DA7245D71B04D1AB00431299 /* JSONModel */,
 				DA64524C1B031BEA0061F855 /* ZFCalendar */,
 				DA92FFB71AFA02B1000AD59F /* sql */,
@@ -1401,6 +1400,15 @@
 			path = sql;
 			sourceTree = "<group>";
 		};
+		DAB703101B09C9C3001C11FF /* BDUGpsCorrect */ = {
+			isa = PBXGroup;
+			children = (
+				DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */,
+				DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */,
+			);
+			name = BDUGpsCorrect;
+			sourceTree = "<group>";
+		};
 		F1501798622CEDCD9E377DF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1876,8 +1884,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BusHelp/KeychainAccessGroups.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jim Min (76NDZXKT6H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jim Min (76NDZXKT6H)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BusHelp/ShareSDK/Connection",
@@ -1916,7 +1924,7 @@
 					"$(SRCROOT)/BusHelp/JPush",
 				);
 				PRODUCT_NAME = BusHelp;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9e492a51-4fa8-4174-bf91-e297e045c73c";
 			};
 			name = Debug;
 		};
@@ -1927,8 +1935,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BusHelp/KeychainAccessGroups.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jim Min (34THUY39J9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jim Min (34THUY39J9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BusHelp/ShareSDK/Connection",
@@ -1967,7 +1975,7 @@
 					"$(SRCROOT)/BusHelp/JPush",
 				);
 				PRODUCT_NAME = BusHelp;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9e492a51-4fa8-4174-bf91-e297e045c73c";
 			};
 			name = Release;
 		};
