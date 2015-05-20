@@ -230,6 +230,10 @@
 		DA92FFB61AFA01EB000AD59F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFB11AFA01EB000AD59F /* FMResultSet.m */; };
 		DA92FFBA1AFA02B1000AD59F /* Sql_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFB91AFA02B1000AD59F /* Sql_Utils.m */; };
 		DA92FFBC1AFA03AB000AD59F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */; };
+		DAA1279F1B0B000900E3A2B4 /* AuthenticatinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA1279E1B0B000900E3A2B4 /* AuthenticatinViewController.m */; };
+		DAABC59F1B0C25F400C29D10 /* VehicleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */; };
+		DAABC5A21B0C2B4600C29D10 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A11B0C2B4600C29D10 /* BaseView.m */; };
+		DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A41B0C324500C29D10 /* BatteryView.m */; };
 		DABD20E01AF07D1200848013 /* FunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD20DF1AF07D1200848013 /* FunctionViewController.m */; };
 		DABEF1A21AF8752A00F72C13 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A11AF8752A00F72C13 /* MessageViewController.m */; };
 		DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A41AF8900A00F72C13 /* popoverViewController.m */; };
@@ -635,6 +639,14 @@
 		DA92FFB81AFA02B1000AD59F /* Sql_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sql_Utils.h; sourceTree = "<group>"; };
 		DA92FFB91AFA02B1000AD59F /* Sql_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sql_Utils.m; sourceTree = "<group>"; };
 		DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DAA1279D1B0B000900E3A2B4 /* AuthenticatinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatinViewController.h; sourceTree = "<group>"; };
+		DAA1279E1B0B000900E3A2B4 /* AuthenticatinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatinViewController.m; sourceTree = "<group>"; };
+		DAABC59D1B0C25F400C29D10 /* VehicleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleDetailViewController.h; sourceTree = "<group>"; };
+		DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleDetailViewController.m; sourceTree = "<group>"; };
+		DAABC5A01B0C2B4600C29D10 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		DAABC5A11B0C2B4600C29D10 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		DAABC5A31B0C324500C29D10 /* BatteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryView.h; sourceTree = "<group>"; };
+		DAABC5A41B0C324500C29D10 /* BatteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryView.m; sourceTree = "<group>"; };
 		DABD20DE1AF07D1200848013 /* FunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionViewController.h; sourceTree = "<group>"; };
 		DABD20DF1AF07D1200848013 /* FunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionViewController.m; sourceTree = "<group>"; };
 		DABEF1A01AF8752A00F72C13 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -1090,6 +1102,10 @@
 				DA6452451B02DFD20061F855 /* MileageViewController.m */,
 				DA6452751B034A780061F855 /* SelectVehicleViewController.h */,
 				DA6452761B034A780061F855 /* SelectVehicleViewController.m */,
+				DAA1279D1B0B000900E3A2B4 /* AuthenticatinViewController.h */,
+				DAA1279E1B0B000900E3A2B4 /* AuthenticatinViewController.m */,
+				DAABC59D1B0C25F400C29D10 /* VehicleDetailViewController.h */,
+				DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1167,6 +1183,10 @@
 				DA4184D01AFCB3DE00639637 /* ContactsTableViewCell.h */,
 				DA4184D11AFCB3DE00639637 /* ContactsTableViewCell.m */,
 				DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */,
+				DAABC5A01B0C2B4600C29D10 /* BaseView.h */,
+				DAABC5A11B0C2B4600C29D10 /* BaseView.m */,
+				DAABC5A31B0C324500C29D10 /* BatteryView.h */,
+				DAABC5A41B0C324500C29D10 /* BatteryView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1600,6 +1620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA1279F1B0B000900E3A2B4 /* AuthenticatinViewController.m in Sources */,
 				DA7EE7A21AFDC5FE002532D5 /* NotificationItem.m in Sources */,
 				B027915A1A9323EB0079F358 /* VehicleItem.m in Sources */,
 				91864F371AB14E6D004DEC9F /* OrgSettingViewController.m in Sources */,
@@ -1675,6 +1696,7 @@
 				B0D904291ADCD99000B50B48 /* RootNavigationController.m in Sources */,
 				B06C75E41AA89175006CF437 /* Violation.m in Sources */,
 				DA7245FA1B04D1AB00431299 /* JSONValueTransformer.m in Sources */,
+				DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */,
 				91864F5E1AB2A4D5004DEC9F /* FSImageTitleView.m in Sources */,
 				B06C75D51AA88644006CF437 /* ShieldVehicleTableViewCell.m in Sources */,
 				91ABF4BF1AA1A25100264F19 /* OrgTableViewCell.m in Sources */,
@@ -1706,6 +1728,7 @@
 				DA6452621B031BEA0061F855 /* CalendarLogic.m in Sources */,
 				915DB6161AA824290098019F /* SvUDIDTools.m in Sources */,
 				B05449ED1A9AF5C100C08C77 /* VehicleItemTableViewCell.m in Sources */,
+				DAABC5A21B0C2B4600C29D10 /* BaseView.m in Sources */,
 				B09944371A98522A00C5C90C /* CustomAnimator.m in Sources */,
 				B0BEFD1C1AC9771000599D5E /* UITableView+WJAdditions.m in Sources */,
 				91ABF4AD1AA05FA700264F19 /* TaskManagerViewController.m in Sources */,
@@ -1722,6 +1745,7 @@
 				DA60FA6C1B01E8FC0005ECAB /* ViolationDetailViewController.m in Sources */,
 				B027909E1A9045360079F358 /* main.m in Sources */,
 				B0617EF51AB7E09C004E12BF /* ErrorHandler.m in Sources */,
+				DAABC59F1B0C25F400C29D10 /* VehicleDetailViewController.m in Sources */,
 				91864F401AB1A660004DEC9F /* MonthItem.m in Sources */,
 				DA6452651B031BEA0061F855 /* CalendarViewController.m in Sources */,
 				91ABF4B51AA1564A00264F19 /* TaskTableView.m in Sources */,

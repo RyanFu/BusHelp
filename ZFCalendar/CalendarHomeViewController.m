@@ -95,7 +95,7 @@
                 [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
                 [[NSUserDefaults standardUserDefaults]setObject:resultdic forKey:@"DailyMile"];
                 [[NSUserDefaults standardUserDefaults]synchronize];
-                NSLog(@"%@",resultdic);
+//                NSLog(@"%@",resultdic);
                 [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
                 [CommonFunctionController hideAllHUD];
             }else

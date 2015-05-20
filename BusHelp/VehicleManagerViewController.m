@@ -11,6 +11,8 @@
 #import "VehicleItemTableViewCell.h"
 #import "DataRequest.h"
 #import <MJRefresh/MJRefresh.h>
+#import "AuthenticatinViewController.h"
+#import "VehicleDetailViewController.h"
 
 @interface VehicleManagerViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *_vehicleArray;
@@ -157,12 +159,20 @@
             NSIndexPath *cellIndexPath = [tableView indexPathForCell:weakCell];
             [_vehicleArray removeObjectAtIndex:cellIndexPath.row];
             [tableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            if (_vehicleArray.count == 0) {
-                [self.navigationController popViewControllerAnimated:YES];
-            }
+//            if (_vehicleArray.count == 0) {
+//                [self.navigationController popViewControllerAnimated:YES];
+//            }
         } failure:^(NSString *message){
             [CommonFunctionController showHUDWithMessage:message success:NO];
         }];
+    }];
+    [cell setAuthenticationButtonPressedBlock:^(Vehicle *vehicle){
+        AuthenticatinViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticatinViewController class])];
+        authenticationViewController.vehicle=vehicle;
+        [self.navigationController pushViewController:authenticationViewController animated:YES];
+//        VehicleDetailViewController *vehicleDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([VehicleDetailViewController class])];
+//        vehicleDetailViewController.vehicle=vehicle;
+//        [self.navigationController pushViewController:vehicleDetailViewController animated:YES];
     }];
     
     return cell;

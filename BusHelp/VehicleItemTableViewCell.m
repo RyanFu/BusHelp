@@ -7,7 +7,6 @@
 //
 
 #import "VehicleItemTableViewCell.h"
-
 @interface VehicleItemTableViewCell () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
@@ -15,6 +14,7 @@
 
 - (IBAction)rubbishButtonPressed:(UIButton *)sender;
 - (IBAction)editButtonPressed:(UIButton *)sender;
+- (IBAction)vehicleAuthenticationButtonPressed:(id)sender;
 
 @end
 
@@ -44,6 +44,12 @@
 - (IBAction)editButtonPressed:(UIButton *)sender {
     if (self.editButtonPressedBlock != nil) {
         self.editButtonPressedBlock(self.vehicle);
+    }
+}
+
+- (IBAction)vehicleAuthenticationButtonPressed:(id)sender {
+    if (self.AuthenticationButtonPressedBlock != nil) {
+        self.AuthenticationButtonPressedBlock(self.vehicle);
     }
 }
 

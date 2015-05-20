@@ -14,5 +14,6 @@
 @property (strong, nonatomic) Vehicle *vehicle;
 @property (copy, nonatomic) void (^editButtonPressedBlock)(Vehicle *vehicle);
 @property (copy, nonatomic) void (^rubbishButtonPressedBlock)(NSString *vehicleID);
+@property (copy, nonatomic) void (^AuthenticationButtonPressedBlock)(Vehicle *vehicle);
 
 @end

@@ -382,6 +382,9 @@
         [_addImageArray addObject:key];
     }
     [picker dismissViewControllerAnimated:YES completion:^{
+        [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:22.0f/255.0f green:164.0f/255.0f blue:220.0f/255.0f alpha:1.0f]];
         [self shouldShowSwipeView];
     }];
 }

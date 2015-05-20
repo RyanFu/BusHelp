@@ -67,6 +67,15 @@
                                 <rect key="frame" x="0.0" y="45" width="320" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoR-YK-gva">
+                                <rect key="frame" x="242" y="52" width="65" height="30"/>
+                                <state key="normal" title="车辆认证">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vehicleAuthenticationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gIT-ch-w4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -80,13 +89,17 @@
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="top" secondItem="GhQ-Ll-kK8" secondAttribute="bottom" constant="13" id="LpM-Gy-XRl"/>
                             <constraint firstItem="GfM-US-Eyv" firstAttribute="top" secondItem="GhQ-Ll-kK8" secondAttribute="bottom" constant="4" id="Omt-yn-BJW"/>
                             <constraint firstItem="GfM-US-Eyv" firstAttribute="centerX" secondItem="cvW-U7-ceK" secondAttribute="centerX" id="PSU-GH-D4j"/>
+                            <constraint firstItem="EoR-YK-gva" firstAttribute="leading" secondItem="cvW-U7-ceK" secondAttribute="trailing" constant="-66" id="PUC-8c-cVt"/>
                             <constraint firstItem="jwW-Gj-2QE" firstAttribute="centerY" secondItem="GhQ-Ll-kK8" secondAttribute="centerY" id="PYm-uU-HS3"/>
                             <constraint firstItem="iou-9K-ZlG" firstAttribute="firstBaseline" secondItem="GhQ-Ll-kK8" secondAttribute="firstBaseline" id="She-NR-KON"/>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="top" secondItem="jwW-Gj-2QE" secondAttribute="bottom" constant="18" id="UMr-eg-Pr8"/>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="trailing" secondItem="iou-9K-ZlG" secondAttribute="trailing" id="WUN-Dm-d0h"/>
                             <constraint firstItem="iou-9K-ZlG" firstAttribute="height" secondItem="GhQ-Ll-kK8" secondAttribute="height" id="Wt6-cU-pZ7"/>
+                            <constraint firstAttribute="bottom" secondItem="EoR-YK-gva" secondAttribute="bottom" constant="3" id="a2j-54-55J"/>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="leading" secondItem="jwW-Gj-2QE" secondAttribute="leading" id="d9L-N6-VWv"/>
+                            <constraint firstItem="EoR-YK-gva" firstAttribute="top" secondItem="Q8h-dt-VQQ" secondAttribute="top" constant="52" id="dgb-wV-JLX"/>
                             <constraint firstItem="GhQ-Ll-kK8" firstAttribute="top" secondItem="iou-9K-ZlG" secondAttribute="top" id="mTo-kb-ciD"/>
+                            <constraint firstAttribute="trailing" secondItem="EoR-YK-gva" secondAttribute="trailing" constant="13" id="n1Y-gR-b7g"/>
                             <constraint firstItem="GhQ-Ll-kK8" firstAttribute="top" secondItem="Q8h-dt-VQQ" secondAttribute="top" constant="6" id="q6I-RK-weV"/>
                             <constraint firstItem="iou-9K-ZlG" firstAttribute="leading" secondItem="GhQ-Ll-kK8" secondAttribute="trailing" constant="10" id="vUD-AW-lMa"/>
                         </constraints>

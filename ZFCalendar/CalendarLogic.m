@@ -137,7 +137,7 @@
     NSString *mark;
 
     NSDictionary *dic=[[NSUserDefaults standardUserDefaults]objectForKey:@"DailyMile"];
-    NSLog(@"%@",dic);
+//    NSLog(@"%@",dic);
     if (dic) {
         for (int i = 1; i < daysCount + 1; ++i) {
             if(components.month<10&&i>10)

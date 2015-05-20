@@ -228,7 +228,7 @@
             _orgArray = orgArray;
             _org = [_orgArray firstObject];
             NSLog(@"组织名称：%@",_org.name);
-            NSLog(@"status:%i",_org.status.integerValue);
+            NSLog(@"status:%li",(long)_org.status.integerValue);
             if (_org != nil ) {
                 showApplyCell=YES;
             }else
