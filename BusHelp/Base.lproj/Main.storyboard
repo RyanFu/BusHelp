@@ -3464,10 +3464,10 @@
             </objects>
             <point key="canvasLocation" x="7089" y="1681"/>
         </scene>
-        <!--Authenticatin View Controller-->
+        <!--Authentication View Controller-->
         <scene sceneID="wdO-yq-bRo">
             <objects>
-                <viewController storyboardIdentifier="AuthenticatinViewController" id="jLM-OT-TBo" customClass="AuthenticatinViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticationViewController" id="jLM-OT-TBo" customClass="AuthenticationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8x8-wE-SFI"/>
                         <viewControllerLayoutGuide type="bottom" id="dZV-QC-X68"/>

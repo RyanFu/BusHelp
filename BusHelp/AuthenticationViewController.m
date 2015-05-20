@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 夜枫尘. All rights reserved.
 //
 
-#import "AuthenticatinViewController.h"
+#import "AuthenticationViewController.h"
 #import "ImageCache.h"
 
-@interface AuthenticatinViewController ()
+@interface AuthenticationViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ImageVerticalConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel1;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation AuthenticatinViewController
+@implementation AuthenticationViewController
 @synthesize vehicle;
 
 - (void)viewDidLoad {
@@ -30,7 +30,10 @@
     tapGeture.numberOfTapsRequired=1;
     [self.MyImage addGestureRecognizer:tapGeture];
     
-    self.MyImage.image=[ImageCache cacheForKey:vehicle.vehicleID];
+    if([ImageCache hasCacheForKey:vehicle.vehicleID])
+    {
+        self.MyImage.image=[ImageCache cacheForKey:vehicle.vehicleID];
+    }
     
 //    self.ImageVerticalConstraint.constant=20;
 //    self.lineLabel2.hidden=YES;

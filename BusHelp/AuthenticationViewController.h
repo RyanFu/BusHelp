@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "Vehicle.h"
 
-@interface AuthenticatinViewController : BaseViewController<UIGestureRecognizerDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface AuthenticationViewController : BaseViewController<UIGestureRecognizerDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *MyImage;
 @property (nonatomic,weak) Vehicle *vehicle;
 

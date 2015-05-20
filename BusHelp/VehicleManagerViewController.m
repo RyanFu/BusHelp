@@ -11,7 +11,7 @@
 #import "VehicleItemTableViewCell.h"
 #import "DataRequest.h"
 #import <MJRefresh/MJRefresh.h>
-#import "AuthenticatinViewController.h"
+#import "AuthenticationViewController.h"
 #import "VehicleDetailViewController.h"
 
 @interface VehicleManagerViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -167,7 +167,7 @@
         }];
     }];
     [cell setAuthenticationButtonPressedBlock:^(Vehicle *vehicle){
-        AuthenticatinViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticatinViewController class])];
+        AuthenticationViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticationViewController class])];
         authenticationViewController.vehicle=vehicle;
         [self.navigationController pushViewController:authenticationViewController animated:YES];
 //        VehicleDetailViewController *vehicleDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([VehicleDetailViewController class])];
