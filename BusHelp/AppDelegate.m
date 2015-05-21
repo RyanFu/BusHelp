@@ -45,10 +45,10 @@
                                                            [UIFont fontWithName:@"Helvetica" size:20.0], NSFontAttributeName, nil]];
     
 
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
 //    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"bushelp.db"];
-//    NSLog(@"%@",documentDirectory);
+    NSLog(@"%@",documentDirectory);
 //    [self removeFileAtPath:dbPath];
     
 

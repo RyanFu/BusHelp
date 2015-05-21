@@ -142,8 +142,6 @@
 		B06C75D51AA88644006CF437 /* ShieldVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75D41AA88644006CF437 /* ShieldVehicleTableViewCell.m */; };
 		B06C75D81AA89174006CF437 /* Oil.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75D71AA89174006CF437 /* Oil.m */; };
 		B06C75DB1AA89175006CF437 /* OrgMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75DA1AA89175006CF437 /* OrgMessage.m */; };
-		B06C75DE1AA89175006CF437 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75DD1AA89175006CF437 /* Vehicle.m */; };
-		B06C75E41AA89175006CF437 /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75E31AA89175006CF437 /* Violation.m */; };
 		B06C75E71AA89175006CF437 /* Org.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75E61AA89175006CF437 /* Org.m */; };
 		B06C75EA1AA89175006CF437 /* RequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75E91AA89175006CF437 /* RequestInfo.m */; };
 		B06C75F01AA89175006CF437 /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75EF1AA89175006CF437 /* Month.m */; };
@@ -183,6 +181,8 @@
 		DA4184D31AFCB3DE00639637 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184D11AFCB3DE00639637 /* ContactsTableViewCell.m */; };
 		DA4184D41AFCB3DE00639637 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */; };
 		DA4184D71AFCB6E900639637 /* popOrgUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184D61AFCB6E900639637 /* popOrgUsersViewController.m */; };
+		DA442F2D1B0DB23000AC6BC7 /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA442F2C1B0DB23000AC6BC7 /* Violation.m */; };
+		DA442F301B0DB24B00AC6BC7 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA442F2F1B0DB24B00AC6BC7 /* Vehicle.m */; };
 		DA5B64551B04A2BF004ACB9D /* MileageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5B64541B04A2BF004ACB9D /* MileageItem.m */; };
 		DA5DBFEB1AF6F940001EFBAF /* HeadPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5DBFE91AF6F940001EFBAF /* HeadPortraitCell.m */; };
 		DA5DBFEC1AF6F940001EFBAF /* HeadPortraitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5DBFEA1AF6F940001EFBAF /* HeadPortraitCell.xib */; };
@@ -482,10 +482,6 @@
 		B06C75D71AA89174006CF437 /* Oil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oil.m; sourceTree = "<group>"; };
 		B06C75D91AA89175006CF437 /* OrgMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMessage.h; sourceTree = "<group>"; };
 		B06C75DA1AA89175006CF437 /* OrgMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMessage.m; sourceTree = "<group>"; };
-		B06C75DC1AA89175006CF437 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
-		B06C75DD1AA89175006CF437 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
-		B06C75E21AA89175006CF437 /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
-		B06C75E31AA89175006CF437 /* Violation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Violation.m; sourceTree = "<group>"; };
 		B06C75E51AA89175006CF437 /* Org.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Org.h; sourceTree = "<group>"; };
 		B06C75E61AA89175006CF437 /* Org.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Org.m; sourceTree = "<group>"; };
 		B06C75E81AA89175006CF437 /* RequestInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestInfo.h; sourceTree = "<group>"; };
@@ -552,6 +548,11 @@
 		DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
 		DA4184D51AFCB6E900639637 /* popOrgUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popOrgUsersViewController.h; sourceTree = "<group>"; };
 		DA4184D61AFCB6E900639637 /* popOrgUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popOrgUsersViewController.m; sourceTree = "<group>"; };
+		DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusHelp2.xcdatamodel; sourceTree = "<group>"; };
+		DA442F2B1B0DB23000AC6BC7 /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
+		DA442F2C1B0DB23000AC6BC7 /* Violation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Violation.m; sourceTree = "<group>"; };
+		DA442F2E1B0DB24B00AC6BC7 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		DA442F2F1B0DB24B00AC6BC7 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		DA5B64531B04A2BF004ACB9D /* MileageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MileageItem.h; path = ../MileageItem.h; sourceTree = "<group>"; };
 		DA5B64541B04A2BF004ACB9D /* MileageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MileageItem.m; path = ../MileageItem.m; sourceTree = "<group>"; };
 		DA5DBFE81AF6F940001EFBAF /* HeadPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadPortraitCell.h; sourceTree = "<group>"; };
@@ -1200,10 +1201,10 @@
 				B06C75E91AA89175006CF437 /* RequestInfo.m */,
 				B06C75E51AA89175006CF437 /* Org.h */,
 				B06C75E61AA89175006CF437 /* Org.m */,
-				B06C75E21AA89175006CF437 /* Violation.h */,
-				B06C75E31AA89175006CF437 /* Violation.m */,
-				B06C75DC1AA89175006CF437 /* Vehicle.h */,
-				B06C75DD1AA89175006CF437 /* Vehicle.m */,
+				DA442F2E1B0DB24B00AC6BC7 /* Vehicle.h */,
+				DA442F2F1B0DB24B00AC6BC7 /* Vehicle.m */,
+				DA442F2B1B0DB23000AC6BC7 /* Violation.h */,
+				DA442F2C1B0DB23000AC6BC7 /* Violation.m */,
 				B06C75D91AA89175006CF437 /* OrgMessage.h */,
 				B06C75DA1AA89175006CF437 /* OrgMessage.m */,
 				B06C75D61AA89174006CF437 /* Oil.h */,
@@ -1626,6 +1627,7 @@
 				91864F371AB14E6D004DEC9F /* OrgSettingViewController.m in Sources */,
 				B099443D1A985FE100C5C90C /* BaseViewController.m in Sources */,
 				91864F681AB2DB89004DEC9F /* ProvinceKeyboard.m in Sources */,
+				DA442F301B0DB24B00AC6BC7 /* Vehicle.m in Sources */,
 				B0B9449E1A9C68DA006AC7C2 /* OilTotalPageView.m in Sources */,
 				91ABF4A51AA0303700264F19 /* CustomGasStationViewController.m in Sources */,
 				DA6083FA1AF21A8700903D27 /* SettingTableViewCell.m in Sources */,
@@ -1694,7 +1696,6 @@
 				B063E6761A97655100685CF4 /* SplashViewThree.m in Sources */,
 				B03C14541A9D9B30008386B8 /* UUBar.m in Sources */,
 				B0D904291ADCD99000B50B48 /* RootNavigationController.m in Sources */,
-				B06C75E41AA89175006CF437 /* Violation.m in Sources */,
 				DA7245FA1B04D1AB00431299 /* JSONValueTransformer.m in Sources */,
 				DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */,
 				91864F5E1AB2A4D5004DEC9F /* FSImageTitleView.m in Sources */,
@@ -1752,9 +1753,9 @@
 				916A36641AA3F38E0026D3A4 /* FeedbackViewController.m in Sources */,
 				DA92FFB41AFA01EB000AD59F /* FMDatabasePool.m in Sources */,
 				91ABF4BA1AA1876000264F19 /* TaskDetailView.m in Sources */,
+				DA442F2D1B0DB23000AC6BC7 /* Violation.m in Sources */,
 				DA64A1801B019FE900815C21 /* ViolationListTableViewCell.m in Sources */,
 				B03C14581A9D9B30008386B8 /* UUColor.m in Sources */,
-				B06C75DE1AA89175006CF437 /* Vehicle.m in Sources */,
 				DA92FFB31AFA01EB000AD59F /* FMDatabaseAdditions.m in Sources */,
 				B05449F71A9B327800C08C77 /* ViolationPageTableViewCell.m in Sources */,
 				B069695A1A9581AD00D5C07D /* DataRequest.m in Sources */,
@@ -2079,9 +2080,10 @@
 		B02790A21A9045360079F358 /* BusHelp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */,
 				B02790A31A9045360079F358 /* BusHelp.xcdatamodel */,
 			);
-			currentVersion = B02790A31A9045360079F358 /* BusHelp.xcdatamodel */;
+			currentVersion = DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */;
 			path = BusHelp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

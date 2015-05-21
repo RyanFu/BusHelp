@@ -21,7 +21,7 @@
 
 + (void)setupCoreDataStackWithStoreNamed:(NSString *)storeName {
     [MagicalRecord cleanUp];
-    [MagicalRecord setupCoreDataStackWithStoreNamed:storeName];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:storeName];
     [MagicalRecord setErrorHandlerTarget:[ErrorHandler sharedInstance] action:@selector(handlerError:)];
 }
 

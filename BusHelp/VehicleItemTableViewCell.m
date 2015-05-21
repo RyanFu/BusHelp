@@ -11,6 +11,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *identitystatusLabel;
 
 - (IBAction)rubbishButtonPressed:(UIButton *)sender;
 - (IBAction)editButtonPressed:(UIButton *)sender;
@@ -34,6 +35,7 @@
     _vehicle = vehicle;
     self.numberLabel.text = _vehicle.number;
     self.nameLabel.text = _vehicle.name;
+    self.identitystatusLabel.text=_vehicle.identify_status;
 }
 
 - (IBAction)rubbishButtonPressed:(UIButton *)sender {

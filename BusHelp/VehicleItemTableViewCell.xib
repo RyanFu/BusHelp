@@ -77,6 +77,12 @@
                                     <action selector="vehicleAuthenticationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gIT-ch-w4E"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkB-sv-uLi">
+                                <rect key="frame" x="130" y="13" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,6 +120,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="identitystatusLabel" destination="tkB-sv-uLi" id="mKw-jY-Jzs"/>
                 <outlet property="nameLabel" destination="cvW-U7-ceK" id="F73-Uw-4CB"/>
                 <outlet property="numberLabel" destination="jwW-Gj-2QE" id="40S-2p-lBQ"/>
             </connections>

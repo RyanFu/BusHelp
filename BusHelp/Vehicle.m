@@ -2,7 +2,7 @@
 //  Vehicle.m
 //  BusHelp
 //
-//  Created by 夜枫尘 on 15/3/5.
+//  Created by Paul on 15/5/21.
 //  Copyright (c) 2015年 夜枫尘. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 @dynamic oilLastUpdateTime;
 @dynamic vehicleID;
 @dynamic vinNumber;
+@dynamic identify_status;
 @dynamic hasOil;
 @dynamic hasOilTotal;
 @dynamic hasViolation;

@@ -2,7 +2,7 @@
 //  Vehicle.h
 //  BusHelp
 //
-//  Created by 夜枫尘 on 15/3/5.
+//  Created by Paul on 15/5/21.
 //  Copyright (c) 2015年 夜枫尘. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * oilLastUpdateTime;
 @property (nonatomic, retain) NSString * vehicleID;
 @property (nonatomic, retain) NSString * vinNumber;
+@property (nonatomic, retain) NSString * identify_status;
 @property (nonatomic, retain) NSSet *hasOil;
 @property (nonatomic, retain) OilTotal *hasOilTotal;
 @property (nonatomic, retain) NSSet *hasViolation;
