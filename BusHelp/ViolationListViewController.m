@@ -72,7 +72,7 @@
         [CommonFunctionController showAnimateMessageHUD];
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
             _vehicleArray = vehicleArray;
-            NSLog(@"%@",_vehicleArray);
+//            NSLog(@"%@",_vehicleArray);
             [_finalArray removeAllObjects];
             for (int i=0; i<_vehicleArray.count; i++) {
                 _vehicle=[_vehicleArray objectAtIndex:i];

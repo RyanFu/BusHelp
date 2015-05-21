@@ -167,12 +167,12 @@
         }];
     }];
     [cell setAuthenticationButtonPressedBlock:^(Vehicle *vehicle){
-        AuthenticationViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticationViewController class])];
-        authenticationViewController.vehicle=vehicle;
-        [self.navigationController pushViewController:authenticationViewController animated:YES];
-//        VehicleDetailViewController *vehicleDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([VehicleDetailViewController class])];
-//        vehicleDetailViewController.vehicle=vehicle;
-//        [self.navigationController pushViewController:vehicleDetailViewController animated:YES];
+//        AuthenticationViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticationViewController class])];
+//        authenticationViewController.vehicle=vehicle;
+//        [self.navigationController pushViewController:authenticationViewController animated:YES];
+        VehicleDetailViewController *vehicleDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([VehicleDetailViewController class])];
+        vehicleDetailViewController.vehicle=vehicle;
+        [self.navigationController pushViewController:vehicleDetailViewController animated:YES];
     }];
     
     return cell;

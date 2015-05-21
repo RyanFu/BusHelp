@@ -146,6 +146,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="c6s-fu-FuX"/>
                                 <exclude reference="xbY-36-h2V"/>
                                 <exclude reference="ALR-bF-JzY"/>
                                 <exclude reference="Xmz-ZM-XQ9"/>

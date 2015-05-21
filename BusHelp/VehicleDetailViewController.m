@@ -11,8 +11,11 @@
 
 @interface VehicleDetailViewController ()
 {
-    int per;
+    int len;
+    int percent;
     NSTimer *mytimer;
+    NSTimer *percentTimer;
+
 }
 @end
 
@@ -25,11 +28,16 @@
     self.NumberLabel.text=vehicle.number;
     self.BatteryHead.layer.masksToBounds=YES;
     self.BatteryHead.layer.cornerRadius=2;
-    per=0;
+    len=0;
+    percent=0;
     
-    mytimer=[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+    mytimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animate) userInfo:nil repeats:YES];
     
     self.statusBall.highlighted=YES;
+    self.percentLabel.text=[NSString stringWithFormat:@"%i%%",percent];
+    
+    percentTimer=[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updatepercent) userInfo:nil repeats:YES];
+
 }
 
 -(void)setupNavigationBar
@@ -47,21 +55,37 @@
 
 -(void)animate
 {
-    if (per<100) {
-        per=per+1;
-        self.percentLabel.text=[NSString stringWithFormat:@"%i%%",per];
-        self.batteryView.percent=[[NSString stringWithFormat:@"%i",per] floatValue]/100;
+    if (len<100) {
+        len=len+1;
+        self.batteryView.percent=[[NSString stringWithFormat:@"%i",len] floatValue]/100;
         [self.batteryView setNeedsDisplay];
-    }else
-    {
-        [mytimer invalidate];
+        if (len==100) {
+            len=0;
+            self.batteryView.percent=[[NSString stringWithFormat:@"%i",len] floatValue]/100;
+            [self.batteryView setNeedsDisplay];
+        }
     }
     
 }
 
+-(void)updatepercent
+{
+    if (percent<100) {
+        percent=percent+10;
+        self.percentLabel.text=[NSString stringWithFormat:@"%i%%",percent];
+        if (percent==100) {
+            [mytimer invalidate];
+            self.batteryView.percent=[[NSString stringWithFormat:@"%i",100] floatValue]/100;
+            [self.batteryView setNeedsDisplay];
+        }
+    }
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
-    mytimer=nil;
+    if ([mytimer isValid]) {
+        [mytimer invalidate];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
