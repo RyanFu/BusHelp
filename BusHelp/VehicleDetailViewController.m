@@ -42,7 +42,7 @@
 
 -(void)setupNavigationBar
 {
-    self.navigationItem.title=@"车辆";
+    self.navigationItem.title=@"车辆监测";
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];

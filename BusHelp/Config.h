@@ -61,6 +61,8 @@
 #define POSTNOTIFICATION [BASE_URL stringByAppendingString:@"/api/org/sendmessage"]
 #define SAVEVEHICLEMILEAGE [BASE_URL stringByAppendingString:@"/api/mil/savedailymileage"]
 #define GETVEHICLEMONTHLIST [BASE_URL stringByAppendingString:@"/api/mil/getmonthmillist"]
+#define GETVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/getdrivinglicense"]
+#define SAVEVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/savedrivinglicense"]
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define DOCUMENT_PATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]

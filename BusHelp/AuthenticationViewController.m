@@ -8,14 +8,22 @@
 
 #import "AuthenticationViewController.h"
 #import "ImageCache.h"
+#import "DataRequest.h"
+#import "UIImageView+WebCache.h"
 
 @interface AuthenticationViewController ()
+{
+    UIImage *scaleImage;
+    NSArray *myimageArray;
+}
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ImageVerticalConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel3;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel4;
+@property (weak, nonatomic) IBOutlet UIButton *commitButton;
+- (IBAction)commitButtonPressed:(id)sender;
 
 @end
 
@@ -33,12 +41,31 @@
     if([ImageCache hasCacheForKey:vehicle.vehicleID])
     {
         self.MyImage.image=[ImageCache cacheForKey:vehicle.vehicleID];
+    }else
+    {
+        if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+            [CommonFunctionController showAnimateMessageHUD];
+            [DataRequest fetchVehicleDrivingLicense:vehicle.vehicleID success:^(id data){
+                NSArray *array=[NSArray arrayWithArray:data];
+                if (array.lastObject) {
+                    [self.MyImage sd_setImageWithURL:[[data objectAtIndex:0] objectForKey:@"attach_url"]];
+                }
+            [CommonFunctionController hideAllHUD];
+            }failure:^(NSString *message){
+            }];
+        }
+
     }
     
-//    self.ImageVerticalConstraint.constant=20;
-//    self.lineLabel2.hidden=YES;
-//    self.lineLabel3.hidden=YES;
-//    self.lineLabel4.hidden=YES;
+    if ([vehicle.identify_status isEqualToString:@"2001"]) {
+        self.ImageVerticalConstraint.constant=10;
+        self.lineLabel2.hidden=YES;
+        self.lineLabel3.hidden=YES;
+        self.lineLabel4.hidden=YES;
+        self.lineLabel1.text=@"正在进行认证审核，一般会在3个工作日内审核完毕，审核结果将以推送方式告知。";
+        [self.commitButton setTitle:@"重新提交" forState:UIControlStateNormal];
+    }
+
     
 }
 
@@ -85,8 +112,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     @autoreleasepool {
-        UIImage *scaleImage = [CommonFunctionController imageCompressForSize:[info objectForKey:UIImagePickerControllerOriginalImage] targetSize:CGSizeMake(800, 600)];
-        [ImageCache storeCache:scaleImage forKey:vehicle.vehicleID];
+        scaleImage = [CommonFunctionController imageCompressForSize:[info objectForKey:UIImagePickerControllerOriginalImage] targetSize:CGSizeMake(800, 600)];
+//        [ImageCache storeCache:scaleImage forKey:vehicle.vehicleID];
         self.MyImage.image=scaleImage;
 
     }
@@ -99,6 +126,15 @@
     }];
 }
 
+- (IBAction)commitButtonPressed:(id)sender {
+    myimageArray=[NSArray arrayWithObject:self.MyImage.image];
+//    [DataRequest saveVehicleDrivingLicense:vehicle.vehicleID imageArray:myimageArray success:^(id data){
+//        NSLog(@"success");
+//    }failure:^(NSString *message){
+//        
+//    }];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -114,5 +150,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

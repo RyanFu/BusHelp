@@ -3468,8 +3468,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传行驶证照片，可以获得以下服务:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-x8-hlF">
-                                <rect key="frame" x="19" y="84" width="282" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传行驶证照片，可以获得以下服务:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-x8-hlF">
+                                <rect key="frame" x="19" y="68" width="282" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -3506,6 +3506,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="commitButtonPressed:" destination="jLM-OT-TBo" eventType="touchUpInside" id="eHm-al-p0Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3515,10 +3518,10 @@
                             <constraint firstItem="5Dt-ck-kl7" firstAttribute="top" secondItem="BZE-UV-V5g" secondAttribute="bottom" constant="18" id="Dqi-aE-Ewn"/>
                             <constraint firstItem="5Dt-ck-kl7" firstAttribute="trailing" secondItem="mDs-jm-pAI" secondAttribute="trailingMargin" id="Ejk-Ta-IGs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l3l-97-m6R" secondAttribute="trailing" constant="3" id="GhV-zn-1o1"/>
-                            <constraint firstItem="Wfc-x8-hlF" firstAttribute="top" secondItem="8x8-wE-SFI" secondAttribute="bottom" constant="20" id="Iey-PB-38v"/>
+                            <constraint firstItem="Wfc-x8-hlF" firstAttribute="top" secondItem="8x8-wE-SFI" secondAttribute="bottom" constant="4" id="Iey-PB-38v"/>
                             <constraint firstItem="8Xs-bb-DwJ" firstAttribute="leading" secondItem="mDs-jm-pAI" secondAttribute="leadingMargin" constant="3" id="OI4-HB-Onb"/>
-                            <constraint firstItem="BZE-UV-V5g" firstAttribute="top" secondItem="Wfc-x8-hlF" secondAttribute="bottom" constant="111" id="YLH-8D-tvh"/>
-                            <constraint firstItem="rOe-S6-Kf1" firstAttribute="top" secondItem="Wfc-x8-hlF" secondAttribute="bottom" constant="8" id="YNs-rS-tTQ"/>
+                            <constraint firstItem="BZE-UV-V5g" firstAttribute="top" secondItem="Wfc-x8-hlF" secondAttribute="bottom" constant="96" id="YLH-8D-tvh"/>
+                            <constraint firstItem="rOe-S6-Kf1" firstAttribute="top" secondItem="Wfc-x8-hlF" secondAttribute="bottom" constant="-7" id="YNs-rS-tTQ"/>
                             <constraint firstItem="rOe-S6-Kf1" firstAttribute="leading" secondItem="mDs-jm-pAI" secondAttribute="leadingMargin" constant="3" id="YhA-MD-xA1"/>
                             <constraint firstItem="rOe-S6-Kf1" firstAttribute="top" secondItem="8x8-wE-SFI" secondAttribute="bottom" constant="50" id="Zga-aY-noQ"/>
                             <constraint firstItem="l3l-97-m6R" firstAttribute="leading" secondItem="mDs-jm-pAI" secondAttribute="leadingMargin" constant="3" id="a3I-R9-Zr0"/>
@@ -3539,6 +3542,7 @@
                     <connections>
                         <outlet property="ImageVerticalConstraint" destination="YLH-8D-tvh" id="mPt-Xm-dN9"/>
                         <outlet property="MyImage" destination="BZE-UV-V5g" id="pOR-m4-00i"/>
+                        <outlet property="commitButton" destination="5Dt-ck-kl7" id="pDM-hE-2iD"/>
                         <outlet property="lineLabel1" destination="Wfc-x8-hlF" id="7If-cr-KqI"/>
                         <outlet property="lineLabel2" destination="rOe-S6-Kf1" id="PrL-dY-ZEd"/>
                         <outlet property="lineLabel3" destination="l3l-97-m6R" id="grB-qN-2gh"/>

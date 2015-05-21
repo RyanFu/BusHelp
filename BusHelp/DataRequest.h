@@ -316,5 +316,11 @@
 //获取车辆每个月历程明细
 + (void)fetchVehicleMonthList:(NSString *)vehicle_ids month:(NSString *)month org_id:(NSString *)org_id success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure;
 
+//获取车辆的行驶证照片
++ (void)fetchVehicleDrivingLicense:(NSString *)vehicle_ids success:(void (^)())success failure:(void (^)(NSString *message))failure;
+
+//上传行驶证照片
++ (void)saveVehicleDrivingLicense:(NSString *)vehicle_ids imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure;
+
 
 @end

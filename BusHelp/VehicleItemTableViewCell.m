@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *identitystatusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *checkVehicleDetailButton;
 
 - (IBAction)rubbishButtonPressed:(UIButton *)sender;
 - (IBAction)editButtonPressed:(UIButton *)sender;
@@ -35,7 +36,27 @@
     _vehicle = vehicle;
     self.numberLabel.text = _vehicle.number;
     self.nameLabel.text = _vehicle.name;
-    self.identitystatusLabel.text=_vehicle.identify_status;
+//    self.identitystatusLabel.text=_vehicle.identify_status;
+    if ([_vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeAlready]]) {
+        self.identitystatusLabel.text=@"已认证";
+        self.checkVehicleDetailButton.hidden=YES;
+    }else if ([_vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeHiger]])
+    {
+        self.identitystatusLabel.text=@"higer认证";
+        [self.checkVehicleDetailButton setTitle:@"实时监测" forState:UIControlStateNormal];
+    }else
+    {
+        if ([_vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeIn]])
+        {
+            self.identitystatusLabel.text=@"认证中";
+
+        }else{
+            self.identitystatusLabel.text=@"未认证";
+
+        }
+        [self.checkVehicleDetailButton setTitle:@"车辆认证" forState:UIControlStateNormal];
+    }
+
 }
 
 - (IBAction)rubbishButtonPressed:(UIButton *)sender {
