@@ -53,7 +53,7 @@ static NSTimeInterval const sceonds = 60;
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         [manager.requestSerializer setTimeoutInterval:sceonds];
         [manager POST:baseUrl parameters:baseParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
             BaseDataItem *baseDataItem = [[BaseDataItem alloc] initWithDictionary:responseObject];
             if (baseDataItem.success) {
                 success(baseDataItem.data);
@@ -662,11 +662,12 @@ static NSTimeInterval const sceonds = 60;
     }failure:failure];
 }
 
-+ (void)saveVehicleDrivingLicense:(NSString *)vehicle_ids imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure
++ (void)saveVehicleDrivingLicense:(NSString *)vehicle_id imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure
 {
     if ([CommonFunctionController checkNetworkWithNotify:NO]) {
         [self downloadImageByImageArray:imageArray success:^(NSDictionary *dictionary) {
-            [self POST:SAVEVEHICLEDRIVINGLICENSE parameters:@{@"vehicle_ids" : vehicle_ids} attachmentDic:dictionary success:^(id data) {
+            [self POST:SAVEVEHICLEDRIVINGLICENSE parameters:@{@"vehicle_id" : vehicle_id
+            } attachmentDic:dictionary success:^(id data) {
                 success(data);
             } failure:^(NSString *message){
                 failure(message);

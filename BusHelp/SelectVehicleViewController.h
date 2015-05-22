@@ -12,6 +12,5 @@
 
 @interface SelectVehicleViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTable;
-@property (nonatomic,strong)NSString *number;
 @property (nonatomic,strong)void (^dismiss)(Vehicle *selectVehicle);
 @end

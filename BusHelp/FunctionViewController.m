@@ -27,13 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    funclist=[NSArray arrayWithObjects:@"违章",@"油耗",@"任务",@"里程", nil];
+    funclist=[NSArray arrayWithObjects:@"违章",@"油耗",@"任务",@"里程",@"实时监测", nil];
     self.FunctionTable.tableFooterView=[[UIView alloc]init];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +66,10 @@
         case 3:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-mileage"];
             break;
+        case 4:
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-mileage"];
+            break;
+
         default:
             break;
     }
@@ -86,6 +90,9 @@
             break;
         case 3:
             [self performSegueWithIdentifier:@"FunctionToMileage" sender:self];
+            break;
+        case 4:
+            [self performSegueWithIdentifier:@"FunctionToVehicleDetail" sender:self];
             break;
         default:
             break;

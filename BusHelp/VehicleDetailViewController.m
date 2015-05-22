@@ -8,6 +8,7 @@
 
 #import "VehicleDetailViewController.h"
 #import <UIKit/UIKit.h>
+#import "HigerVehicleListViewController.h"
 
 @interface VehicleDetailViewController ()
 {
@@ -22,22 +23,27 @@
 @implementation VehicleDetailViewController
 @synthesize vehicle;
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    len=0;
+    percent=0;
+    
+    self.statusBall.highlighted=YES;
+    self.percentLabel.text=[NSString stringWithFormat:@"%i%%",percent];
+    
+    mytimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+    percentTimer=[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updatepercent) userInfo:nil repeats:YES];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.NumberLabel.text=vehicle.number;
     self.BatteryHead.layer.masksToBounds=YES;
     self.BatteryHead.layer.cornerRadius=2;
-    len=0;
-    percent=0;
-    
-    mytimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-    
-    self.statusBall.highlighted=YES;
-    self.percentLabel.text=[NSString stringWithFormat:@"%i%%",percent];
-    
-    percentTimer=[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updatepercent) userInfo:nil repeats:YES];
-
+    [self setupNavigationBar];
+   
 }
 
 -(void)setupNavigationBar
@@ -46,12 +52,19 @@
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"换车" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonItemPressed:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)rightBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
+    [self performSegueWithIdentifier:@"VehicleDetailToHigerVehicleList" sender:self];
+}
 
 -(void)animate
 {
@@ -86,6 +99,9 @@
     if ([mytimer isValid]) {
         [mytimer invalidate];
     }
+    if ([percentTimer isValid]) {
+        [percentTimer invalidate];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,14 +109,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"VehicleDetailToHigerVehicleList"]) {
+        HigerVehicleListViewController *higerVehicle=segue.destinationViewController;
+        higerVehicle.dismiss=^(Vehicle *selectVehicle){
+            vehicle=selectVehicle;
+            self.NumberLabel.text=vehicle.number;
+        };
+    }
 }
-*/
+
 
 @end

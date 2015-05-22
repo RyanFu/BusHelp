@@ -12,6 +12,7 @@
 #import <IQKeyboardManager/KeyboardManager.h>
 #import "SettingViewController.h"
 #import "ProvinceKeyboard.h"
+#import "UIImageView+WebCache.h"
 
 @interface EditVehicleViewController () <UITextFieldDelegate>
 
@@ -21,11 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *engineNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *vinNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet RoundCornerButton *searchButton;
 @property (weak, nonatomic) IBOutlet UILabel *provinceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *licenseImage;
 
 - (IBAction)provinceLableTapped:(UITapGestureRecognizer *)sender;
-- (IBAction)searchButtonPressed:(RoundCornerButton *)sender;
 - (IBAction)checkSmallButtonPressed:(RoundCornerButton *)sender;
 - (IBAction)checkLargeButtonPressed:(RoundCornerButton *)sender;
 - (IBAction)helpButtonPressed:(UIButton *)sender;
@@ -78,6 +78,19 @@
             self.checkButtonSmall.buttonSelected = NO;
             self.checkButtonLarge.buttonSelected = YES;
         }
+        //显示行驶证图片
+        if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+            [DataRequest fetchVehicleDrivingLicense:self.vehicleItem.vehicleID success:^(id data){
+                NSArray *array=[NSArray arrayWithArray:data];
+                if (array.lastObject) {
+                    [self.licenseImage sd_setImageWithURL:[[data objectAtIndex:0] objectForKey:@"attach_url"]];
+                }
+                [CommonFunctionController hideAllHUD];
+            }failure:^(NSString *message){
+                NSLog(@"%@",message);
+            }];
+        }
+
     }
 }
 
@@ -92,7 +105,6 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
     
-    self.searchButton.hidden = self.hiddenSearchButton;
 }
 
 - (void)saveVehicleItemWithSuccess:(void(^)())success {
@@ -163,14 +175,6 @@
     }];
 }
 
-- (IBAction)searchButtonPressed:(RoundCornerButton *)sender {
-    __weak EditVehicleViewController *weakSelf = self;
-    [self saveVehicleItemWithSuccess:^{
-        [(UITabBarController *)weakSelf.navigationController.viewControllers[0] setSelectedIndex:0];
-        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-        [[NSNotificationCenter defaultCenter] postNotificationName:searchNotificationKey object:nil];
-    }];
-}
 
 - (IBAction)checkSmallButtonPressed:(RoundCornerButton *)sender {
     self.checkButtonSmall.buttonSelected = YES;

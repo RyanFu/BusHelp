@@ -38,24 +38,8 @@
     tapGeture.numberOfTapsRequired=1;
     [self.MyImage addGestureRecognizer:tapGeture];
     
-    if([ImageCache hasCacheForKey:vehicle.vehicleID])
-    {
-        self.MyImage.image=[ImageCache cacheForKey:vehicle.vehicleID];
-    }else
-    {
-        if ([CommonFunctionController checkNetworkWithNotify:NO]) {
-            [CommonFunctionController showAnimateMessageHUD];
-            [DataRequest fetchVehicleDrivingLicense:vehicle.vehicleID success:^(id data){
-                NSArray *array=[NSArray arrayWithArray:data];
-                if (array.lastObject) {
-                    [self.MyImage sd_setImageWithURL:[[data objectAtIndex:0] objectForKey:@"attach_url"]];
-                }
-            [CommonFunctionController hideAllHUD];
-            }failure:^(NSString *message){
-            }];
-        }
-
-    }
+    myimageArray=[[NSArray alloc]init];
+    
     
     if ([vehicle.identify_status isEqualToString:@"2001"]) {
         self.ImageVerticalConstraint.constant=10;
@@ -64,6 +48,20 @@
         self.lineLabel4.hidden=YES;
         self.lineLabel1.text=@"正在进行认证审核，一般会在3个工作日内审核完毕，审核结果将以推送方式告知。";
         [self.commitButton setTitle:@"重新提交" forState:UIControlStateNormal];
+        
+        if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+            [CommonFunctionController showAnimateMessageHUD];
+            [DataRequest fetchVehicleDrivingLicense:vehicle.vehicleID success:^(id data){
+                NSArray *array=[NSArray arrayWithArray:data];
+                if (array.lastObject) {
+                    [self.MyImage sd_setImageWithURL:[[data objectAtIndex:0] objectForKey:@"attach_url"]];
+                }
+                [CommonFunctionController hideAllHUD];
+            }failure:^(NSString *message){
+                NSLog(@"%@",message);
+            }];
+        }
+
     }
 
     
@@ -113,9 +111,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     @autoreleasepool {
         scaleImage = [CommonFunctionController imageCompressForSize:[info objectForKey:UIImagePickerControllerOriginalImage] targetSize:CGSizeMake(800, 600)];
-//        [ImageCache storeCache:scaleImage forKey:vehicle.vehicleID];
         self.MyImage.image=scaleImage;
-
+        NSString *key = [[NSUUID UUID] UUIDString];
+        [ImageCache storeCache:scaleImage forKey:key];
+        myimageArray=[NSArray arrayWithObject:key];
+       
     }
     [picker dismissViewControllerAnimated:YES completion:^{
         [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -127,12 +127,17 @@
 }
 
 - (IBAction)commitButtonPressed:(id)sender {
-    myimageArray=[NSArray arrayWithObject:self.MyImage.image];
-//    [DataRequest saveVehicleDrivingLicense:vehicle.vehicleID imageArray:myimageArray success:^(id data){
-//        NSLog(@"success");
-//    }failure:^(NSString *message){
-//        
-//    }];
+    NSLog(@"%@",myimageArray);
+    if ([myimageArray firstObject]) {
+        [CommonFunctionController showAnimateHUDWithMessage:@"提交中..."];
+        [DataRequest saveVehicleDrivingLicense:vehicle.vehicleID imageArray:myimageArray success:^(id data){
+            NSLog(@"success");
+            [CommonFunctionController showHUDWithMessage:@"提交成功" detail:nil];
+        }failure:^(NSString *message){
+            
+        }];
+    }
+    
     
 }
 

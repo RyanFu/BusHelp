@@ -320,7 +320,7 @@
 + (void)fetchVehicleDrivingLicense:(NSString *)vehicle_ids success:(void (^)())success failure:(void (^)(NSString *message))failure;
 
 //上传行驶证照片
-+ (void)saveVehicleDrivingLicense:(NSString *)vehicle_ids imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure;
++ (void)saveVehicleDrivingLicense:(NSString *)vehicle_id imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure;
 
 
 @end

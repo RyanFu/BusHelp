@@ -12,7 +12,7 @@
 #import "BaseView.h"
 #import "BatteryView.h"
 
-@interface VehicleDetailViewController : BaseViewController
+@interface VehicleDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *NumberLabel;
 @property (weak, nonatomic) IBOutlet BaseView *baseview1;
 @property (weak, nonatomic) IBOutlet BaseView *BaseView2;

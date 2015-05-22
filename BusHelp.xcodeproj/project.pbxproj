@@ -238,6 +238,7 @@
 		DABEF1A21AF8752A00F72C13 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A11AF8752A00F72C13 /* MessageViewController.m */; };
 		DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A41AF8900A00F72C13 /* popoverViewController.m */; };
 		DABEF1A71AF8900A00F72C13 /* popoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */; };
+		DAE6CC6D1B0EFE4D004F64B4 /* HigerVehicleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -655,6 +656,8 @@
 		DABEF1A31AF8900A00F72C13 /* popoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popoverViewController.h; sourceTree = "<group>"; };
 		DABEF1A41AF8900A00F72C13 /* popoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popoverViewController.m; sourceTree = "<group>"; };
 		DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popoverViewController.xib; sourceTree = "<group>"; };
+		DAE6CC6B1B0EFE4D004F64B4 /* HigerVehicleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HigerVehicleListViewController.h; sourceTree = "<group>"; };
+		DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HigerVehicleListViewController.m; sourceTree = "<group>"; };
 		F68F68E2B5DC9704BFDAA4ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1107,6 +1110,8 @@
 				DAA1279E1B0B000900E3A2B4 /* AuthenticationViewController.m */,
 				DAABC59D1B0C25F400C29D10 /* VehicleDetailViewController.h */,
 				DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */,
+				DAE6CC6B1B0EFE4D004F64B4 /* HigerVehicleListViewController.h */,
+				DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1687,6 +1692,7 @@
 				9149594C1AAFF5AD00941AFD /* ImageCache.m in Sources */,
 				B09944401A98636C00C5C90C /* OilViewController.m in Sources */,
 				B04929D21AC3C71E000A17B0 /* HelpView.m in Sources */,
+				DAE6CC6D1B0EFE4D004F64B4 /* HigerVehicleListViewController.m in Sources */,
 				DA5B64551B04A2BF004ACB9D /* MileageItem.m in Sources */,
 				DA7245F71B04D1AB00431299 /* JSONHTTPClient.m in Sources */,
 				DABD20E01AF07D1200848013 /* FunctionViewController.m in Sources */,

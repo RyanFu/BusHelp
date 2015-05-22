@@ -1164,37 +1164,27 @@
                                                     <constraint firstAttribute="height" constant="50" id="ye5-VU-5Xr"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8n-AU-RXO" customClass="RoundCornerButton">
-                                                <rect key="frame" x="0.0" y="324" width="588" height="40"/>
-                                                <color key="backgroundColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="BUh-VZ-0Fo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <state key="normal" title="查询违章">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="searchButtonPressed:" destination="AhU-Yt-r6k" eventType="touchUpInside" id="6tW-An-kYz"/>
-                                                </connections>
-                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DVW-vV-GHI">
+                                                <rect key="frame" x="19" y="317" width="550" height="254"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="zPH-j9-oEZ" firstAttribute="top" secondItem="rtq-Qd-L9D" secondAttribute="bottom" constant="2" id="00o-zk-2JY"/>
-                                            <constraint firstItem="R8n-AU-RXO" firstAttribute="leading" secondItem="D2I-mQ-JFM" secondAttribute="leading" id="3OL-P8-HWe"/>
+                                            <constraint firstAttribute="bottom" secondItem="DVW-vV-GHI" secondAttribute="bottom" constant="14" id="3Pj-gm-gxh"/>
                                             <constraint firstItem="zPH-j9-oEZ" firstAttribute="width" secondItem="rtq-Qd-L9D" secondAttribute="width" id="4o7-p4-Mms"/>
+                                            <constraint firstAttribute="trailing" secondItem="DVW-vV-GHI" secondAttribute="trailing" constant="19" id="Ceu-Co-6jt"/>
                                             <constraint firstItem="rtq-Qd-L9D" firstAttribute="top" secondItem="Zcb-qy-lWn" secondAttribute="bottom" constant="15" id="DR2-j9-gxV"/>
-                                            <constraint firstItem="R8n-AU-RXO" firstAttribute="top" secondItem="D2I-mQ-JFM" secondAttribute="bottom" constant="25" id="DkX-AE-f5R"/>
                                             <constraint firstItem="wOm-Pc-TC5" firstAttribute="top" secondItem="aSY-zN-rrF" secondAttribute="top" constant="15" id="FAq-eM-XP4"/>
                                             <constraint firstItem="wOm-Pc-TC5" firstAttribute="leading" secondItem="Zcb-qy-lWn" secondAttribute="leading" id="LXJ-Lw-d0j"/>
                                             <constraint firstItem="wOm-Pc-TC5" firstAttribute="width" secondItem="Zcb-qy-lWn" secondAttribute="width" id="M0a-xf-ojo"/>
                                             <constraint firstItem="Zcb-qy-lWn" firstAttribute="top" secondItem="wOm-Pc-TC5" secondAttribute="bottom" constant="2" id="SJH-h1-sRr"/>
                                             <constraint firstItem="F7V-cl-OVz" firstAttribute="leading" secondItem="Bkv-oQ-1AF" secondAttribute="leading" id="TDa-1k-yDo"/>
-                                            <constraint firstItem="R8n-AU-RXO" firstAttribute="width" secondItem="D2I-mQ-JFM" secondAttribute="width" id="Y4d-cU-teD"/>
                                             <constraint firstItem="VUz-7j-9M4" firstAttribute="leading" secondItem="Bkv-oQ-1AF" secondAttribute="leading" id="Y55-vk-w7x"/>
                                             <constraint firstItem="D2I-mQ-JFM" firstAttribute="width" secondItem="zPH-j9-oEZ" secondAttribute="width" id="ZjL-dd-6lF"/>
+                                            <constraint firstItem="DVW-vV-GHI" firstAttribute="top" secondItem="D2I-mQ-JFM" secondAttribute="bottom" constant="18" id="gju-yc-Rsm"/>
+                                            <constraint firstItem="DVW-vV-GHI" firstAttribute="leading" secondItem="aSY-zN-rrF" secondAttribute="leading" constant="19" id="jC2-Y6-SiA"/>
                                             <constraint firstItem="D2I-mQ-JFM" firstAttribute="leading" secondItem="zPH-j9-oEZ" secondAttribute="leading" id="kKZ-Jt-iX9"/>
                                             <constraint firstItem="wRt-yc-UW1" firstAttribute="leading" secondItem="wtd-72-oSc" secondAttribute="leading" id="lfS-lq-gdP"/>
                                             <constraint firstItem="Zcb-qy-lWn" firstAttribute="leading" secondItem="rtq-Qd-L9D" secondAttribute="leading" id="pYi-Jr-5Jr"/>
@@ -1230,10 +1220,10 @@
                         <outlet property="checkButtonLarge" destination="vTJ-JU-Se2" id="km1-Ux-CHw"/>
                         <outlet property="checkButtonSmall" destination="E0R-5E-bsj" id="g78-zU-B8W"/>
                         <outlet property="engineNumberTextField" destination="C2U-vr-8Z0" id="Unc-Yx-8kz"/>
+                        <outlet property="licenseImage" destination="DVW-vV-GHI" id="uZM-l1-ccx"/>
                         <outlet property="nameTextField" destination="9ta-s8-Xgr" id="Qaa-eu-xaF"/>
                         <outlet property="numberTextField" destination="Axk-wZ-4yR" id="5e8-co-eOd"/>
                         <outlet property="provinceLabel" destination="75b-bP-gMP" id="sHf-Pt-fdf"/>
-                        <outlet property="searchButton" destination="R8n-AU-RXO" id="wC6-JS-rIf"/>
                         <outlet property="vinNumberTextField" destination="tzG-J7-jST" id="GDn-94-CHH"/>
                     </connections>
                 </viewController>
@@ -2202,6 +2192,7 @@
                         <segue destination="iAI-BT-b8c" kind="push" identifier="FunctionToTaskManager" id="8Zv-GI-FMl"/>
                         <segue destination="ONL-Qv-Q9E" kind="push" identifier="FunctionToViolation" id="hh5-L8-zSB"/>
                         <segue destination="2Ke-6g-bkO" kind="push" identifier="FunctionToMileage" id="Xen-gW-bMA"/>
+                        <segue destination="ec2-Gd-7hh" kind="push" identifier="FunctionToVehicleDetail" id="1Jv-f5-YAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09u-pZ-6w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3562,7 +3553,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GS8-Dp-Vmn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4P5-Fs-3GF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIp-JT-8vg">
@@ -3756,6 +3747,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="YNy-Lg-I6w" secondAttribute="trailing" constant="78" id="xms-Ye-acH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bUh-am-BDq"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -3770,11 +3762,52 @@
                         <outlet property="percentLabel" destination="9yD-1u-Pn9" id="ra7-S4-Mg9"/>
                         <outlet property="statusBall" destination="YNy-Lg-I6w" id="E2s-S2-HEc"/>
                         <outlet property="statusLabel" destination="XCq-pm-7cm" id="Tl4-7S-9wx"/>
+                        <segue destination="q50-Hd-yDU" kind="push" identifier="VehicleDetailToHigerVehicleList" id="O2W-A0-PIK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgQ-oK-0bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7836" y="1681"/>
+        </scene>
+        <!--Higer Vehicle List View Controller-->
+        <scene sceneID="tij-ta-KoN">
+            <objects>
+                <viewController id="q50-Hd-yDU" customClass="HigerVehicleListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DrL-XZ-LFh"/>
+                        <viewControllerLayoutGuide type="bottom" id="VUy-XW-BJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RAh-Vj-mQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-hw-8wD">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="q50-Hd-yDU" id="Teg-Zp-xJH"/>
+                                    <outlet property="delegate" destination="q50-Hd-yDU" id="Cim-Rj-bXf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lLf-hw-8wD" firstAttribute="top" secondItem="DrL-XZ-LFh" secondAttribute="bottom" id="28C-pD-SIx"/>
+                            <constraint firstAttribute="trailing" secondItem="lLf-hw-8wD" secondAttribute="trailing" id="kWx-Tc-Tt6"/>
+                            <constraint firstItem="lLf-hw-8wD" firstAttribute="leading" secondItem="RAh-Vj-mQ6" secondAttribute="leading" id="pWc-Qa-14R"/>
+                            <constraint firstItem="lLf-hw-8wD" firstAttribute="bottom" secondItem="VUy-XW-BJc" secondAttribute="top" id="sK0-H8-LLH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3qy-4a-PDh"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="HigerListTable" destination="lLf-hw-8wD" id="b03-gP-na7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gis-y4-eKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8214" y="1676"/>
         </scene>
         <!--Shield Vehicle Table View Controller-->
         <scene sceneID="Imu-lZ-lIN">
