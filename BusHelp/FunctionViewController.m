@@ -67,7 +67,7 @@
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-mileage"];
             break;
         case 4:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-mileage"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
             break;
 
         default:

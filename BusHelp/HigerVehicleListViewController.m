@@ -14,6 +14,7 @@
 {
     NSArray *_vehicleArray;
     Vehicle *_vehicle;
+    NSMutableArray *higerVehicle;
 }
 @end
 
@@ -22,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    higerVehicle=[[NSMutableArray alloc]init];
     self.HigerListTable.tableFooterView=[[UIView alloc]init];
     [self setupData];
 
@@ -33,8 +36,14 @@
         
         [CommonFunctionController showAnimateMessageHUD];
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
-            NSLog(@"%@",vehicleArray);
             _vehicleArray = [NSMutableArray arrayWithArray:vehicleArray];
+            [higerVehicle removeAllObjects];
+            for (int i=0; i<_vehicleArray.count; i++) {
+                _vehicle=[_vehicleArray objectAtIndex:i];
+                if ([_vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeHiger]]) {
+                    [higerVehicle addObject:_vehicle];
+                }
+            }
             [CommonFunctionController hideAllHUD];
             [self.HigerListTable reloadData];
         } failure:^(NSString *message){
@@ -47,7 +56,7 @@
 -(void)setupNavigationBar
 {
     [super setupNavigationBar];
-    self.navigationItem.title=@"Higer";
+    self.navigationItem.title=@"G-BOS车";
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
@@ -59,13 +68,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _vehicleArray.count;
+    return higerVehicle.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    _vehicle=[_vehicleArray objectAtIndex:indexPath.row];
+    _vehicle=[higerVehicle objectAtIndex:indexPath.row];
     cell.textLabel.text=[NSString stringWithFormat:@"%@",_vehicle.number];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
@@ -74,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _vehicle=[_vehicleArray objectAtIndex:indexPath.row];
+    _vehicle=[higerVehicle objectAtIndex:indexPath.row];
     self.dismiss(_vehicle);
     [self.navigationController popViewControllerAnimated:YES];
 }

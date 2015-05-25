@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel3;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel4;
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel5;
 @property (weak, nonatomic) IBOutlet UIButton *commitButton;
 - (IBAction)commitButtonPressed:(id)sender;
 
@@ -46,6 +47,7 @@
         self.lineLabel2.hidden=YES;
         self.lineLabel3.hidden=YES;
         self.lineLabel4.hidden=YES;
+        self.lineLabel5.hidden=YES;
         self.lineLabel1.text=@"正在进行认证审核，一般会在3个工作日内审核完毕，审核结果将以推送方式告知。";
         [self.commitButton setTitle:@"重新提交" forState:UIControlStateNormal];
         

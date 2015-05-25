@@ -22,8 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *ContinutionMile;
 @property (weak, nonatomic) IBOutlet UILabel *TotalMile;
 @property (weak, nonatomic) IBOutlet UILabel *UpdateTime;
-@property (weak, nonatomic) IBOutlet UIImageView *statusBall;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *lineimage;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 
 @property(nonatomic,weak)Vehicle *vehicle;
 @end

@@ -168,7 +168,7 @@
     }];
     [cell setAuthenticationButtonPressedBlock:^(Vehicle *vehicle){
         NSLog(@"%@",vehicle.identify_status);
-        if ([vehicle.identify_status isEqualToString:@""]||[vehicle.identify_status isEqualToString:@"2001"]) {
+        if ([vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeUn]]||[vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeIn]]) {
             AuthenticationViewController *authenticationViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AuthenticationViewController class])];
             authenticationViewController.vehicle=vehicle;
             [self.navigationController pushViewController:authenticationViewController animated:YES];
@@ -176,7 +176,6 @@
             VehicleDetailViewController *vehicleDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([VehicleDetailViewController class])];
             vehicleDetailViewController.vehicle=vehicle;
             [self.navigationController pushViewController:vehicleDetailViewController animated:YES];
-            
         }
         
         }];

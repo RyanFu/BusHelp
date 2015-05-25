@@ -72,6 +72,7 @@ typedef enum : NSUInteger {
 } NotificationContentType;
 
 typedef enum : NSUInteger {
+    AuthenticationTypeUn = 1001,
     AuthenticationTypeIn = 2001,
     AuthenticationTypeAlready = 3001,
     AuthenticationTypeHiger = 4001,

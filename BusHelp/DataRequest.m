@@ -680,4 +680,11 @@ static NSTimeInterval const sceonds = 60;
 
 }
 
++ (void)getVehicleDetectionInfo:(NSString *)vehicle_ids success:(void (^)())success failure:(void (^)(NSString *message))failure
+{
+    [self POST:GETVEHICLEDETECTIONINFO parameters:@{@"vehicle_ids" : vehicle_ids} success:^(id data){
+        success(data);
+    }failure:failure];
+}
+
 @end

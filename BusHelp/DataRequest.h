@@ -322,5 +322,7 @@
 //上传行驶证照片
 + (void)saveVehicleDrivingLicense:(NSString *)vehicle_id imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure;
 
+//获取车辆实时监测信息
++ (void)getVehicleDetectionInfo:(NSString *)vehicle_ids success:(void (^)())success failure:(void (^)(NSString *message))failure;
 
 @end

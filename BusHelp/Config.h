@@ -63,6 +63,7 @@
 #define GETVEHICLEMONTHLIST [BASE_URL stringByAppendingString:@"/api/mil/getmonthmillist"]
 #define GETVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/getdrivinglicense"]
 #define SAVEVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/savedrivinglicense"]
+#define GETVEHICLEDETECTIONINFO [BASE_URL stringByAppendingString:@"/api/vehicle/getvehiclemonitor"]
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define DOCUMENT_PATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]

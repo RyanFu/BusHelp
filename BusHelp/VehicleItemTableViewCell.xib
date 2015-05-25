@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -48,9 +49,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="苏E2U065" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwW-Gj-2QE">
-                                <rect key="frame" x="12" y="11" width="110" height="25"/>
+                                <rect key="frame" x="12" y="11" width="100" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="0Xp-wW-s3B"/>
+                                    <constraint firstAttribute="width" constant="100" id="0Xp-wW-s3B"/>
                                     <constraint firstAttribute="height" constant="25" id="0p5-dy-Lic"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -77,23 +78,27 @@
                                     <action selector="vehicleAuthenticationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gIT-ch-w4E"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkB-sv-uLi">
-                                <rect key="frame" x="130" y="13" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="83K-9r-2tg">
+                                <rect key="frame" x="116" y="15" width="46" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="0nX-JA-Rwc"/>
+                                    <constraint firstAttribute="width" secondItem="83K-9r-2tg" secondAttribute="height" multiplier="15:8" constant="14.125" id="5Ry-ZI-37q"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="top" secondItem="GfM-US-Eyv" secondAttribute="bottom" constant="8" symbolic="YES" id="03t-Vf-ddC"/>
                             <constraint firstItem="GfM-US-Eyv" firstAttribute="leading" secondItem="Q8h-dt-VQQ" secondAttribute="leading" id="32q-Ia-9RY"/>
+                            <constraint firstItem="GfM-US-Eyv" firstAttribute="top" secondItem="83K-9r-2tg" secondAttribute="bottom" constant="13" id="7Vo-AT-iKK"/>
+                            <constraint firstItem="83K-9r-2tg" firstAttribute="top" secondItem="Q8h-dt-VQQ" secondAttribute="top" constant="15" id="7hz-Iw-wp6"/>
                             <constraint firstItem="jwW-Gj-2QE" firstAttribute="leading" secondItem="Q8h-dt-VQQ" secondAttribute="leading" constant="12" id="84q-VM-pGc"/>
                             <constraint firstItem="iou-9K-ZlG" firstAttribute="width" secondItem="GhQ-Ll-kK8" secondAttribute="width" id="8YI-o4-kpB"/>
                             <constraint firstAttribute="bottom" secondItem="cvW-U7-ceK" secondAttribute="bottom" constant="6" id="E8h-5i-324"/>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="centerX" secondItem="Q8h-dt-VQQ" secondAttribute="centerX" id="Fcz-3P-0yv"/>
                             <constraint firstItem="iou-9K-ZlG" firstAttribute="baseline" secondItem="GhQ-Ll-kK8" secondAttribute="baseline" id="HiV-Mi-c2F"/>
                             <constraint firstItem="cvW-U7-ceK" firstAttribute="top" secondItem="GhQ-Ll-kK8" secondAttribute="bottom" constant="13" id="LpM-Gy-XRl"/>
+                            <constraint firstItem="83K-9r-2tg" firstAttribute="leading" secondItem="jwW-Gj-2QE" secondAttribute="trailing" constant="4" id="LpN-rj-z4Q"/>
                             <constraint firstItem="GfM-US-Eyv" firstAttribute="top" secondItem="GhQ-Ll-kK8" secondAttribute="bottom" constant="4" id="Omt-yn-BJW"/>
                             <constraint firstItem="GfM-US-Eyv" firstAttribute="centerX" secondItem="cvW-U7-ceK" secondAttribute="centerX" id="PSU-GH-D4j"/>
                             <constraint firstItem="EoR-YK-gva" firstAttribute="leading" secondItem="cvW-U7-ceK" secondAttribute="trailing" constant="-66" id="PUC-8c-cVt"/>
@@ -121,7 +126,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="checkVehicleDetailButton" destination="EoR-YK-gva" id="ahz-tt-r6L"/>
-                <outlet property="identitystatusLabel" destination="tkB-sv-uLi" id="mKw-jY-Jzs"/>
+                <outlet property="identifyImage" destination="83K-9r-2tg" id="e7k-vq-Czm"/>
                 <outlet property="nameLabel" destination="cvW-U7-ceK" id="F73-Uw-4CB"/>
                 <outlet property="numberLabel" destination="jwW-Gj-2QE" id="40S-2p-lBQ"/>
             </connections>
