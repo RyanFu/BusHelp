@@ -38,7 +38,7 @@
     self.percentLabel.text=@"--%";
     self.TotalMile.text=@"--";
     self.ContinutionMile.text=@"--";
-    
+    self.UpdateTime.text=@"更新于: --";
     
 //    animatetimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animate) userInfo:nil repeats:YES];
 //    percentTimer=[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updatepercent) userInfo:nil repeats:YES];
@@ -100,7 +100,7 @@
                     [higerVehicle addObject:_vehicle];
                 }
             }
-            if ([higerVehicle firstObject]) {
+            if ([higerVehicle count]) {
                 vehicle=[higerVehicle firstObject];
                 self.NumberLabel.text=vehicle.number;
                 NSLog(@"%@",vehicle.number);
@@ -130,7 +130,7 @@
         [CommonFunctionController showAnimateHUDWithMessage:@"监测信息获取中.."];
         [DataRequest getVehicleDetectionInfo:vehicle.vehicleID success:^(id data){
             NSLog(@"%@",data);
-            if ([data firstObject]) {
+            if ([data count]) {
                 vehicleinfo=[data firstObject];
                 self.percentLabel.text=[NSString stringWithFormat:@"%@%%",[vehicleinfo objectForKey:@"batteryVoltage"]];
                 self.ContinutionMile.text=[vehicleinfo objectForKey:@"enduranceMileage"];
