@@ -219,8 +219,6 @@
 		DA7245F81B04D1AB00431299 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245EB1B04D1AB00431299 /* JSONModel+networking.m */; };
 		DA7245F91B04D1AB00431299 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245EE1B04D1AB00431299 /* JSONKeyMapper.m */; };
 		DA7245FA1B04D1AB00431299 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245F01B04D1AB00431299 /* JSONValueTransformer.m */; };
-		DA7245FD1B04DA0100431299 /* MileageDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7245FC1B04DA0100431299 /* MileageDataRequest.m */; };
-		DA75303D1B05CABA00DE6426 /* BDUGpsCorrect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */; };
 		DA7EE7A21AFDC5FE002532D5 /* NotificationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EE7A11AFDC5FE002532D5 /* NotificationItem.m */; };
 		DA92FFA31AFA0038000AD59F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92FFA21AFA0038000AD59F /* Foundation.framework */; };
 		DA92FFB21AFA01EB000AD59F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFA81AFA01EB000AD59F /* FMDatabase.m */; };
@@ -238,6 +236,7 @@
 		DABEF1A21AF8752A00F72C13 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A11AF8752A00F72C13 /* MessageViewController.m */; };
 		DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A41AF8900A00F72C13 /* popoverViewController.m */; };
 		DABEF1A71AF8900A00F72C13 /* popoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */; };
+		DACE95871B16D7CE0054D822 /* BDUGpsCorrect.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95851B16D7CE0054D822 /* BDUGpsCorrect.m */; };
 		DAE6CC6D1B0EFE4D004F64B4 /* HigerVehicleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -620,10 +619,6 @@
 		DA7245EE1B04D1AB00431299 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		DA7245EF1B04D1AB00431299 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		DA7245F01B04D1AB00431299 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		DA7245FB1B04DA0100431299 /* MileageDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MileageDataRequest.h; sourceTree = "<group>"; };
-		DA7245FC1B04DA0100431299 /* MileageDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MileageDataRequest.m; sourceTree = "<group>"; };
-		DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUGpsCorrect.m; sourceTree = "<group>"; };
-		DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDUGpsCorrect.h; sourceTree = "<group>"; };
 		DA7EE7A01AFDC5FE002532D5 /* NotificationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationItem.h; sourceTree = "<group>"; };
 		DA7EE7A11AFDC5FE002532D5 /* NotificationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationItem.m; sourceTree = "<group>"; };
 		DA92FFA21AFA0038000AD59F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -656,6 +651,8 @@
 		DABEF1A31AF8900A00F72C13 /* popoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popoverViewController.h; sourceTree = "<group>"; };
 		DABEF1A41AF8900A00F72C13 /* popoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popoverViewController.m; sourceTree = "<group>"; };
 		DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popoverViewController.xib; sourceTree = "<group>"; };
+		DACE95851B16D7CE0054D822 /* BDUGpsCorrect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDUGpsCorrect.m; path = BDUGpsCorrect/BDUGpsCorrect.m; sourceTree = "<group>"; };
+		DACE95861B16D7CE0054D822 /* BDUGpsCorrect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDUGpsCorrect.h; path = BDUGpsCorrect/BDUGpsCorrect.h; sourceTree = "<group>"; };
 		DAE6CC6B1B0EFE4D004F64B4 /* HigerVehicleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HigerVehicleListViewController.h; sourceTree = "<group>"; };
 		DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HigerVehicleListViewController.m; sourceTree = "<group>"; };
 		F68F68E2B5DC9704BFDAA4ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -793,8 +790,6 @@
 		B027908F1A9045350079F358 = {
 			isa = PBXGroup;
 			children = (
-				DA7245FB1B04DA0100431299 /* MileageDataRequest.h */,
-				DA7245FC1B04DA0100431299 /* MileageDataRequest.m */,
 				DAB703101B09C9C3001C11FF /* BDUGpsCorrect */,
 				DA7245D71B04D1AB00431299 /* JSONModel */,
 				DA64524C1B031BEA0061F855 /* ZFCalendar */,
@@ -1429,8 +1424,8 @@
 		DAB703101B09C9C3001C11FF /* BDUGpsCorrect */ = {
 			isa = PBXGroup;
 			children = (
-				DA75303B1B05CABA00DE6426 /* BDUGpsCorrect.m */,
-				DA75303C1B05CABA00DE6426 /* BDUGpsCorrect.h */,
+				DACE95851B16D7CE0054D822 /* BDUGpsCorrect.m */,
+				DACE95861B16D7CE0054D822 /* BDUGpsCorrect.h */,
 			);
 			name = BDUGpsCorrect;
 			sourceTree = "<group>";
@@ -1654,7 +1649,6 @@
 				DA7245F61B04D1AB00431299 /* JSONAPI.m in Sources */,
 				914959491AAFDB0A00941AFD /* ImageDownloader.m in Sources */,
 				B03C14591A9D9B30008386B8 /* UULineChart.m in Sources */,
-				DA7245FD1B04DA0100431299 /* MileageDataRequest.m in Sources */,
 				915DB6231AA99ECD0098019F /* OilTotal.m in Sources */,
 				91ABF4A21AA02C3A00264F19 /* ForgetPasswordViewController.m in Sources */,
 				B03C142F1A9D6919008386B8 /* NSString+custom.m in Sources */,
@@ -1722,7 +1716,6 @@
 				B0E344EB1AB09944005F314F /* OilType.m in Sources */,
 				B03C145F1A9DC0F8008386B8 /* RegisterViewController.m in Sources */,
 				B03C14561A9D9B30008386B8 /* UUChart.m in Sources */,
-				DA75303D1B05CABA00DE6426 /* BDUGpsCorrect.m in Sources */,
 				DA64525F1B031BEA0061F855 /* CalendarDayCell.m in Sources */,
 				B09944341A984F5F00C5C90C /* HomeTabBarController.m in Sources */,
 				B0B944A61A9CAC95006AC7C2 /* OilManagerViewController.m in Sources */,
@@ -1742,6 +1735,7 @@
 				91864F5F1AB2A4D5004DEC9F /* FSImageView.m in Sources */,
 				B069695D1A95867F00D5C07D /* BaseDataItem.m in Sources */,
 				915DB6341AAD44ED0098019F /* AttachmentImageView.m in Sources */,
+				DACE95871B16D7CE0054D822 /* BDUGpsCorrect.m in Sources */,
 				91864F601AB2A4D5004DEC9F /* FSImageViewerViewController.m in Sources */,
 				91864F5D1AB2A4D5004DEC9F /* FSImageScrollView.m in Sources */,
 				DABEF1A21AF8752A00F72C13 /* MessageViewController.m in Sources */,

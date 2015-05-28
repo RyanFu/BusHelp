@@ -18,7 +18,6 @@
 #import "CommonFunctionController.h"
 #import "Vehicle.h"
 #import "NSDate+custom.h"
-#import "MileageDataRequest.h"
 #import "BDUGpsCorrect.h"
 
 @interface MileageViewController ()

@@ -17,7 +17,6 @@
 #import "NSDate+custom.h"
 #import "CommonFunctionController.h"
 #import "MileageItem.h"
-#import "MileageDataRequest.h"
 
 @interface CalendarHomeViewController ()
 {
@@ -73,7 +72,6 @@
     NSLog(@"%@",vehicle.vehicleID);
     NSLog(@"%@",org.orgID);
     NSLog(@"%@",month);
-//    [[MileageDataRequest shareinstance]fetchVehicleMonthList:vehicle.vehicleID month:month org_id:org.orgID];
     
     if ([CommonFunctionController checkValueValidate:month]&&[CommonFunctionController checkValueValidate:vehicle.vehicleID]&&[CommonFunctionController checkValueValidate:org.orgID]) {
         [DataRequest fetchVehicleMonthList:vehicle.vehicleID month:month org_id:org.orgID success:^(id data){
