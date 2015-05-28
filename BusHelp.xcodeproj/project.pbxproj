@@ -237,6 +237,21 @@
 		DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A41AF8900A00F72C13 /* popoverViewController.m */; };
 		DABEF1A71AF8900A00F72C13 /* popoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */; };
 		DACE95871B16D7CE0054D822 /* BDUGpsCorrect.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95851B16D7CE0054D822 /* BDUGpsCorrect.m */; };
+		DACE959F1B16DA430054D822 /* BaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE958B1B16DA430054D822 /* BaseInfo.m */; };
+		DACE95A01B16DA430054D822 /* UrlInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE958E1B16DA430054D822 /* UrlInfo.m */; };
+		DACE95A11B16DA430054D822 /* UrlParaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95901B16DA430054D822 /* UrlParaInfo.m */; };
+		DACE95A21B16DA430054D822 /* StationBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95931B16DA430054D822 /* StationBaseViewController.m */; };
+		DACE95A31B16DA430054D822 /* NetBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95961B16DA430054D822 /* NetBaseService.m */; };
+		DACE95A41B16DA430054D822 /* NetStationService.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95981B16DA430054D822 /* NetStationService.m */; };
+		DACE95A51B16DA430054D822 /* m_column.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE959C1B16DA430054D822 /* m_column.m */; };
+		DACE95A61B16DA430054D822 /* m_station.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE959E1B16DA430054D822 /* m_station.m */; };
+		DACE95B41B16DADD0054D822 /* StationMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DACE95A91B16DADD0054D822 /* StationMapViewController.xib */; };
+		DACE95B51B16DADD0054D822 /* StationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95AA1B16DADD0054D822 /* StationMapViewController.m */; };
+		DACE95B61B16DADD0054D822 /* StationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95AB1B16DADD0054D822 /* StationAnnotationView.m */; };
+		DACE95B71B16DADD0054D822 /* StationAnnotationDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DACE95AC1B16DADD0054D822 /* StationAnnotationDetailsView.xib */; };
+		DACE95B81B16DADD0054D822 /* StationPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95AE1B16DADD0054D822 /* StationPointAnnotation.m */; };
+		DACE95B91B16DADD0054D822 /* StationMapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95B01B16DADD0054D822 /* StationMapPointAnnotation.m */; };
+		DACE95BA1B16DADD0054D822 /* StationAnnotationDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DACE95B31B16DADD0054D822 /* StationAnnotationDetailsView.m */; };
 		DAE6CC6D1B0EFE4D004F64B4 /* HigerVehicleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -653,6 +668,35 @@
 		DABEF1A51AF8900A00F72C13 /* popoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popoverViewController.xib; sourceTree = "<group>"; };
 		DACE95851B16D7CE0054D822 /* BDUGpsCorrect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDUGpsCorrect.m; path = BDUGpsCorrect/BDUGpsCorrect.m; sourceTree = "<group>"; };
 		DACE95861B16D7CE0054D822 /* BDUGpsCorrect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDUGpsCorrect.h; path = BDUGpsCorrect/BDUGpsCorrect.h; sourceTree = "<group>"; };
+		DACE958A1B16DA430054D822 /* BaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo.h; sourceTree = "<group>"; };
+		DACE958B1B16DA430054D822 /* BaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo.m; sourceTree = "<group>"; };
+		DACE958C1B16DA430054D822 /* MessageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInfo.h; sourceTree = "<group>"; };
+		DACE958D1B16DA430054D822 /* UrlInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlInfo.h; sourceTree = "<group>"; };
+		DACE958E1B16DA430054D822 /* UrlInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlInfo.m; sourceTree = "<group>"; };
+		DACE958F1B16DA430054D822 /* UrlParaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlParaInfo.h; sourceTree = "<group>"; };
+		DACE95901B16DA430054D822 /* UrlParaInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlParaInfo.m; sourceTree = "<group>"; };
+		DACE95921B16DA430054D822 /* StationBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationBaseViewController.h; sourceTree = "<group>"; };
+		DACE95931B16DA430054D822 /* StationBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationBaseViewController.m; sourceTree = "<group>"; };
+		DACE95951B16DA430054D822 /* NetBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetBaseService.h; sourceTree = "<group>"; };
+		DACE95961B16DA430054D822 /* NetBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetBaseService.m; sourceTree = "<group>"; };
+		DACE95971B16DA430054D822 /* NetStationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetStationService.h; sourceTree = "<group>"; };
+		DACE95981B16DA430054D822 /* NetStationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetStationService.m; sourceTree = "<group>"; };
+		DACE959B1B16DA430054D822 /* m_column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_column.h; sourceTree = "<group>"; };
+		DACE959C1B16DA430054D822 /* m_column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = m_column.m; sourceTree = "<group>"; };
+		DACE959D1B16DA430054D822 /* m_station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_station.h; sourceTree = "<group>"; };
+		DACE959E1B16DA430054D822 /* m_station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = m_station.m; sourceTree = "<group>"; };
+		DACE95A81B16DADD0054D822 /* StationMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationMapViewController.h; sourceTree = "<group>"; };
+		DACE95A91B16DADD0054D822 /* StationMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationMapViewController.xib; sourceTree = "<group>"; };
+		DACE95AA1B16DADD0054D822 /* StationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationMapViewController.m; sourceTree = "<group>"; };
+		DACE95AB1B16DADD0054D822 /* StationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotationView.m; sourceTree = "<group>"; };
+		DACE95AC1B16DADD0054D822 /* StationAnnotationDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationAnnotationDetailsView.xib; sourceTree = "<group>"; };
+		DACE95AD1B16DADD0054D822 /* StationAnnotationDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotationDetailsView.h; sourceTree = "<group>"; };
+		DACE95AE1B16DADD0054D822 /* StationPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPointAnnotation.m; sourceTree = "<group>"; };
+		DACE95AF1B16DADD0054D822 /* StationPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationPointAnnotation.h; sourceTree = "<group>"; };
+		DACE95B01B16DADD0054D822 /* StationMapPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationMapPointAnnotation.m; sourceTree = "<group>"; };
+		DACE95B11B16DADD0054D822 /* StationMapPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationMapPointAnnotation.h; sourceTree = "<group>"; };
+		DACE95B21B16DADD0054D822 /* StationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotationView.h; sourceTree = "<group>"; };
+		DACE95B31B16DADD0054D822 /* StationAnnotationDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotationDetailsView.m; sourceTree = "<group>"; };
 		DAE6CC6B1B0EFE4D004F64B4 /* HigerVehicleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HigerVehicleListViewController.h; sourceTree = "<group>"; };
 		DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HigerVehicleListViewController.m; sourceTree = "<group>"; };
 		F68F68E2B5DC9704BFDAA4ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -790,6 +834,7 @@
 		B027908F1A9045350079F358 = {
 			isa = PBXGroup;
 			children = (
+				DACE95881B16DA1E0054D822 /* Station */,
 				DAB703101B09C9C3001C11FF /* BDUGpsCorrect */,
 				DA7245D71B04D1AB00431299 /* JSONModel */,
 				DA64524C1B031BEA0061F855 /* ZFCalendar */,
@@ -1430,6 +1475,90 @@
 			name = BDUGpsCorrect;
 			sourceTree = "<group>";
 		};
+		DACE95881B16DA1E0054D822 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				DACE95A71B16DA6C0054D822 /* StationMap */,
+				DACE95891B16DA430054D822 /* Common */,
+				DACE95911B16DA430054D822 /* BaseUI */,
+				DACE95941B16DA430054D822 /* NetworkService */,
+				DACE95991B16DA430054D822 /* DataService */,
+			);
+			name = Station;
+			sourceTree = "<group>";
+		};
+		DACE95891B16DA430054D822 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DACE958A1B16DA430054D822 /* BaseInfo.h */,
+				DACE958B1B16DA430054D822 /* BaseInfo.m */,
+				DACE958C1B16DA430054D822 /* MessageInfo.h */,
+				DACE958D1B16DA430054D822 /* UrlInfo.h */,
+				DACE958E1B16DA430054D822 /* UrlInfo.m */,
+				DACE958F1B16DA430054D822 /* UrlParaInfo.h */,
+				DACE95901B16DA430054D822 /* UrlParaInfo.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DACE95911B16DA430054D822 /* BaseUI */ = {
+			isa = PBXGroup;
+			children = (
+				DACE95921B16DA430054D822 /* StationBaseViewController.h */,
+				DACE95931B16DA430054D822 /* StationBaseViewController.m */,
+			);
+			path = BaseUI;
+			sourceTree = "<group>";
+		};
+		DACE95941B16DA430054D822 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				DACE95951B16DA430054D822 /* NetBaseService.h */,
+				DACE95961B16DA430054D822 /* NetBaseService.m */,
+				DACE95971B16DA430054D822 /* NetStationService.h */,
+				DACE95981B16DA430054D822 /* NetStationService.m */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		DACE95991B16DA430054D822 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				DACE959A1B16DA430054D822 /* Model */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		DACE959A1B16DA430054D822 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DACE959B1B16DA430054D822 /* m_column.h */,
+				DACE959C1B16DA430054D822 /* m_column.m */,
+				DACE959D1B16DA430054D822 /* m_station.h */,
+				DACE959E1B16DA430054D822 /* m_station.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DACE95A71B16DA6C0054D822 /* StationMap */ = {
+			isa = PBXGroup;
+			children = (
+				DACE95A81B16DADD0054D822 /* StationMapViewController.h */,
+				DACE95AA1B16DADD0054D822 /* StationMapViewController.m */,
+				DACE95A91B16DADD0054D822 /* StationMapViewController.xib */,
+				DACE95B21B16DADD0054D822 /* StationAnnotationView.h */,
+				DACE95AB1B16DADD0054D822 /* StationAnnotationView.m */,
+				DACE95AD1B16DADD0054D822 /* StationAnnotationDetailsView.h */,
+				DACE95B31B16DADD0054D822 /* StationAnnotationDetailsView.m */,
+				DACE95AC1B16DADD0054D822 /* StationAnnotationDetailsView.xib */,
+				DACE95AE1B16DADD0054D822 /* StationPointAnnotation.m */,
+				DACE95AF1B16DADD0054D822 /* StationPointAnnotation.h */,
+				DACE95B01B16DADD0054D822 /* StationMapPointAnnotation.m */,
+				DACE95B11B16DADD0054D822 /* StationMapPointAnnotation.h */,
+			);
+			name = StationMap;
+			sourceTree = "<group>";
+		};
 		F1501798622CEDCD9E377DF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1536,6 +1665,7 @@
 				DABEF1A71AF8900A00F72C13 /* popoverViewController.xib in Resources */,
 				B02790AF1A9045360079F358 /* LaunchScreen.xib in Resources */,
 				B0A51EB41AC9392C0013E032 /* placeholder-image.png in Resources */,
+				DACE95B41B16DADD0054D822 /* StationMapViewController.xib in Resources */,
 				B00E03B11AC2E0FB00A8355B /* help-6.png in Resources */,
 				DA64A1811B019FE900815C21 /* ViolationListTableViewCell.xib in Resources */,
 				B00E039E1AC2D78900A8355B /* splash-introduction-3.png in Resources */,
@@ -1569,6 +1699,7 @@
 				916A36691AA40B4F0026D3A4 /* CustomGasStationView.xib in Resources */,
 				91ABF4B21AA14E7E00264F19 /* TaskTableViewCell.xib in Resources */,
 				B063E6681A97628E00685CF4 /* SplashViewOne.xib in Resources */,
+				DACE95B71B16DADD0054D822 /* StationAnnotationDetailsView.xib in Resources */,
 				B02790AC1A9045360079F358 /* Images.xcassets in Resources */,
 				B05391B51AB5969600A82B30 /* WeiboSDK.bundle in Resources */,
 			);
@@ -1647,12 +1778,16 @@
 				915DB6311AAD40990098019F /* AttachmentDownload.m in Sources */,
 				B05391CC1AB59AE100A82B30 /* ShareViewController.m in Sources */,
 				DA7245F61B04D1AB00431299 /* JSONAPI.m in Sources */,
+				DACE95B91B16DADD0054D822 /* StationMapPointAnnotation.m in Sources */,
+				DACE95A61B16DA430054D822 /* m_station.m in Sources */,
 				914959491AAFDB0A00941AFD /* ImageDownloader.m in Sources */,
 				B03C14591A9D9B30008386B8 /* UULineChart.m in Sources */,
 				915DB6231AA99ECD0098019F /* OilTotal.m in Sources */,
+				DACE95BA1B16DADD0054D822 /* StationAnnotationDetailsView.m in Sources */,
 				91ABF4A21AA02C3A00264F19 /* ForgetPasswordViewController.m in Sources */,
 				B03C142F1A9D6919008386B8 /* NSString+custom.m in Sources */,
 				DA6452641B031BEA0061F855 /* CalendarMonthHeaderView.m in Sources */,
+				DACE95A41B16DA430054D822 /* NetStationService.m in Sources */,
 				DA6452631B031BEA0061F855 /* CalendarMonthCollectionViewLayout.m in Sources */,
 				DA5DBFEB1AF6F940001EFBAF /* HeadPortraitCell.m in Sources */,
 				915DB61A1AA83A490098019F /* UserInfoViewController.m in Sources */,
@@ -1670,6 +1805,7 @@
 				91864F5C1AB2A4D5004DEC9F /* FSImageLoader.m in Sources */,
 				B02791621A93629F0079F358 /* OilItem.m in Sources */,
 				B099443A1A985F6F00C5C90C /* ViolationViewController.m in Sources */,
+				DACE95A01B16DA430054D822 /* UrlInfo.m in Sources */,
 				B02790A41A9045360079F358 /* BusHelp.xcdatamodeld in Sources */,
 				91864F3D1AB1A643004DEC9F /* OilTotalItem.m in Sources */,
 				91864F711AB30D05004DEC9F /* OrgSearchTableViewCell.m in Sources */,
@@ -1677,6 +1813,7 @@
 				B09944431A9865D400C5C90C /* ManagerViewController.m in Sources */,
 				91864F6E1AB3026B004DEC9F /* OrgSearchTableViewController.m in Sources */,
 				DA6452671B031BEA0061F855 /* NSDate+WQCalendarLogic.m in Sources */,
+				DACE95A11B16DA430054D822 /* UrlParaInfo.m in Sources */,
 				B063E6661A9761C600685CF4 /* SplashViewOne.m in Sources */,
 				DA6D65821AFEF60500842D80 /* CreatOrJionViewController.m in Sources */,
 				B063E67B1A976A4500685CF4 /* RoundCornerButton.m in Sources */,
@@ -1689,17 +1826,21 @@
 				DAE6CC6D1B0EFE4D004F64B4 /* HigerVehicleListViewController.m in Sources */,
 				DA5B64551B04A2BF004ACB9D /* MileageItem.m in Sources */,
 				DA7245F71B04D1AB00431299 /* JSONHTTPClient.m in Sources */,
+				DACE95A21B16DA430054D822 /* StationBaseViewController.m in Sources */,
 				DABD20E01AF07D1200848013 /* FunctionViewController.m in Sources */,
 				DA7245F91B04D1AB00431299 /* JSONKeyMapper.m in Sources */,
 				DA7245F21B04D1AB00431299 /* JSONModelArray.m in Sources */,
 				B00E03B61AC2E2DA00A8355B /* HelpViewController.m in Sources */,
 				B063E6761A97655100685CF4 /* SplashViewThree.m in Sources */,
+				DACE95B81B16DADD0054D822 /* StationPointAnnotation.m in Sources */,
 				B03C14541A9D9B30008386B8 /* UUBar.m in Sources */,
 				B0D904291ADCD99000B50B48 /* RootNavigationController.m in Sources */,
 				DA7245FA1B04D1AB00431299 /* JSONValueTransformer.m in Sources */,
 				DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */,
 				91864F5E1AB2A4D5004DEC9F /* FSImageTitleView.m in Sources */,
 				B06C75D51AA88644006CF437 /* ShieldVehicleTableViewCell.m in Sources */,
+				DACE95B61B16DADD0054D822 /* StationAnnotationView.m in Sources */,
+				DACE95B51B16DADD0054D822 /* StationMapViewController.m in Sources */,
 				91ABF4BF1AA1A25100264F19 /* OrgTableViewCell.m in Sources */,
 				B063E6711A9764BE00685CF4 /* SplashViewTwo.m in Sources */,
 				DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */,
@@ -1720,6 +1861,7 @@
 				B09944341A984F5F00C5C90C /* HomeTabBarController.m in Sources */,
 				B0B944A61A9CAC95006AC7C2 /* OilManagerViewController.m in Sources */,
 				B063E6621A975AEB00685CF4 /* SplashViewController.m in Sources */,
+				DACE95A31B16DA430054D822 /* NetBaseService.m in Sources */,
 				91864F741AB314EB004DEC9F /* OrgItem.m in Sources */,
 				B05449F11A9B2A1600C08C77 /* ViolationPageView.m in Sources */,
 				DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */,
@@ -1727,6 +1869,7 @@
 				915DB6261AA9D0960098019F /* Task.m in Sources */,
 				DA6452621B031BEA0061F855 /* CalendarLogic.m in Sources */,
 				915DB6161AA824290098019F /* SvUDIDTools.m in Sources */,
+				DACE95A51B16DA430054D822 /* m_column.m in Sources */,
 				B05449ED1A9AF5C100C08C77 /* VehicleItemTableViewCell.m in Sources */,
 				DAABC5A21B0C2B4600C29D10 /* BaseView.m in Sources */,
 				B09944371A98522A00C5C90C /* CustomAnimator.m in Sources */,
@@ -1769,6 +1912,7 @@
 				B06C75EA1AA89175006CF437 /* RequestInfo.m in Sources */,
 				DA7245F81B04D1AB00431299 /* JSONModel+networking.m in Sources */,
 				B05449E61A9ABC7F00C08C77 /* VehicleManagerViewController.m in Sources */,
+				DACE959F1B16DA430054D822 /* BaseInfo.m in Sources */,
 				B0980ED21AAC27F9005E4984 /* OrgMessageDetailViewController.m in Sources */,
 				DA92FFBA1AFA02B1000AD59F /* Sql_Utils.m in Sources */,
 				91864F5A1AB2A4D5004DEC9F /* FSBasicImage.m in Sources */,

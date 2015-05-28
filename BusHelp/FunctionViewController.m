@@ -9,10 +9,12 @@
 #import "FunctionViewController.h"
 #import "FunctionTableViewCell.h"
 #import "DataRequest.h"
+#import "StationMapViewController.h"
 
 @interface FunctionViewController ()
 {
     NSArray *funclist;
+    StationMapViewController *stationMapVC;
 }
 @end
 
@@ -21,19 +23,21 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    funclist=[NSArray arrayWithObjects:@"违章",@"油耗",@"任务",@"里程",@"实时监测", nil];
+    funclist=[NSArray arrayWithObjects:@"违章",@"油耗",@"任务",@"里程",@"实时监测",@"充电站", nil];
     self.FunctionTable.tableFooterView=[[UIView alloc]init];
+    
+    stationMapVC=[[StationMapViewController alloc]initWithNibName:@"StationMapViewController" bundle:nil];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,6 +73,9 @@
         case 4:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
             break;
+        case 5:
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
+            break;
 
         default:
             break;
@@ -93,6 +100,10 @@
             break;
         case 4:
             [self performSegueWithIdentifier:@"FunctionToVehicleDetail" sender:self];
+            break;
+        case 5:
+            [self.navigationController pushViewController:stationMapVC animated:YES];
+            
             break;
         default:
             break;

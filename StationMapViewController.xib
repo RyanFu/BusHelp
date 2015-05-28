@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationMapViewController">
+            <connections>
+                <outlet property="mapView" destination="uV8-zD-ixT" id="Pbv-Dz-8tV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="YIr-o8-Of8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRs-xs-uXb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="jjk-sj-b6j"/>
+                    </constraints>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="jjk-sj-b6j"/>
+                        </mask>
+                    </variation>
+                </view>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uV8-zD-ixT">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="oeT-9W-D0w"/>
+                    </connections>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV4-6P-lNI">
+                    <rect key="frame" x="277" y="29" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="AzD-Hm-xud"/>
+                        <constraint firstAttribute="width" secondItem="sV4-6P-lNI" secondAttribute="height" multiplier="1:1" id="N6B-1D-jKr"/>
+                    </constraints>
+                    <state key="normal" image="station_list">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnStationList_TouchUpInside:" destination="-1" eventType="touchUpInside" id="Zc7-Zx-0hI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhg-hk-Q4Q">
+                    <rect key="frame" x="14" y="29" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="LJ1-V4-dBR"/>
+                        <constraint firstAttribute="width" secondItem="Rhg-hk-Q4Q" secondAttribute="height" multiplier="1:1" id="sYk-Pj-jdy"/>
+                    </constraints>
+                    <state key="normal" image="station_back">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="B3h-20-Sue"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XRs-xs-uXb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vb-4Z-PPd"/>
+                <constraint firstItem="XRs-xs-uXb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5T9-t4-j1R"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="top" secondItem="XRs-xs-uXb" secondAttribute="bottom" id="7CN-5r-oWR"/>
+                <constraint firstAttribute="trailing" secondItem="sV4-6P-lNI" secondAttribute="trailing" constant="15" id="Apu-Ed-TkD"/>
+                <constraint firstItem="Rhg-hk-Q4Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="BeK-K2-MeW"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="top" secondItem="XRs-xs-uXb" secondAttribute="bottom" id="K1i-91-q6I"/>
+                <constraint firstAttribute="trailing" secondItem="uV8-zD-ixT" secondAttribute="trailing" id="YIH-7S-UaJ"/>
+                <constraint firstItem="Rhg-hk-Q4Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="ZKa-up-ftY"/>
+                <constraint firstAttribute="bottom" secondItem="uV8-zD-ixT" secondAttribute="bottom" id="cqI-Yn-K11"/>
+                <constraint firstAttribute="trailing" secondItem="XRs-xs-uXb" secondAttribute="trailing" id="fpq-L1-1Sr"/>
+                <constraint firstItem="sV4-6P-lNI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="fvl-u3-BDi"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="top" secondItem="XRs-xs-uXb" secondAttribute="top" constant="20" id="k5c-Fj-1vo"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="trailing" secondItem="XRs-xs-uXb" secondAttribute="trailing" id="mw5-OI-bEB"/>
+                <constraint firstItem="sV4-6P-lNI" firstAttribute="top" secondItem="XRs-xs-uXb" secondAttribute="bottom" constant="9" id="n1g-yn-7bK"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="q4i-ej-XZt"/>
+                <constraint firstItem="Rhg-hk-Q4Q" firstAttribute="top" secondItem="XRs-xs-uXb" secondAttribute="bottom" constant="9" id="qQ3-L3-6M0"/>
+                <constraint firstAttribute="bottom" secondItem="uV8-zD-ixT" secondAttribute="bottom" id="tL1-Vh-2Cm"/>
+                <constraint firstItem="uV8-zD-ixT" firstAttribute="leading" secondItem="XRs-xs-uXb" secondAttribute="leading" id="vc1-70-LFW"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="XRs-xs-uXb"/>
+                    <include reference="uV8-zD-ixT"/>
+                    <include reference="sV4-6P-lNI"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="0vb-4Z-PPd"/>
+                    <include reference="5T9-t4-j1R"/>
+                    <include reference="fpq-L1-1Sr"/>
+                    <include reference="K1i-91-q6I"/>
+                    <include reference="YIH-7S-UaJ"/>
+                    <include reference="cqI-Yn-K11"/>
+                    <include reference="q4i-ej-XZt"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="407" y="260"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="station_back" width="42" height="42"/>
+        <image name="station_list" width="28" height="28"/>
+    </resources>
+</document>
