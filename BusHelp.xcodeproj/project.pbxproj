@@ -177,6 +177,9 @@
 		B0E344F11AB099D9005F314F /* StationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E344F01AB099D9005F314F /* StationItem.m */; };
 		CE43F4951AE0FB5E00754C55 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43F4941AE0FB5E00754C55 /* MessageUI.framework */; };
 		CE43F4971AE0FF7100754C55 /* SMSConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43F4961AE0FF7100754C55 /* SMSConnection.framework */; };
+		DA0CAD7E1B1843BB00ECADC6 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD7D1B1843BB00ECADC6 /* AddTaskViewController.m */; };
+		DA0CAD811B185F4000ECADC6 /* TaskManagerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */; };
+		DA0CAD841B18683B00ECADC6 /* TaskPickVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */; };
 		DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */; };
 		DA4184D31AFCB3DE00639637 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184D11AFCB3DE00639637 /* ContactsTableViewCell.m */; };
 		DA4184D41AFCB3DE00639637 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */; };
@@ -556,6 +559,12 @@
 		C50A2E955A4E8CC0042DC69B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE43F4941AE0FB5E00754C55 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE43F4961AE0FF7100754C55 /* SMSConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMSConnection.framework; sourceTree = "<group>"; };
+		DA0CAD7C1B1843BB00ECADC6 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		DA0CAD7D1B1843BB00ECADC6 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		DA0CAD7F1B185F4000ECADC6 /* TaskManagerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManagerListViewController.h; sourceTree = "<group>"; };
+		DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManagerListViewController.m; sourceTree = "<group>"; };
+		DA0CAD821B18683B00ECADC6 /* TaskPickVehiclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskPickVehiclesViewController.h; sourceTree = "<group>"; };
+		DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskPickVehiclesViewController.m; sourceTree = "<group>"; };
 		DA4184C81AFC99CF00639637 /* TransmitNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitNotificationViewController.h; sourceTree = "<group>"; };
 		DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitNotificationViewController.m; sourceTree = "<group>"; };
 		DA4184D01AFCB3DE00639637 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewCell.h; sourceTree = "<group>"; };
@@ -1152,6 +1161,12 @@
 				DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */,
 				DAE6CC6B1B0EFE4D004F64B4 /* HigerVehicleListViewController.h */,
 				DAE6CC6C1B0EFE4D004F64B4 /* HigerVehicleListViewController.m */,
+				DA0CAD7C1B1843BB00ECADC6 /* AddTaskViewController.h */,
+				DA0CAD7D1B1843BB00ECADC6 /* AddTaskViewController.m */,
+				DA0CAD7F1B185F4000ECADC6 /* TaskManagerListViewController.h */,
+				DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */,
+				DA0CAD821B18683B00ECADC6 /* TaskPickVehiclesViewController.h */,
+				DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1847,6 +1862,7 @@
 				B06C75E71AA89175006CF437 /* Org.m in Sources */,
 				B03C145C1A9DB1ED008386B8 /* LoginViewController.m in Sources */,
 				91864F431AB280B8004DEC9F /* NotificationSettingViewController.m in Sources */,
+				DA0CAD811B185F4000ECADC6 /* TaskManagerListViewController.m in Sources */,
 				B09944461A9865E500C5C90C /* SettingViewController.m in Sources */,
 				916A366D1AA441C50026D3A4 /* AttachmentView.m in Sources */,
 				DA6083F51AF20B1100903D27 /* FunctionTableViewCell.m in Sources */,
@@ -1867,6 +1883,7 @@
 				DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */,
 				DA6452601B031BEA0061F855 /* CalendarDayModel.m in Sources */,
 				915DB6261AA9D0960098019F /* Task.m in Sources */,
+				DA0CAD7E1B1843BB00ECADC6 /* AddTaskViewController.m in Sources */,
 				DA6452621B031BEA0061F855 /* CalendarLogic.m in Sources */,
 				915DB6161AA824290098019F /* SvUDIDTools.m in Sources */,
 				DACE95A51B16DA430054D822 /* m_column.m in Sources */,
@@ -1875,6 +1892,7 @@
 				B09944371A98522A00C5C90C /* CustomAnimator.m in Sources */,
 				B0BEFD1C1AC9771000599D5E /* UITableView+WJAdditions.m in Sources */,
 				91ABF4AD1AA05FA700264F19 /* TaskManagerViewController.m in Sources */,
+				DA0CAD841B18683B00ECADC6 /* TaskPickVehiclesViewController.m in Sources */,
 				91864F5F1AB2A4D5004DEC9F /* FSImageView.m in Sources */,
 				B069695D1A95867F00D5C07D /* BaseDataItem.m in Sources */,
 				915DB6341AAD44ED0098019F /* AttachmentImageView.m in Sources */,

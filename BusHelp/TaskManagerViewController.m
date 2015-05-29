@@ -74,6 +74,11 @@
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarButtonItemPressed:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    
     if (self.isNotification && self.referenceID != nil) {
         [self showDetailViewWithReferenceID:self.referenceID];
     }
@@ -139,6 +144,10 @@
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)rightBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
+    [self performSegueWithIdentifier:@"TaskManagerToAddTask" sender:self];
 }
 
 - (IBAction)topViewTappedGesture:(UITapGestureRecognizer *)sender {
