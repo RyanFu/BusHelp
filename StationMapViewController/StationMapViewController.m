@@ -11,6 +11,7 @@
 #import "StationAnnotationView.h"
 #import "StationAnnotationDetailsView.h"
 //#import "StationDetailsViewController.h"
+#import "Math.h"
 
 @interface StationMapViewController ()
 {
@@ -70,7 +71,7 @@
 
 - (void)requestGetStationList:(CLLocationCoordinate2D)coordinate
 {
-    [_stationService requestGetStationList:[NSString stringWithFormat:@"%.6f", coordinate.longitude] user_lat:[NSString stringWithFormat:@"%.6f", coordinate.latitude] success:^(int code, NSString *msg, NSArray *station_list) {
+    [_stationService requestGetStationList:[NSString stringWithFormat:@"%f", coordinate.longitude] user_lat:[NSString stringWithFormat:@"%f", coordinate.latitude] success:^(int code, NSString *msg, NSArray *station_list) {
         [self.mapView removeAnnotations:self.mapView.annotations]; //清除所有标注
         _station_list = [[NSArray alloc] initWithArray:station_list copyItems:YES]; //添加数据
         for (m_station *station in _station_list) {
@@ -79,13 +80,25 @@
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = [station.station_lat doubleValue];
             coordinate.longitude = [station.station_lng doubleValue];
-            pointAnnotation.coordinate = coordinate;
+            pointAnnotation.coordinate = [self BaiduToMars:coordinate];
             [_mapView addAnnotation:pointAnnotation];
         } //添加标注
         [self zoomToMapPoints:self.mapView annotations:_mapView.annotations]; //缩放至显示所有充电站
     } error:^(int code, NSString *msg) {
         [self alert:msg view:self.view animated:YES afterDelay:2.0];
     }];
+}
+
+//百度地图转火星
+-(CLLocationCoordinate2D)BaiduToMars:(CLLocationCoordinate2D)coordinate
+{
+    double x = coordinate.latitude-0.0065;
+    double y = coordinate.longitude-0.006;
+    double z = sqrt(x * x + y * y) - 0.00002 * sin(y * M_PI);
+    double theta = atan2(y, x) - 0.000003 * cos(x * M_PI);
+    coordinate.latitude = z * cos(theta);
+    coordinate.longitude = z * sin(theta);
+    return coordinate;
 }
 
 - (void)zoomToMapPoints:(MKMapView*)mapView annotations:(NSArray*)annotations
@@ -149,7 +162,7 @@
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = [pointAnnotation.station.station_lat doubleValue];
         coordinate.longitude = [pointAnnotation.station.station_lng doubleValue];
-        _mapPointAnnotation.coordinate = coordinate;
+        _mapPointAnnotation.coordinate = [self BaiduToMars:coordinate];
         [self.mapView addAnnotation:_mapPointAnnotation];
         [self.mapView setCenterCoordinate:_mapPointAnnotation.coordinate animated:YES];
     }
@@ -230,18 +243,18 @@
 
 
         
-        CGSize labelMaxSize = CGSizeMake(240, 20);
-        NSDictionary *attributes = @{NSFontAttributeName:annotationDetailsView.lblStationName.font};
-        CGSize labelSize = [annotationDetailsView.lblStationName.text boundingRectWithSize:labelMaxSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
-        annotationDetailsView.lblStationName.frame = CGRectMake(annotationDetailsView.lblStationName.frame.origin.x, annotationDetailsView.lblStationName.frame.origin.y, labelSize.width, annotationDetailsView.lblStationName.frame.size.height);
-        annotationDetailsView.imgStationDiscount.frame = CGRectMake(annotationDetailsView.lblStationName.frame.origin.x + annotationDetailsView.lblStationName.frame.size.width + 5, annotationDetailsView.imgStationDiscount.frame.origin.y, annotationDetailsView.imgStationDiscount.frame.size.width, annotationDetailsView.imgStationDiscount.frame.size.height);
-        
-        
-        labelMaxSize = CGSizeMake(240, 20);
-        attributes = @{NSFontAttributeName:annotationDetailsView.lblStationDistance.font};
-        labelSize = [annotationDetailsView.lblStationDistance.text boundingRectWithSize:labelMaxSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
-        annotationDetailsView.lblStationDistance.frame = CGRectMake(annotationDetailsView.lblStationDistance.frame.origin.x, annotationDetailsView.lblStationDistance.frame.origin.y, labelSize.width, annotationDetailsView.lblStationDistance.frame.size.height);
-        annotationDetailsView.btnGo.frame = CGRectMake(annotationDetailsView.lblStationDistance.frame.origin.x + annotationDetailsView.lblStationDistance.frame.size.width + 5, annotationDetailsView.btnGo.frame.origin.y, annotationDetailsView.btnGo.frame.size.width, annotationDetailsView.btnGo.frame.size.height);
+//        CGSize labelMaxSize = CGSizeMake(240, 20);
+//        NSDictionary *attributes = @{NSFontAttributeName:annotationDetailsView.lblStationName.font};
+//        CGSize labelSize = [annotationDetailsView.lblStationName.text boundingRectWithSize:labelMaxSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
+//        annotationDetailsView.lblStationName.frame = CGRectMake(annotationDetailsView.lblStationName.frame.origin.x, annotationDetailsView.lblStationName.frame.origin.y, labelSize.width, annotationDetailsView.lblStationName.frame.size.height);
+//        annotationDetailsView.imgStationDiscount.frame = CGRectMake(annotationDetailsView.lblStationName.frame.origin.x + annotationDetailsView.lblStationName.frame.size.width + 5, annotationDetailsView.imgStationDiscount.frame.origin.y, annotationDetailsView.imgStationDiscount.frame.size.width, annotationDetailsView.imgStationDiscount.frame.size.height);
+//        
+//        
+//        labelMaxSize = CGSizeMake(240, 20);
+//        attributes = @{NSFontAttributeName:annotationDetailsView.lblStationDistance.font};
+//        labelSize = [annotationDetailsView.lblStationDistance.text boundingRectWithSize:labelMaxSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
+//        annotationDetailsView.lblStationDistance.frame = CGRectMake(annotationDetailsView.lblStationDistance.frame.origin.x, annotationDetailsView.lblStationDistance.frame.origin.y, labelSize.width, annotationDetailsView.lblStationDistance.frame.size.height);
+//        annotationDetailsView.btnGo.frame = CGRectMake(annotationDetailsView.lblStationDistance.frame.origin.x + annotationDetailsView.lblStationDistance.frame.size.width + 5, annotationDetailsView.btnGo.frame.origin.y, annotationDetailsView.btnGo.frame.size.width, annotationDetailsView.btnGo.frame.size.height);
         
         [annotationDetailsView.btnDetails addTarget:self action:@selector(btnDetails_TouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
         [annotationDetailsView.btnGo addTarget:self action:@selector(btnGo_TouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
@@ -263,7 +276,7 @@
     endCoordinate.latitude = [_station.station_lat doubleValue];
     endCoordinate.longitude = [_station.station_lng doubleValue];
     MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
-    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:endCoordinate addressDictionary:nil]];
+    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:[self BaiduToMars:endCoordinate] addressDictionary:nil]];
     toLocation.name = _station.station_name;
     [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
                    launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];

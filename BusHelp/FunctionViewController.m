@@ -74,7 +74,7 @@
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
             break;
         case 5:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-station"];
             break;
 
         default:

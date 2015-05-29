@@ -35,7 +35,7 @@
                         <outlet property="delegate" destination="-1" id="oeT-9W-D0w"/>
                     </connections>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV4-6P-lNI">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV4-6P-lNI">
                     <rect key="frame" x="277" y="29" width="28" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="28" id="AzD-Hm-xud"/>

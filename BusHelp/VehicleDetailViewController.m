@@ -145,9 +145,9 @@
                     [self.batteryView setNeedsDisplay];
                 }else if([status isEqualToString:@"--"])
                 {
-                    self.batteryView.percent=0;
+                    self.batteryView.percent=[[NSString stringWithFormat:@"%@",[vehicleinfo objectForKey:@"batteryVoltage"]] floatValue]/100;
                     [self.batteryView setNeedsDisplay];
-                    
+
                 }
                 [CommonFunctionController hideAllHUD];
             }
@@ -181,9 +181,8 @@
                     [self.batteryView setNeedsDisplay];
                 }else if([status isEqualToString:@"--"])
                 {
-                    self.batteryView.percent=0;
+                    self.batteryView.percent=[[NSString stringWithFormat:@"%@",[vehicleinfo objectForKey:@"batteryVoltage"]] floatValue]/100;
                     [self.batteryView setNeedsDisplay];
-                    
                 }
             }
 

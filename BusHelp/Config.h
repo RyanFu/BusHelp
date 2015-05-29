@@ -22,9 +22,9 @@
 #define SHARE_CONTENT @"//走过春夏秋冬安全永驻心中"
 #define DEVICE_TYPE @"1001"
 
-//#define BASE_URL @"http://ygcapi.g-bos.cn:7702"//@"http://ptpws-pre.g-bos.cn:71"//@"http://172.16.21.141:9000"@"http://192.168.200.179:9000"
+#define BASE_URL @"http://ygcapi.g-bos.cn:7702"//@"http://ptpws-pre.g-bos.cn:71"//@"http://172.16.21.141:9000"@"http://192.168.200.179:9000"
 
-#define BASE_URL @"http://ptpws-pre.g-bos.cn:71"
+//#define BASE_URL @"http://ptpws-pre.g-bos.cn:71"
 #define LOGIN_URL [BASE_URL stringByAppendingString:@"/api/user/login"]
 #define REGISTER_URL [BASE_URL stringByAppendingString:@"/api/user/register"]
 #define LOGOUT_URL [BASE_URL stringByAppendingString:@"/api/user/logout"]
