@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIView *taskbegintimeView;
 @property (weak, nonatomic) IBOutlet UIView *taskendtimeView;
 @property (weak, nonatomic) IBOutlet UILabel *managerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *vehicleNumbersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 
 - (IBAction)managerViewTappedGesture:(UITapGestureRecognizer *)sender;
 - (IBAction)vehicleViewTappedGesture:(UITapGestureRecognizer *)sender;

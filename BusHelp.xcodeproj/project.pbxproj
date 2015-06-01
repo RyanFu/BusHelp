@@ -194,6 +194,8 @@
 		DA6083FA1AF21A8700903D27 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6083F81AF21A8700903D27 /* SettingTableViewCell.m */; };
 		DA6083FB1AF21A8700903D27 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA6083F91AF21A8700903D27 /* SettingTableViewCell.xib */; };
 		DA60FA6C1B01E8FC0005ECAB /* ViolationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FA6B1B01E8FC0005ECAB /* ViolationDetailViewController.m */; };
+		DA6410431B1BF6B2002CB45E /* MyDataPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6410421B1BF6B2002CB45E /* MyDataPickerView.m */; };
+		DA6410451B1BF6F1002CB45E /* MyDataPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA6410441B1BF6F1002CB45E /* MyDataPickerView.xib */; };
 		DA6452461B02DFD20061F855 /* MileageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6452451B02DFD20061F855 /* MileageViewController.m */; };
 		DA6452481B02EFF80061F855 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6452471B02EFF80061F855 /* CoreLocation.framework */; };
 		DA64525F1B031BEA0061F855 /* CalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64524E1B031BEA0061F855 /* CalendarDayCell.m */; };
@@ -590,6 +592,9 @@
 		DA6083F91AF21A8700903D27 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		DA60FA6A1B01E8FC0005ECAB /* ViolationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationDetailViewController.h; sourceTree = "<group>"; };
 		DA60FA6B1B01E8FC0005ECAB /* ViolationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDetailViewController.m; sourceTree = "<group>"; };
+		DA6410411B1BF6B2002CB45E /* MyDataPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataPickerView.h; sourceTree = "<group>"; };
+		DA6410421B1BF6B2002CB45E /* MyDataPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataPickerView.m; sourceTree = "<group>"; };
+		DA6410441B1BF6F1002CB45E /* MyDataPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDataPickerView.xib; sourceTree = "<group>"; };
 		DA6452441B02DFD20061F855 /* MileageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MileageViewController.h; sourceTree = "<group>"; };
 		DA6452451B02DFD20061F855 /* MileageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MileageViewController.m; sourceTree = "<group>"; };
 		DA6452471B02EFF80061F855 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -1174,6 +1179,9 @@
 		B063E6631A9761A500685CF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA6410411B1BF6B2002CB45E /* MyDataPickerView.h */,
+				DA6410421B1BF6B2002CB45E /* MyDataPickerView.m */,
+				DA6410441B1BF6F1002CB45E /* MyDataPickerView.xib */,
 				DA6083F21AF20B1100903D27 /* FunctionTableViewCell.h */,
 				DA6083F31AF20B1100903D27 /* FunctionTableViewCell.m */,
 				DA6083F41AF20B1100903D27 /* FunctionTableViewCell.xib */,
@@ -1688,6 +1696,7 @@
 				B05391B11AB5969600A82B30 /* ShareSDKLocalizable.strings in Resources */,
 				B00E03B21AC2E0FB00A8355B /* help-7.png in Resources */,
 				B04929CF1AC3C70A000A17B0 /* HelpView.xib in Resources */,
+				DA6410451B1BF6F1002CB45E /* MyDataPickerView.xib in Resources */,
 				B00E03A01AC2D7A300A8355B /* splash-introduction-2.png in Resources */,
 				916A366F1AA441D30026D3A4 /* AttachmentView.xib in Resources */,
 				DA6452661B031BEA0061F855 /* chack.png in Resources */,
@@ -1789,6 +1798,7 @@
 				91AACBA91AB11B020045AB9C /* OilTypeItem.m in Sources */,
 				DA92FFB21AFA01EB000AD59F /* FMDatabase.m in Sources */,
 				B03C14571A9D9B30008386B8 /* UUChartLabel.m in Sources */,
+				DA6410431B1BF6B2002CB45E /* MyDataPickerView.m in Sources */,
 				91864F3A1AB1A632004DEC9F /* ViolationItem.m in Sources */,
 				915DB6311AAD40990098019F /* AttachmentDownload.m in Sources */,
 				B05391CC1AB59AE100A82B30 /* ShareViewController.m in Sources */,

@@ -687,4 +687,11 @@ static NSTimeInterval const sceonds = 60;
     }failure:failure];
 }
 
++ (void)saveNewTask:(NSString *)task_id org_id:(NSString *)org_id task_title:(NSString *)task_title task_content:(NSString *)task_content task_manager:(NSString *)task_manager task_begin_time:(NSString *)task_begin_time task_end_time:(NSString *)task_end_time vehicle_ids:(NSString *)vehicle_ids success:(void (^)())success failure:(void (^)(NSString *message))failure
+{
+    [self POST:SAVENEWTASK parameters:@{@"task_id" : task_id,@"org_id" : org_id,@"task_title" : task_title,@"task_content" : task_content,@"task_manager" : task_manager,@"task_begin_time" : task_begin_time,@"task_end_time" : task_end_time,@"vehicle_ids" : vehicle_ids} success:^(id data){
+        success(data);
+    } failure:failure];
+}
+
 @end

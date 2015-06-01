@@ -16,6 +16,8 @@
 @interface TaskManagerViewController () <SwipeViewDataSource, SwipeViewDelegate> {
     TaskDetailView *_taskDetailView;
     UIView *_currentSelectedView;
+    Org *_org;
+
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *spotTaskCountLabel;
@@ -37,6 +39,19 @@
 @end
 
 @implementation TaskManagerViewController
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        [self setupNavigationBar];
+        
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,6 +93,15 @@
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarButtonItemPressed:)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    if (_org.userType.integerValue==OrgUserTypeCreater||_org.userType.integerValue==OrgUserTypeAdmin) {
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    }else
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+
     
     if (self.isNotification && self.referenceID != nil) {
         [self showDetailViewWithReferenceID:self.referenceID];
@@ -235,6 +259,24 @@
             break;
     }
     [self changeSelectedByTapView:tapView];
+}
+
+- (void)setupOrgWithRequest:(BOOL)request {
+    [CommonFunctionController showAnimateMessageHUD];
+    if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
+        [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
+            _org = [orgArray firstObject];
+            NSLog(@"组织名称：%@",_org.name);
+            [self setupNavigationBar];
+            [CommonFunctionController hideAllHUD];
+        } failure:^(NSString *message){
+            [CommonFunctionController hideAllHUD];
+            
+        }];
+    }
+    else {
+        [CommonFunctionController showHUDWithMessage:@"网络已断开" detail:nil];
+    }
 }
 
 @end

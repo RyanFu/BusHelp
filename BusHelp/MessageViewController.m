@@ -12,7 +12,6 @@
 #import "popoverViewController.h"
 #import "ManagerViewController.h"
 #import "DataRequest.h"
-#import "DataRequest.h"
 #import "CommonFunctionController.h"
 #import "CreatOrJionViewController.h"
 
@@ -38,7 +37,14 @@
     [self setupNavigationBar];
     orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
     [messageTable reloadData];
-    [self setupOrgWithRequest:YES];
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        [self setupNavigationBar];
+
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -62,6 +68,7 @@
         hasadd=flag;
         [weakself performSegueWithIdentifier:@"MessageToTransmitNotification" sender:nil];
     };
+    
 }
 
 - (void)setupOrgWithRequest:(BOOL)request {
@@ -150,7 +157,7 @@
 {
     switch (indexPath.row) {
         case 0:
-            messagecategory=@"1001,2001,3001";
+            messagecategory=@"1001,2001,3001,5001";
             tabbarTitle=@"系统消息";
             [self performSegueWithIdentifier:@"MessageToManger" sender:self];
             break;

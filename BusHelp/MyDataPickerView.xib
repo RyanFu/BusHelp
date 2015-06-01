@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyDataPickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyD-ZL-Zfa">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRo-7U-eDt">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="bEd-TW-UK4"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem title="取消" id="X0D-Oa-fMK">
+                                    <connections>
+                                        <action selector="cancelButtonTap:" destination="iN0-l3-epB" id="cCR-xJ-2jr"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="UCN-lL-PMe"/>
+                                <barButtonItem title="确定" id="Hbq-6V-1QG">
+                                    <connections>
+                                        <action selector="confirmButtonTap:" destination="iN0-l3-epB" id="CG8-QQ-BHp"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-mc-GaK">
+                            <rect key="frame" x="0.0" y="44" width="320" height="162"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="hzy-ZI-afw"/>
+                            </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="454819580.886796">
+                                <!--2015-06-01 02:46:20 +0000-->
+                            </date>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="BRo-7U-eDt" firstAttribute="top" secondItem="YyD-ZL-Zfa" secondAttribute="top" id="5ni-A4-oX8"/>
+                        <constraint firstAttribute="trailing" secondItem="GUU-mc-GaK" secondAttribute="trailing" id="Csx-7L-XlB"/>
+                        <constraint firstAttribute="trailing" secondItem="BRo-7U-eDt" secondAttribute="trailing" id="R29-Cj-JLN"/>
+                        <constraint firstItem="GUU-mc-GaK" firstAttribute="leading" secondItem="YyD-ZL-Zfa" secondAttribute="leading" id="cMa-Ki-kvG"/>
+                        <constraint firstItem="GUU-mc-GaK" firstAttribute="top" secondItem="BRo-7U-eDt" secondAttribute="bottom" id="w2Y-kL-WWb"/>
+                        <constraint firstItem="BRo-7U-eDt" firstAttribute="leading" secondItem="YyD-ZL-Zfa" secondAttribute="leading" id="yux-qX-chg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YyD-ZL-Zfa" secondAttribute="bottom" id="BXE-L7-QkM"/>
+                <constraint firstItem="YyD-ZL-Zfa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rLO-Sk-5AV"/>
+                <constraint firstAttribute="trailing" secondItem="YyD-ZL-Zfa" secondAttribute="trailing" id="tDI-T6-jzy"/>
+                <constraint firstItem="YyD-ZL-Zfa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tHg-QH-J8P"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="DataTimePickerView" destination="GUU-mc-GaK" id="olw-IS-xqL"/>
+            </connections>
+            <point key="canvasLocation" x="269" y="41"/>
+        </view>
+    </objects>
+</document>

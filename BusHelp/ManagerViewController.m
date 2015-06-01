@@ -151,12 +151,6 @@ static NSInteger const listCount = 20;
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
-//    OrgSettingViewController *orgSettingViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([OrgSettingViewController class])];
-//    orgSettingViewController.orgID = _org.orgID;
-//    orgSettingViewController.orgName = _org.name;
-//    orgSettingViewController.vehicleListArray = _org.vehicleList;
-//    orgSettingViewController.userType = _org.userType;
-//    [self.tabBarController.navigationController pushViewController:orgSettingViewController animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 
 }
@@ -264,6 +258,7 @@ static NSInteger const listCount = 20;
         self.tipMessageLabel.hidden = YES;
         [self.managerTableView reloadData];
         [HelpView showWithImageArray:@[@"help-1"]];
+        
     }
     [self setupLeftMenu];
     [self updateBadgeValue];

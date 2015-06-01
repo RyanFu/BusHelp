@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "Vehicle.h"
 
-@interface TaskPickVehiclesViewController : BaseViewController
+@interface TaskPickVehiclesViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTable;
+@property (nonatomic,strong)void (^confirmBlock)(NSArray *selectVehicles);
 
 @end

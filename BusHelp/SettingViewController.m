@@ -299,7 +299,20 @@
     [super viewDidAppear:animated];
     
     [self setupNavigationBar];
-    [self setupOrgWithRequest:YES];
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        if (_org != nil ) {
+            showApplyCell=YES;
+        }else
+        {
+            showApplyCell=NO;
+        }
+        [self.SettingTable reloadData];
+
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
 
 
 }

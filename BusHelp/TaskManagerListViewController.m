@@ -62,7 +62,7 @@
         [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
             _orgArray = orgArray;
             _org = [_orgArray firstObject];
-            NSLog(@"组织id：%@",_org.orgID);
+//            NSLog(@"组织id：%@",_org.orgID);
             if (_org) {
                 [self getOrgAllUsers:YES];
             }else
@@ -85,9 +85,7 @@
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest getOrgAllUser:_org.orgID success:^(id data){
             contactlist=data;
-            NSLog(@"%@",contactlist);
-            
-            
+//            NSLog(@"%@",contactlist);
             self.items = [NSMutableArray arrayWithCapacity:0];
             for (int i=0; i<contactlist.count; i++) {
                 NotificationItem *item = [[NotificationItem alloc] init];
@@ -152,8 +150,6 @@
 {
     NotificationItem *item=[_items objectAtIndex:indexPath.row];
     [selectArray addObject:item];
-    NSLog(@"%@",selectArray);
-    NSLog(@"%@",_org.orgID);
     _confirmBlock(selectArray,_org.orgID);
     [self.navigationController popViewControllerAnimated:YES];
 
