@@ -25,6 +25,11 @@
     [super viewWillAppear:animated];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

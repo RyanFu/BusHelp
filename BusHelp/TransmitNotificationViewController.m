@@ -118,7 +118,7 @@
     if ([segue.identifier isEqualToString:@"ToSelectUsers"]) {
         popOrgUsersViewController *pop=segue.destinationViewController;
         [pop setConfirmBlock:^(NSArray *select,NSString *OrgID){
-                NSLog(@"%@",select);
+//                NSLog(@"%@",select);
                 for (int i=0; i<select.count; i++) {
                 NotificationItem *item=[select objectAtIndex:i];
                 [Name_multistring appendString:[NSString stringWithFormat:@"%@,",item.username]];

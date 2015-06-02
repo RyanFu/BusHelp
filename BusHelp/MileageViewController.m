@@ -107,8 +107,11 @@
 {
     /* Failed to receive user's location */
     NSLog(@"%@",error);
-    [CommonFunctionController showHUDWithMessage:@"请打开定位服务" detail:nil];
-    self.activityindicator.hidden=YES;
+    if (![CommonFunctionController checkUrlValidate:self.AddressLabel.text]) {
+        [CommonFunctionController showHUDWithMessage:@"请打开定位服务" detail:nil];
+        self.activityindicator.hidden=YES;
+    }
+    
 }
 
 

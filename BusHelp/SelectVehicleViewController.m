@@ -23,8 +23,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.vehicleTable.tableFooterView=[[UIView alloc]init];
-    [self setupData];
 
+    if ([DataFetcher fetchAllVehicle:YES].count) {
+        _vehicleArray=[DataFetcher fetchAllVehicle:YES];
+        [self.vehicleTable reloadData];
+        
+    }else
+    {
+        [self setupData];
+    }
 }
 
 -(void)setupData
@@ -33,7 +40,7 @@
         
         [CommonFunctionController showAnimateMessageHUD];
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
-            NSLog(@"%@",vehicleArray);
+//            NSLog(@"%@",vehicleArray);
             _vehicleArray = [NSMutableArray arrayWithArray:vehicleArray];
             [CommonFunctionController hideAllHUD];
             [self.vehicleTable reloadData];

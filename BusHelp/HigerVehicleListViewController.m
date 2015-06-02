@@ -26,7 +26,23 @@
     
     higerVehicle=[[NSMutableArray alloc]init];
     self.HigerListTable.tableFooterView=[[UIView alloc]init];
-    [self setupData];
+    
+    if ([DataFetcher fetchAllVehicle:YES].count) {
+        _vehicleArray=[DataFetcher fetchAllVehicle:YES];
+        [higerVehicle removeAllObjects];
+        for (int i=0; i<_vehicleArray.count; i++) {
+            _vehicle=[_vehicleArray objectAtIndex:i];
+            if ([_vehicle.identify_status isEqualToString:[NSString stringWithFormat:@"%lu",(unsigned long)AuthenticationTypeHiger]]) {
+                [higerVehicle addObject:_vehicle];
+            }
+        }
+        [self.HigerListTable reloadData];
+
+    }else
+    {
+        [self setupData];
+    }
+
 
 }
 

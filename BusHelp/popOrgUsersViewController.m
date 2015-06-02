@@ -27,9 +27,18 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [CommonFunctionController showAnimateMessageHUD];
-    [self setupOrgWithRequest:YES];
     [self setupNavigationBar];
+    
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        [self setupNavigationBar];
+        [self getOrgAllUsers:YES];
+        
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
+
 
 }
 
@@ -50,7 +59,7 @@
 
 -(void)confirm
 {
-    NSLog(@"%@",selectArray);
+//    NSLog(@"%@",selectArray);
     _confirmBlock(selectArray,_org.orgID);
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -61,6 +70,7 @@
 
 
 - (void)setupOrgWithRequest:(BOOL)request {
+    [CommonFunctionController showAnimateMessageHUD];
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
             _orgArray = orgArray;

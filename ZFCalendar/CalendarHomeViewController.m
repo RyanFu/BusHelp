@@ -79,7 +79,7 @@
             if (dataArray.count>0) {
                 NSDictionary *dic=[data objectAtIndex:0];
                 MileageItem *mileModel=[[MileageItem alloc]initWithDictionary:dic error:nil];
-                NSLog(@"%@",mileModel.mil_month_list);
+//                NSLog(@"%@",mileModel.mil_month_list);
                 NSMutableArray *key=[[NSMutableArray alloc]init];
                 NSMutableArray *value=[[NSMutableArray alloc]init];
                 [key removeAllObjects];
@@ -203,7 +203,6 @@
     if (todate) {
         
         selectdate = [selectdate dateFromString:todate];
-        NSLog(@"%@",selectdate);
         
     }
     
