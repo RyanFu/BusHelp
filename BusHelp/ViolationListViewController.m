@@ -35,23 +35,24 @@
     // Do any additional setup after loading the view.
     _finalArray=[[NSMutableArray alloc]init];
     _VechicleListTable.tableFooterView=[[UIView alloc]init];
+    
 }
 
 - (void)commonInit {
     [super commonInit];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchNotification:) name:searchNotificationKey object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchNotification:) name:searchNotificationKey object:nil];
 }
 
-- (void)searchNotification:(NSNotification *)notification {
-    _isSearchViolation = YES;
-}
+//- (void)searchNotification:(NSNotification *)notification {
+//    _isSearchViolation = YES;
+//}
 
-- (void)setReferenceID:(NSString *)referenceID {
-    if (![referenceID isEqualToString:_referenceID] && referenceID != nil) {
-        _referenceID = referenceID;
-        [self setupData];
-    }
-}
+//- (void)setReferenceID:(NSString *)referenceID {
+//    if (![referenceID isEqualToString:_referenceID] && referenceID != nil) {
+//        _referenceID = referenceID;
+//        [self setupData];
+//    }
+//}
 
 - (void)setupNavigationBar
 {
@@ -68,11 +69,11 @@
 
 - (void)setupData {
     _vehicleArray = [DataFetcher fetchAllVehicle:YES];
-    if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+    
+     if ([CommonFunctionController checkNetworkWithNotify:NO]) {
         [CommonFunctionController showAnimateMessageHUD];
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
             _vehicleArray = vehicleArray;
-//            NSLog(@"%@",_vehicleArray);
             [_finalArray removeAllObjects];
             for (int i=0; i<_vehicleArray.count; i++) {
                 _vehicle=[_vehicleArray objectAtIndex:i];
@@ -83,21 +84,24 @@
             
             [self.VechicleListTable reloadData];
             [self setupEmptyMessage];
-            [self reloadData:YES];
-            [CommonFunctionController hideAllHUD];
+            if (_isSearchViolation==NO) {
+                [self reloadData:YES];
+            }else
+            {
+                [CommonFunctionController hideAllHUD];
+            }
         } failure:^(NSString *message){
             [CommonFunctionController showHUDWithMessage:message success:NO];
         }];
     }
 }
 
-
 - (void)reloadData:(BOOL)request {
     if (_vehicleArray.count > 0) {
             if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
             [DataRequest importAllViolationWithVehicleIDArray:[_vehicleArray valueForKeyPath:@"vehicleID"] success:^{
-                [CommonFunctionController hideAllHUD];
-                [self.VechicleListTable reloadData];
+                _isSearchViolation=YES;
+                [self setupData];
             } failure:^(NSString *message){
                 [CommonFunctionController showHUDWithMessage:message success:NO];
             }];
@@ -113,15 +117,14 @@
 
 
 - (void)setupEmptyMessage {
-    BOOL hidden = YES;
-    if ([CommonFunctionController checkValueValidate:_finalArray] == nil) {
-        hidden = NO;
-        self.thumbimage.hidden=hidden;
-        self.Label1.hidden=hidden;
-        self.Label2.hidden=hidden;
-
+    BOOL hidden = NO;
+    if (_finalArray.count) {
+        hidden=YES;
     }
-    
+    self.thumbimage.hidden=hidden;
+    self.Label1.hidden=hidden;
+    self.Label2.hidden=hidden;
+
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
