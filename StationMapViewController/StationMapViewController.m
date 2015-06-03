@@ -62,7 +62,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
-    [self alert:MSG_ALERT_ALLOW_LOCATION view:self.view animated:YES afterDelay:5];
+    [self alert:MSG_ALERT_ALLOW_LOCATION view:self.view animated:YES afterDelay:3];
 
 }
 

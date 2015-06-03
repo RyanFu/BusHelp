@@ -36,6 +36,8 @@
     // Do any additional setup after loading the view.
     vehicleids_Mutistring=[[NSMutableString alloc]init];
     vehicleNumbers_Mutistring=[[NSMutableString alloc]init];
+    vehicles_string=@"";
+    
     pickerview=[[[NSBundle mainBundle]loadNibNamed:@"MyDataPickerView" owner:self options:nil]firstObject];
     [pickerview setFrame:CGRectMake(0, sFrame.size.height, sFrame.size.width, PICKERVIEW_HEIGHT)];
     [self.view addSubview:pickerview];
@@ -83,14 +85,16 @@
 
 -(void)saveTask
 {
-    if ([CommonFunctionController checkValueValidate:self.taskTitle.text]&&[CommonFunctionController checkValueValidate:self.taskContent.text]&&[CommonFunctionController checkValueValidate:self.managerLabel.text]&&[CommonFunctionController checkValueValidate:self.vehicleNumbersLabel.text]&&[CommonFunctionController checkValueValidate:self.beginTimeLabel.text]&&[CommonFunctionController checkValueValidate:self.endTimeLabel.text]) {
+    [self.taskTitle resignFirstResponder];
+    [self.taskContent resignFirstResponder];
+    if ([CommonFunctionController checkValueValidate:self.taskTitle.text]&&[CommonFunctionController checkValueValidate:self.taskContent.text]&&[CommonFunctionController checkValueValidate:self.managerLabel.text]&&[CommonFunctionController checkValueValidate:self.beginTimeLabel.text]&&[CommonFunctionController checkValueValidate:self.endTimeLabel.text]) {
         if (![self compareDate:self.beginTimeLabel.text endDate:self.endTimeLabel.text]) {
             [CommonFunctionController showHUDWithMessage:@"请检查您的日期" detail:nil];
         }else
         {
             [CommonFunctionController showAnimateHUDWithMessage:@"提交中.."];
             [DataRequest saveNewTask:@"" org_id:Org_id task_title:self.taskTitle.text task_content:self.taskContent.text task_manager:Useridstring task_begin_time:self.beginTimeLabel.text task_end_time:self.endTimeLabel.text vehicle_ids:vehicles_string success:^(id data){
-                NSLog(@"success");
+                [self.navigationController popViewControllerAnimated:YES];
                 [CommonFunctionController showHUDWithMessage:@"提交成功" success:YES];
             } failure:^(NSString *message){
                 NSLog(@"error");

@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    funclist=[NSArray arrayWithObjects:@"违章",@"油耗",@"任务",@"里程",@"实时监测",@"充电站", nil];
+    funclist=[NSArray arrayWithObjects:@"任务",@"充电站",@"实时监测",@"里程",@"违章",@"油耗", nil];
     self.FunctionTable.tableFooterView=[[UIView alloc]init];
     
     stationMapVC=[[StationMapViewController alloc]initWithNibName:@"StationMapViewController" bundle:nil];
@@ -64,22 +64,22 @@
     cell.FunctionImage.backgroundColor=[UIColor clearColor];
     switch (indexPath.row) {
         case 0:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-violation"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
             break;
         case 1:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-oilmanager"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-station"];
             break;
         case 2:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
             break;
         case 3:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-mileage"];
             break;
         case 4:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-detection"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-violation"];
             break;
         case 5:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-station"];
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-oilmanager"];
             break;
 
         default:
@@ -92,23 +92,22 @@
 {
     switch (indexPath.row) {
         case 0:
-            [self performSegueWithIdentifier:@"FunctionToViolation" sender:self];
+            [self performSegueWithIdentifier:@"FunctionToTaskManager" sender:self];
             break;
         case 1:
-            [self performSegueWithIdentifier:@"FunctionToOilManager" sender:self];
+            [self.navigationController pushViewController:stationMapVC animated:YES];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"FunctionToTaskManager" sender:self];
+            [self performSegueWithIdentifier:@"FunctionToVehicleDetail" sender:self];
             break;
         case 3:
             [self performSegueWithIdentifier:@"FunctionToMileage" sender:self];
             break;
         case 4:
-            [self performSegueWithIdentifier:@"FunctionToVehicleDetail" sender:self];
+            [self performSegueWithIdentifier:@"FunctionToViolation" sender:self];
             break;
         case 5:
-            [self.navigationController pushViewController:stationMapVC animated:YES];
-            
+            [self performSegueWithIdentifier:@"FunctionToOilManager" sender:self];
             break;
         default:
             break;

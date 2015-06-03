@@ -240,7 +240,7 @@
             [self postVehicleMile];
         
         } failure:^(NSString *message){
-            
+            [CommonFunctionController showHUDWithMessage:message detail:nil];
         }];
     }
     else {
@@ -259,7 +259,13 @@
 
 -(void)setupVehicleNumber
 {
-    if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+    if ([DataFetcher fetchAllVehicle:YES].count) {
+        _vehicleArray=[DataFetcher fetchAllVehicle:YES];
+        _vehicle=[_vehicleArray firstObject];
+        [self.vehicleNumber setTitle:_vehicle.number forState:UIControlStateNormal];
+        [self.vehicleNumber setTintColor:[UIColor blackColor]];
+    }
+    else if ([CommonFunctionController checkNetworkWithNotify:NO]) {
         
         [CommonFunctionController showAnimateMessageHUD];
         [DataRequest fetchVehicleWithSuccess:^(NSArray *vehicleArray) {
@@ -286,7 +292,7 @@
                 _org.name=@"";
             }            
         } failure:^(NSString *message){
-            
+            [CommonFunctionController showHUDWithMessage:message success:NO];
         }];
     }
     else {
