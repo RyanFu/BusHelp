@@ -27,10 +27,18 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [CommonFunctionController showAnimateMessageHUD];
-    [self setupOrgWithRequest:YES];
     [self setupNavigationBar];
-    
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        [self setupNavigationBar];
+        [CommonFunctionController showAnimateMessageHUD];
+        [self getOrgAllUsers:YES];
+        
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
+
 }
 
 - (void)viewDidLoad {
@@ -50,6 +58,16 @@
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(confirmButtonTap)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+
+}
+
+- (void)confirmButtonTap
+{
+    _confirmBlock(selectArray,_org.orgID);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
@@ -150,19 +168,17 @@
 {
     NotificationItem *item=[_items objectAtIndex:indexPath.row];
     [selectArray addObject:item];
-    _confirmBlock(selectArray,_org.orgID);
-    [self.navigationController popViewControllerAnimated:YES];
-
     
 }
 
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NotificationItem *item=[_items objectAtIndex:indexPath.row];
-//    [selectArray removeObject:item];
-//    
-//    
-//}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NotificationItem *item=[_items objectAtIndex:indexPath.row];
+    [selectArray removeObject:item];
+    
+    
+}
+
 
 
 

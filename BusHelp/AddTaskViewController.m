@@ -14,29 +14,49 @@
 #import "UserSettingInfo.h"
 #import "TaskPickVehiclesViewController.h"
 #import "MyDataPickerView.h"
+#import "DataFetcher.h"
+
 #define PICKERVIEW_HEIGHT 206
 #define TOP_HEIGHT 64
 
 @interface AddTaskViewController ()
 {
-    NSString *Namestring;
-    NSString *Useridstring;
+    NSMutableString *Name_multistring;
+    NSMutableString *Userid_multistring;
     NSString *Org_id;
     NSMutableString *vehicleids_Mutistring;
     NSMutableString *vehicleNumbers_Mutistring;
     MyDataPickerView *pickerview;
     NSString *vehicles_string;//final
+    NSString *usersid_string;//final
+    Org *_org;
 }
 @end
 
 @implementation AddTaskViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if ([DataFetcher fetchAllOrg].count) {
+        _org=[[DataFetcher fetchAllOrg] firstObject];
+        Org_id=_org.orgID;
+        [self setupNavigationBar];
+    }else
+    {
+        [self setupOrgWithRequest:YES];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     vehicleids_Mutistring=[[NSMutableString alloc]init];
     vehicleNumbers_Mutistring=[[NSMutableString alloc]init];
     vehicles_string=@"";
+    usersid_string=@"";
+    Name_multistring=[[NSMutableString alloc]init];
+    Userid_multistring=[[NSMutableString alloc]init];
+    Org_id=@"";
+
     
     pickerview=[[[NSBundle mainBundle]loadNibNamed:@"MyDataPickerView" owner:self options:nil]firstObject];
     [pickerview setFrame:CGRectMake(0, sFrame.size.height, sFrame.size.width, PICKERVIEW_HEIGHT)];
@@ -87,13 +107,13 @@
 {
     [self.taskTitle resignFirstResponder];
     [self.taskContent resignFirstResponder];
-    if ([CommonFunctionController checkValueValidate:self.taskTitle.text]&&[CommonFunctionController checkValueValidate:self.taskContent.text]&&[CommonFunctionController checkValueValidate:self.managerLabel.text]&&[CommonFunctionController checkValueValidate:self.beginTimeLabel.text]&&[CommonFunctionController checkValueValidate:self.endTimeLabel.text]) {
+    if ([CommonFunctionController checkValueValidate:self.taskTitle.text]&&[CommonFunctionController checkValueValidate:self.managerLabel.text]) {
         if (![self compareDate:self.beginTimeLabel.text endDate:self.endTimeLabel.text]) {
             [CommonFunctionController showHUDWithMessage:@"请检查您的日期" detail:nil];
         }else
         {
             [CommonFunctionController showAnimateHUDWithMessage:@"提交中.."];
-            [DataRequest saveNewTask:@"" org_id:Org_id task_title:self.taskTitle.text task_content:self.taskContent.text task_manager:Useridstring task_begin_time:self.beginTimeLabel.text task_end_time:self.endTimeLabel.text vehicle_ids:vehicles_string success:^(id data){
+            [DataRequest saveNewTask:@"" org_id:Org_id task_title:self.taskTitle.text task_content:self.taskContent.text task_manager:usersid_string task_begin_time:self.beginTimeLabel.text task_end_time:self.endTimeLabel.text vehicle_ids:vehicles_string success:^(id data){
                 [self.navigationController popViewControllerAnimated:YES];
                 [CommonFunctionController showHUDWithMessage:@"提交成功" success:YES];
             } failure:^(NSString *message){
@@ -134,6 +154,8 @@
 {
     NSLog(@"负责人");
     [self hidePickerView:YES];
+    [Name_multistring setString:@""];
+    [Userid_multistring setString:@""];
     [self performSegueWithIdentifier:@"AddTaskToManagers" sender:self];
 
 }
@@ -189,17 +211,18 @@
     if ([segue.identifier isEqualToString:@"AddTaskToManagers"]) {
         TaskManagerListViewController *managerlistvc=segue.destinationViewController;
         [managerlistvc setConfirmBlock:^(NSArray *select,NSString *OrgID){
-            if (select.count) {
-                NotificationItem *item=[select objectAtIndex:0];
-                Namestring=item.username;
-                Useridstring=item.userid;
-                Org_id=OrgID;
-                NSLog(@"%@",Namestring);
-                NSLog(@"%@",Useridstring);
-                NSLog(@"%@",Org_id);
-                self.managerLabel.text=Namestring;
+            for (int i=0; i<select.count; i++) {
+                NotificationItem *item=[select objectAtIndex:i];
+                [Name_multistring appendString:[NSString stringWithFormat:@"%@,",item.username]];
+                [Userid_multistring appendString:[NSString stringWithFormat:@"%@,",item.userid]];
             }
-            
+            if (Name_multistring.length) {
+                self.managerLabel.text=[Name_multistring substringWithRange:NSMakeRange(0,[Name_multistring length]-1)];
+            }
+            if (Userid_multistring.length) {
+                usersid_string=[Userid_multistring substringWithRange:NSMakeRange(0, [Userid_multistring length]-1)];
+
+            }
         }];
     }
     else if ([segue.identifier isEqualToString:@"AddTaskToVehicles"]) {
@@ -224,6 +247,31 @@
     }
 
 }
+
+-(void)setupOrgWithRequest:(BOOL)request {
+    [CommonFunctionController showAnimateMessageHUD];
+    if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
+        [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
+            _org = [orgArray firstObject];
+            if (_org) {
+                Org_id=_org.orgID;
+                [self setupNavigationBar];
+                [CommonFunctionController hideAllHUD];
+            }else
+            {
+                [CommonFunctionController showHUDWithMessage:@"请先加入组织" detail:nil];
+            }
+            
+        } failure:^(NSString *message){
+            
+        }];
+    }
+    else {
+        [CommonFunctionController showHUDWithMessage:@"网络已断开" detail:nil];
+        
+    }
+}
+
 
 
 @end

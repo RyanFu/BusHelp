@@ -32,6 +32,7 @@
     if ([DataFetcher fetchAllOrg].count) {
         _org=[[DataFetcher fetchAllOrg] firstObject];
         [self setupNavigationBar];
+        [CommonFunctionController showAnimateMessageHUD];
         [self getOrgAllUsers:YES];
         
     }else
@@ -98,8 +99,7 @@
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest getOrgAllUser:_org.orgID success:^(id data){
             contactlist=data;
-            NSLog(@"%@",contactlist);
-            
+//            NSLog(@"%@",contactlist);
             
             self.items = [NSMutableArray arrayWithCapacity:0];
             for (int i=0; i<contactlist.count; i++) {
