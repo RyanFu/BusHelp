@@ -53,7 +53,6 @@ static NSTimeInterval const sceonds = 60;
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         [manager.requestSerializer setTimeoutInterval:sceonds];
         [manager POST:baseUrl parameters:baseParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"%@",responseObject);
             BaseDataItem *baseDataItem = [[BaseDataItem alloc] initWithDictionary:responseObject];
             if (baseDataItem.success) {
                 success(baseDataItem.data);

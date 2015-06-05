@@ -206,7 +206,7 @@
         StationMapPointAnnotation *mapPointAnnotation = (StationMapPointAnnotation *)annotation;
         StationAnnotationView *annotationView = [[StationAnnotationView alloc] init];
         StationAnnotationDetailsView *annotationDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"StationAnnotationDetailsView" owner:self options:nil] objectAtIndex:0];
-        annotationDetailsView.frame = CGRectMake(0, 0, 280, 180);
+        annotationDetailsView.frame = CGRectMake(0, 0, 280, 130);
         
         annotationDetailsView.lblStationName.text = mapPointAnnotation.station.station_name;
         if ([mapPointAnnotation.station.station_discount isEqualToString:@""]) {
@@ -233,7 +233,22 @@
         }
 
         annotationDetailsView.lblColumnCount.text = [NSString stringWithFormat:@"%d个", mapPointAnnotation.station.column_count.intValue];;
-        annotationDetailsView.lblStationDistance.text = mapPointAnnotation.station.station_distance;
+        
+        
+        NSString *distanceString=mapPointAnnotation.station.station_distance;
+        NSString *finalstring;
+        NSString *temp;
+        if (distanceString.length) {
+            temp=[distanceString substringToIndex:1];
+            NSLog(@"%@",temp);
+            if ([temp isEqualToString:@"."]) {
+                finalstring=[NSString stringWithFormat:@"0%@",distanceString];
+            }else
+            {
+                finalstring=distanceString;
+            }
+        }
+        annotationDetailsView.lblStationDistance.text = finalstring;
         
         //新增4.28
         annotationDetailsView.occupyNo.text = [NSString stringWithFormat:@"%d个",mapPointAnnotation.station.occupy_number.intValue];

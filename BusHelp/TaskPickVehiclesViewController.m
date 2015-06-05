@@ -25,7 +25,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.vehicleTable.tableFooterView=[[UIView alloc]init];
-    [self setupData];
+    if ([DataFetcher fetchAllVehicle:YES].count) {
+        _vehicleArray=[DataFetcher fetchAllVehicle:YES];
+        [self.vehicleTable reloadData];
+        
+    }else
+    {
+        [self setupData];
+    }
     self.vehicleTable.allowsMultipleSelectionDuringEditing=YES;
     [self.vehicleTable setEditing:YES];
     
@@ -91,8 +98,14 @@
 
 - (void)confirmButtonTap
 {
-    self.confirmBlock(selectArray);
-    [self.navigationController popViewControllerAnimated:YES];
+    if (selectArray.count) {
+        self.confirmBlock(selectArray);
+        [self.navigationController popViewControllerAnimated:YES];
+    }else
+    {
+        [CommonFunctionController showHUDWithMessage:@"请先选择车辆" detail:nil];
+    }
+    
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {

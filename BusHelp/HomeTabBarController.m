@@ -79,17 +79,17 @@
 
     });
     
-    NSInteger spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
-    NSString *badgeValue2 = nil;
-    
-    if (spotTaskCount != 0) {
-        badgeValue2 = @(spotTaskCount).stringValue;
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [(UITabBarItem *)self.tabBar.items[2] setBadgeValue:badgeValue2];
-        
-    });
+//    NSInteger spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
+//    NSString *badgeValue2 = nil;
+//    
+//    if (spotTaskCount != 0) {
+//        badgeValue2 = @(spotTaskCount).stringValue;
+//    }
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [(UITabBarItem *)self.tabBar.items[2] setBadgeValue:badgeValue2];
+//        
+//    });
 
 
 }

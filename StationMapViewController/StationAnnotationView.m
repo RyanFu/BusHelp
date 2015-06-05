@@ -20,8 +20,8 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.canShowCallout = NO;
-        self.centerOffset = CGPointMake(0, -120);
-        self.frame = CGRectMake(0, 0, 280, 180 + arrow_height);
+        self.centerOffset = CGPointMake(0, -90);
+        self.frame = CGRectMake(0, 0, 280, 130 + arrow_height);
         UIView *_contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - arrow_height)];
         _contentView.backgroundColor   = [UIColor clearColor];
         [self addSubview:_contentView];

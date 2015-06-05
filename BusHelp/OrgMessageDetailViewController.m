@@ -87,7 +87,7 @@
 }
 
 - (void)setupMessageReadStatus {
-    if (([self.orgMessage.action integerValue] == OrgMessageTypeCommon || [self.orgMessage.action integerValue] == OrgMessageTypeManual) && [self.orgMessage.isRead isEqualToString:orgMessageNotRead]) {
+    if (([self.orgMessage.action integerValue] == OrgMessageTypeCommon||[self.orgMessage.action integerValue]==OrgMessageTypeNormal || [self.orgMessage.action integerValue] == OrgMessageTypeManual) && [self.orgMessage.isRead isEqualToString:orgMessageNotRead]) {
         [DataFetcher updateOrgMessageStatusByOrgMessageID:self.orgMessage.orgMessageID completion:nil];
         
         [DataRequest joinOrgWithOrgID:self.orgMessage.belongsToOrg.orgID orgMessageID:self.orgMessage.orgMessageID action:OrgActionAgree messageType:[self.orgMessage.action integerValue] success:^{

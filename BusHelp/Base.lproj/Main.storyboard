@@ -1889,7 +1889,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" 任务内容" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-ya-Yib">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-ya-Yib">
                                 <rect key="frame" x="9" y="14" width="302" height="116"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1902,7 +1902,7 @@
                                     <outlet property="delegate" destination="eDf-Mf-1PW" id="vwo-BM-jfy"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" 任务详情" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-np-LDU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-np-LDU">
                                 <rect key="frame" x="9" y="138" width="302" height="116"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2091,6 +2091,18 @@
                                     <outletCollection property="gestureRecognizers" destination="frv-gD-bIX" appends="YES" id="gPc-oc-08v"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py0-44-3qC">
+                                <rect key="frame" x="17" y="20" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务详情" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FZ-AG-Vyu">
+                                <rect key="frame" x="17" y="142" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2121,6 +2133,8 @@
                         <outlet property="beginTimeLabel" destination="Suw-eG-40f" id="ILJ-JW-tAo"/>
                         <outlet property="endTimeLabel" destination="51m-An-CUn" id="qSE-ts-07U"/>
                         <outlet property="managerLabel" destination="A6r-zz-74p" id="R2V-Et-DuK"/>
+                        <outlet property="placeholder_content" destination="4FZ-AG-Vyu" id="bfv-Wq-CT0"/>
+                        <outlet property="placeholder_title" destination="Py0-44-3qC" id="vjU-ju-8XG"/>
                         <outlet property="taskContent" destination="BSd-np-LDU" id="ICc-4q-yMD"/>
                         <outlet property="taskTitle" destination="0VC-ya-Yib" id="Nbh-TV-Qj6"/>
                         <outlet property="taskbegintimeView" destination="LhY-zO-XU5" id="UrT-T4-NHC"/>

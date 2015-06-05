@@ -66,8 +66,13 @@
 
 - (void)confirmButtonTap
 {
-    _confirmBlock(selectArray,_org.orgID);
-    [self.navigationController popViewControllerAnimated:YES];
+    if (selectArray.count) {
+        _confirmBlock(selectArray,_org.orgID);
+        [self.navigationController popViewControllerAnimated:YES];
+    }else
+    {
+        [CommonFunctionController showHUDWithMessage:@"请先选择负责人" detail:nil];
+    }
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {
@@ -76,6 +81,7 @@
 
 
 - (void)setupOrgWithRequest:(BOOL)request {
+    [CommonFunctionController showAnimateMessageHUD];
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
             _orgArray = orgArray;
@@ -103,7 +109,6 @@
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest getOrgAllUser:_org.orgID success:^(id data){
             contactlist=data;
-//            NSLog(@"%@",contactlist);
             self.items = [NSMutableArray arrayWithCapacity:0];
             for (int i=0; i<contactlist.count; i++) {
                 NotificationItem *item = [[NotificationItem alloc] init];

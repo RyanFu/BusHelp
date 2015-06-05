@@ -15,6 +15,7 @@
 {
     NSArray *funclist;
     StationMapViewController *stationMapVC;
+    NSInteger spotTaskCount;
 }
 @end
 
@@ -23,11 +24,26 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+    [self fetchTaskCount];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+}
+
+-(void)fetchTaskCount
+{
+    if ([CommonFunctionController checkNetworkWithNotify:NO]) {
+        [DataRequest fetchTaskCountWithSuccess:^(NSDictionary *taskCountDictionary) {
+            spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
+            [self.FunctionTable reloadData];
+        } failure:^(NSString *message){
+            [CommonFunctionController showHUDWithMessage:message success:NO];
+        }];
+    }
+
 }
 
 - (void)viewDidLoad {
@@ -65,6 +81,9 @@
     switch (indexPath.row) {
         case 0:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
+            if (spotTaskCount != 0) {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task-more"];
+            }
             break;
         case 1:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-station"];

@@ -57,6 +57,7 @@ typedef enum : NSUInteger {
     OrgMessageTypeInvite = 2001,
     OrgMessageTypeApply = 3001,
     OrgMessageTypeManual = 4001,
+    OrgMessageTypeNormal = 5001,
 } OrgMessageType;
 
 typedef enum : NSUInteger {

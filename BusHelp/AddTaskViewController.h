@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *vehicleNumbersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeholder_title;
+@property (weak, nonatomic) IBOutlet UILabel *placeholder_content;
+
 
 - (IBAction)managerViewTappedGesture:(UITapGestureRecognizer *)sender;
 - (IBAction)vehicleViewTappedGesture:(UITapGestureRecognizer *)sender;
