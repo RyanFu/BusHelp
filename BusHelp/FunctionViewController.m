@@ -10,6 +10,7 @@
 #import "FunctionTableViewCell.h"
 #import "DataRequest.h"
 #import "StationMapViewController.h"
+#import "UIView+MGBadgeView.h"
 
 @interface FunctionViewController ()
 {
@@ -35,10 +36,12 @@
 
 -(void)fetchTaskCount
 {
+    [CommonFunctionController showAnimateMessageHUD];
     if ([CommonFunctionController checkNetworkWithNotify:NO]) {
         [DataRequest fetchTaskCountWithSuccess:^(NSDictionary *taskCountDictionary) {
             spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
             [self.FunctionTable reloadData];
+            [CommonFunctionController hideAllHUD];
         } failure:^(NSString *message){
             [CommonFunctionController showHUDWithMessage:message success:NO];
         }];
@@ -82,8 +85,15 @@
         case 0:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
             if (spotTaskCount != 0) {
-                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task-more"];
+//                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task-more"];
+                [cell.FunctionImage.badgeView setBadgeValue:spotTaskCount];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
             }
+            
+            
+            
             break;
         case 1:
             cell.FunctionImage.image=[UIImage imageNamed:@"cell-station"];

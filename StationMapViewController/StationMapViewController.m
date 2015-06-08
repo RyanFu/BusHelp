@@ -47,8 +47,8 @@
         }
     }
     
-    [locationManager startUpdatingLocation];
     [self showWait:MSG_LOAD_CURRENT_LOCATION view:self.view];
+    [locationManager startUpdatingLocation];
 
     
     

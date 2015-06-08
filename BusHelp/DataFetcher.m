@@ -517,7 +517,20 @@
 }
 
 + (NSArray *)fetchAllTask:(BOOL)ascending {
-    return [Task MR_findAllSortedBy:@"updateTime" ascending:ascending];
+    NSArray *resultSpot=nil;
+    NSArray *resultUnderway=nil;
+    NSArray *resultFinished=nil;
+    NSMutableArray *resultArray=nil;
+    resultArray=[[NSMutableArray alloc]init];
+    resultSpot = [Task MR_findByAttribute:@"status" withValue:[NSNumber numberWithInteger:TaskStatusSpot] andOrderBy:@"updateTime" ascending:ascending];
+    resultUnderway = [Task MR_findByAttribute:@"status" withValue:[NSNumber numberWithInteger:TaskStatusUnderWay] andOrderBy:@"updateTime" ascending:ascending];
+    resultFinished = [Task MR_findByAttribute:@"status" withValue:[NSNumber numberWithInteger:TaskStatusFinished] andOrderBy:@"updateTime" ascending:ascending];
+    [resultArray addObjectsFromArray:resultSpot];
+    [resultArray addObjectsFromArray:resultUnderway];
+    [resultArray addObjectsFromArray:resultFinished];
+
+    return resultArray;
+//    return [Task MR_findAllSortedBy:@"status" ascending:ascending];
 }
 
 + (Task *)fetchTaskByTaskID:(NSString *)taskID {

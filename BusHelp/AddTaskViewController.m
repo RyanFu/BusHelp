@@ -147,35 +147,43 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     [self hidePickerView:YES];
-}
-
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if (textView==self.taskTitle) {
-        if (![text isEqualToString:@""])
-        {
-            self.placeholder_title.hidden = YES;
-        }
-        
-        else if ([text isEqualToString:@""] && range.location == 0 && range.length == 1)
-        {
-            self.placeholder_title.hidden = NO;
-        }
-    }else if(textView==self.taskContent)
+    if(textView==self.taskTitle)
     {
-        if (![text isEqualToString:@""])
-        {
-            self.placeholder_content.hidden = YES;
-        }
+        self.placeholder_title.hidden = YES;
         
-        else if ([text isEqualToString:@""] && range.location == 0 && range.length == 1)
-        {
-            self.placeholder_content.hidden = NO;
-        }
-
+    }else if (textView==self.taskContent)
+    {
+        self.placeholder_content.hidden = YES;
     }
-        return YES;
 }
+
+//- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+//{
+//    if (textView==self.taskTitle) {
+//        if (![text isEqualToString:@""])
+//        {
+//            self.placeholder_title.hidden = YES;
+//        }
+//        
+//        else if ([text isEqualToString:@""] && range.location == 0 && range.length == 1)
+//        {
+//            self.placeholder_title.hidden = NO;
+//        }
+//    }else if(textView==self.taskContent)
+//    {
+//        if (![text isEqualToString:@""])
+//        {
+//            self.placeholder_content.hidden = YES;
+//        }
+//        
+//        else if ([text isEqualToString:@""] && range.location == 0 && range.length == 1)
+//        {
+//            self.placeholder_content.hidden = NO;
+//        }
+//
+//    }
+//        return YES;
+//}
 
 - (IBAction)managerViewTappedGesture:(UITapGestureRecognizer *)sender
 {

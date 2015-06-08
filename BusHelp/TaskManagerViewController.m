@@ -50,7 +50,7 @@
     {
         [self setupOrgWithRequest:YES];
     }
-
+    [self.taskSwipeView scrollToPage:0 duration:0];
 }
 
 - (void)viewDidLoad {

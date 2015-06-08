@@ -28,16 +28,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self setupNavigationBar];
-    if ([DataFetcher fetchAllOrg].count) {
-        _org=[[DataFetcher fetchAllOrg] firstObject];
-        [self setupNavigationBar];
-        [CommonFunctionController showAnimateMessageHUD];
-        [self getOrgAllUsers:YES];
-        
-    }else
-    {
-        [self setupOrgWithRequest:YES];
-    }
+    [self setupOrgWithRequest:YES];
 
 }
 
@@ -95,7 +86,7 @@
             }
             
         } failure:^(NSString *message){
-            
+            [CommonFunctionController showHUDWithMessage:message detail:nil];
         }];
     }
     else {
@@ -121,7 +112,7 @@
             [CommonFunctionController hideAllHUD];
             
         }  failure:^(NSString *message){
-            
+            [CommonFunctionController showHUDWithMessage:message detail:nil];
         }];
     }
 }

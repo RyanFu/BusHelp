@@ -180,6 +180,7 @@
 		DA0CAD7E1B1843BB00ECADC6 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD7D1B1843BB00ECADC6 /* AddTaskViewController.m */; };
 		DA0CAD811B185F4000ECADC6 /* TaskManagerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */; };
 		DA0CAD841B18683B00ECADC6 /* TaskPickVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */; };
+		DA1E13DE1B256CC70049E859 /* UIView+MGBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */; };
 		DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */; };
 		DA4184D31AFCB3DE00639637 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184D11AFCB3DE00639637 /* ContactsTableViewCell.m */; };
 		DA4184D41AFCB3DE00639637 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */; };
@@ -567,6 +568,8 @@
 		DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManagerListViewController.m; sourceTree = "<group>"; };
 		DA0CAD821B18683B00ECADC6 /* TaskPickVehiclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskPickVehiclesViewController.h; sourceTree = "<group>"; };
 		DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskPickVehiclesViewController.m; sourceTree = "<group>"; };
+		DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MGBadgeView.m"; sourceTree = "<group>"; };
+		DA1E13DD1B256CC70049E859 /* UIView+MGBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadgeView.h"; sourceTree = "<group>"; };
 		DA4184C81AFC99CF00639637 /* TransmitNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitNotificationViewController.h; sourceTree = "<group>"; };
 		DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitNotificationViewController.m; sourceTree = "<group>"; };
 		DA4184D01AFCB3DE00639637 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewCell.h; sourceTree = "<group>"; };
@@ -968,6 +971,7 @@
 		B03C14301A9D7C17008386B8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DA1E13DB1B256CA90049E859 /* BadgeView */,
 				B08B3F701ABA71B50076A710 /* JPush */,
 				B053918F1AB5969600A82B30 /* ShareSDK */,
 				91864F441AB2A4D5004DEC9F /* FSImageViewer */,
@@ -1374,6 +1378,15 @@
 			);
 			name = JPush;
 			path = jpush;
+			sourceTree = "<group>";
+		};
+		DA1E13DB1B256CA90049E859 /* BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */,
+				DA1E13DD1B256CC70049E859 /* UIView+MGBadgeView.h */,
+			);
+			name = BadgeView;
 			sourceTree = "<group>";
 		};
 		DA64524C1B031BEA0061F855 /* ZFCalendar */ = {
@@ -1878,6 +1891,7 @@
 				DA6083F51AF20B1100903D27 /* FunctionTableViewCell.m in Sources */,
 				B02790A11A9045360079F358 /* AppDelegate.m in Sources */,
 				B063E66B1A9762F300685CF4 /* UIView+custom.m in Sources */,
+				DA1E13DE1B256CC70049E859 /* UIView+MGBadgeView.m in Sources */,
 				DA7245F41B04D1AB00431299 /* JSONModelError.m in Sources */,
 				B02791561A931EDD0079F358 /* DataFetcher.m in Sources */,
 				B0E344EB1AB09944005F314F /* OilType.m in Sources */,
