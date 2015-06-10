@@ -101,6 +101,18 @@
     return coordinate;
 }
 
+//火星转百度
+-(CLLocationCoordinate2D)MarsToBaidu:(CLLocationCoordinate2D)coordinate
+{
+    double x = coordinate.latitude;
+    double y = coordinate.longitude;
+    double z = sqrt(x * x + y * y) + 0.00002 * sin(y * M_PI);
+    double theta = atan2(y, x) + 0.000003 * cos(x * M_PI);
+    coordinate.latitude = z * cos(theta)+0.0065;
+    coordinate.longitude = z * sin(theta)+0.006;
+    return coordinate;
+}
+
 - (void)zoomToMapPoints:(MKMapView*)mapView annotations:(NSArray*)annotations
 {
     double minLat = 360.0f, maxLat = -360.0f;
@@ -130,13 +142,13 @@
         theRegion.span = theSpan;
         [self.mapView setRegion:theRegion animated:YES];
         _srcCoordinate = userLocation.coordinate;
-        [self requestGetStationList:_srcCoordinate];
+        [self requestGetStationList:[self MarsToBaidu:_srcCoordinate]];
     } //初次加载
     else {
         double distance = [BaseInfo calculateDistance:_srcCoordinate.longitude srcLat:_srcCoordinate.latitude desLng:userLocation.coordinate.longitude desLat:userLocation.coordinate.latitude];
         if (distance >= 1000) {
             _srcCoordinate = userLocation.coordinate;
-            [self requestGetStationList:_srcCoordinate];
+            [self requestGetStationList:[self MarsToBaidu:_srcCoordinate]];
         } //相隔距离超过1000米
     } //计算用户移动距离
     
@@ -232,7 +244,7 @@
             annotationDetailsView.lblStationStatus.textColor = [UIColor darkGrayColor];
         }
 
-        annotationDetailsView.lblColumnCount.text = [NSString stringWithFormat:@"%d个", mapPointAnnotation.station.column_count.intValue];;
+        annotationDetailsView.lblColumnCount.text = [NSString stringWithFormat:@"%d个", mapPointAnnotation.station.column_count.intValue];
         
         
         NSString *distanceString=mapPointAnnotation.station.station_distance;

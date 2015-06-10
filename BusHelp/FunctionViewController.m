@@ -52,6 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    spotTaskCount=0;
     funclist=[NSArray arrayWithObjects:@"任务",@"充电站",@"实时监测",@"里程",@"违章",@"油耗", nil];
     self.FunctionTable.tableFooterView=[[UIView alloc]init];
     
@@ -83,16 +84,21 @@
     cell.FunctionImage.backgroundColor=[UIColor clearColor];
     switch (indexPath.row) {
         case 0:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
-            if (spotTaskCount != 0) {
-//                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task-more"];
+            if(spotTaskCount==0)
+            {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
+                [cell.FunctionImage.badgeView setBadgeValue:0];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+            }
+            else {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-task"];
                 [cell.FunctionImage.badgeView setBadgeValue:spotTaskCount];
                 [cell.FunctionImage.badgeView setOutlineWidth:0];
                 [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
                 [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
             }
-            
-            
             
             break;
         case 1:
