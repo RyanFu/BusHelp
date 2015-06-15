@@ -149,12 +149,23 @@
 
 - (void)reloadDataWithTaskCountDictionary:(NSDictionary *)taskCountDictionary {
     self.spotTaskCountLabel.text = [NSString stringWithFormat:@"(%@)", [taskCountDictionary objectForKey:[NSNumber numberWithInteger:TaskStatusSpot]]];
-    if (![self.spotTaskCountLabel.text isEqualToString:@"(0)"]) {
+    
+    self.underWayTaskCountLabel.text = [NSString stringWithFormat:@"(%@)", [taskCountDictionary objectForKey:[NSNumber numberWithInteger:TaskStatusUnderWay]]];
+    
+    self.allTaskCountLabel.text = [NSString stringWithFormat:@"(%@)", [taskCountDictionary objectForKey:[NSNumber numberWithInteger:TaskStatusAll]]];
+    
+    if (![self.spotTaskCountLabel.text isEqualToString:@"(0)"]&&_currentSelectedView == self.spotView) {
         self.cryImageView.hidden = YES;
         self.tipMessageLabel.hidden = YES;
     }
-    self.underWayTaskCountLabel.text = [NSString stringWithFormat:@"(%@)", [taskCountDictionary objectForKey:[NSNumber numberWithInteger:TaskStatusUnderWay]]];
-    self.allTaskCountLabel.text = [NSString stringWithFormat:@"(%@)", [taskCountDictionary objectForKey:[NSNumber numberWithInteger:TaskStatusAll]]];
+    if (![self.underWayTaskCountLabel.text isEqualToString:@"(0)"]&&_currentSelectedView == self.underWayView) {
+        self.cryImageView.hidden = YES;
+        self.tipMessageLabel.hidden = YES;
+    }
+    if (![self.allTaskCountLabel.text isEqualToString:@"(0)"]&&_currentSelectedView == self.allView) {
+        self.cryImageView.hidden = YES;
+        self.tipMessageLabel.hidden = YES;
+    }
     [self.taskSwipeView reloadData];
     [self setupTopView];
 }
