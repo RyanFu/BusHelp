@@ -11,9 +11,12 @@
 #import "RoundCornerButton.h"
 #import "DataRequest.h"
 #import "AttachmentView.h"
+#import "ImageDownloader.h"
 
 @interface TaskDetailView () <SwipeViewDataSource, SwipeViewDelegate> {
     NSArray *_imageArray;
+    ImageDownloader *_imageDownloader;
+
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *statusImageView;
@@ -161,8 +164,43 @@
     }
     [(AttachmentView *)view setImageUrl:[_imageArray objectAtIndex:index]];
     
+    [(AttachmentView *)view setImageViewTapBlock:^(AttachmentView *attachmentView) {
+        UIView *attachView = [[UIView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+        attachView.backgroundColor=[UIColor whiteColor];
+        UIImageView *attachImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, sFrame.size.width, sFrame.size.height-160)];
+    
+        attachmentView.contentMode=UIViewContentModeScaleAspectFit;
+        
+        _imageDownloader = [[ImageDownloader alloc] init];
+        [_imageDownloader downloadImageWithUrl:[_imageArray objectAtIndex:index] success:^(UIImage *image) {
+            attachImageView.image = image;
+            attachImageView.alpha = 0;
+            [[UIApplication sharedApplication].keyWindow addSubview:attachView];
+            [attachView addSubview:attachImageView];
+
+            [UIView animateWithDuration:0.5 animations:^{
+                attachImageView.alpha = 1.0f;
+            }];
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Attachtapped:)];
+            attachView.userInteractionEnabled = YES;
+            [attachView addGestureRecognizer:tapGesture];
+
+        } failure:^{
+        }];
+    }];
+
     return view;
 }
+
+- (void)Attachtapped:(UITapGestureRecognizer *)gesture {
+    UIView *view = gesture.view;
+    [UIView animateWithDuration:0.5 animations:^{
+        view.alpha = 0;
+    } completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
+}
+
 
 - (CGSize)swipeViewItemSize:(SwipeView *)swipeView {
     return CGSizeMake(100.0f, 88.0f);

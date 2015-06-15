@@ -15,11 +15,17 @@
 #import "TaskPickVehiclesViewController.h"
 #import "MyDataPickerView.h"
 #import "DataFetcher.h"
+#import "AttachmentView.h"
+#import <ImageIO/ImageIO.h>
+#import "ImageCache.h"
+#import "FSImageViewerViewController.h"
+#import "FSBasicImage.h"
+#import "FSBasicImageSource.h"
 
 #define PICKERVIEW_HEIGHT 206
 #define TOP_HEIGHT 64
 
-@interface AddTaskViewController ()
+@interface AddTaskViewController ()<SwipeViewDelegate, SwipeViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     NSMutableString *Name_multistring;
     NSMutableString *Userid_multistring;
@@ -30,6 +36,8 @@
     NSString *vehicles_string;//final
     NSString *usersid_string;//final
     Org *_org;
+    NSMutableArray *_addImageArray;
+
 }
 @end
 
@@ -86,6 +94,13 @@
     }];
 }
 
+- (void)setImageArray:(NSMutableArray *)imageArray {
+    if (![imageArray isEqual:_imageArray]) {
+        _imageArray = imageArray;
+        [self shouldShowSwipeView];
+    }
+}
+
 -(void)setupNavigationBar
 {
     [super setupNavigationBar];
@@ -103,6 +118,16 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+-(void)commonInit
+{
+    [super commonInit];
+    if ([CommonFunctionController checkValueValidate:self.imageArray] == nil) {
+        self.imageArray = [NSMutableArray arrayWithCapacity:2];
+    }
+    _addImageArray = [NSMutableArray arrayWithCapacity:2];
+}
+
 -(void)saveTask
 {
     [self.taskTitle resignFirstResponder];
@@ -113,7 +138,7 @@
         }else
         {
             [CommonFunctionController showAnimateHUDWithMessage:@"提交中.."];
-            [DataRequest saveNewTask:@"" org_id:Org_id task_title:self.taskTitle.text task_content:self.taskContent.text task_manager:usersid_string task_begin_time:self.beginTimeLabel.text task_end_time:self.endTimeLabel.text vehicle_ids:vehicles_string success:^(id data){
+            [DataRequest saveNewTask:@"" org_id:Org_id task_title:self.taskTitle.text task_content:self.taskContent.text task_manager:usersid_string task_begin_time:self.beginTimeLabel.text task_end_time:self.endTimeLabel.text vehicle_ids:vehicles_string imageArray:self.imageArray success:^(id data){
                 [self.navigationController popViewControllerAnimated:YES];
                 [CommonFunctionController showHUDWithMessage:@"提交成功" success:YES];
             } failure:^(NSString *message){
@@ -219,6 +244,12 @@
 
 }
 
+- (IBAction)cameraButtonPressed:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"从相册中选取", @"拍照", nil];
+    [actionSheet showInView:self.view];
+
+}
+
 - (void)hidePickerView:(BOOL)flag
 {
     if (flag) {
@@ -307,6 +338,99 @@
     }
 }
 
+- (void)shouldShowSwipeView {
+    if ([CommonFunctionController checkValueValidate:self.imageArray] == nil) {
+        self.LayoutConstraintSwipeHeight.constant = 0;
+        self.LayoutConstrainCamerTopToSwipeBottom.constant = 0;
+    }
+    else {
+        self.LayoutConstrainCamerTopToSwipeBottom.constant = 8.0f;
+        self.LayoutConstraintSwipeHeight.constant = 70.0f;
+    }
+    [self.attachmentSwipeView reloadData];
+}
+
+
+#pragma - SwipeView datasource and delegate
+- (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView {
+    return _imageArray.count;
+}
+
+- (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    if (view == nil) {
+        @autoreleasepool {
+            view = [AttachmentView loadFromNib];
+        }
+    }
+    
+    [(AttachmentView *)view setImageUrl:[_imageArray objectAtIndex:index]];
+    [(AttachmentView *)view setDeleteButtonPressedBlock:^(AttachmentView *attachmentView) {
+        [self.imageArray removeObject:attachmentView.imageUrl];
+        if ([_addImageArray containsObject:attachmentView.imageUrl]) {
+            [ImageCache clearCacheWithKeyArray:@[attachmentView.imageUrl]];
+            [_addImageArray removeObject:attachmentView.imageUrl];
+        }
+        [self shouldShowSwipeView];
+    }];
+    [(AttachmentView *)view setImageViewTapBlock:^(AttachmentView *attachmentView) {
+        NSMutableArray *photoArray = [NSMutableArray arrayWithCapacity:_imageArray.count];
+        for (NSString *url in _imageArray) {
+            FSBasicImage *photo = [[FSBasicImage alloc] initWithImageURL:[NSURL URLWithString:url] name:nil];
+            [photoArray addObject:photo];
+        }
+        FSBasicImageSource *photoSource = [[FSBasicImageSource alloc] initWithImages:photoArray];
+        FSImageViewerViewController *photoController = [[FSImageViewerViewController alloc] initWithImageSource:photoSource];
+        photoController.sharingDisabled = YES;
+        photoController.backgroundColorVisible = [UIColor whiteColor];
+        photoController.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+        [self.navigationController pushViewController:photoController animated:YES];
+        [photoController moveToImageAtIndex:index animated:YES];
+    }];
+    
+    return view;
+}
+
+- (CGSize)swipeViewItemSize:(SwipeView *)swipeView {
+    return CGSizeMake(100.0f, 88.0f);
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    @autoreleasepool {
+        UIImage *scaleImage = [CommonFunctionController imageCompressForSize:[info objectForKey:UIImagePickerControllerOriginalImage] targetSize:CGSizeMake(600, 800)];
+        NSString *key = [[NSUUID UUID] UUIDString];
+        [ImageCache storeCache:scaleImage forKey:key];
+        [self.imageArray addObject:key];
+        [_addImageArray addObject:key];
+    }
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:22.0f/255.0f green:164.0f/255.0f blue:220.0f/255.0f alpha:1.0f]];
+        [self shouldShowSwipeView];
+    }];
+}
+
+#pragma - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate =self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+    else if (buttonIndex == 1) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:picker animated:YES completion:nil];
+        }
+        else{
+            [CommonFunctionController showHUDWithMessage:@"你没有摄像头！" success:NO];
+        }
+    }
+}
 
 
 @end

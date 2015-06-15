@@ -45,6 +45,8 @@
         } failure:^(NSString *message){
             [CommonFunctionController showHUDWithMessage:message success:NO];
         }];
+    }else{
+        [CommonFunctionController showHUDWithMessage:@"网络未连接" success:NO];
     }
 
 }

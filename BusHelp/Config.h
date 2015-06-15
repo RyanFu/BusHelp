@@ -22,9 +22,9 @@
 #define SHARE_CONTENT @"//走过春夏秋冬安全永驻心中"
 #define DEVICE_TYPE @"1001"
 
-#define BASE_URL @"http://ygcapi.g-bos.cn:7702"//@"http://ptpws-pre.g-bos.cn:71"//@"http://172.16.21.141:9000"@"http://192.168.200.179:9000"
+//#define BASE_URL @"http://ygcapi.g-bos.cn:7702"//@"http://ptpws-pre.g-bos.cn:71"//@"http://172.16.21.141:9000"@"http://192.168.200.179:9000"
 
-//#define BASE_URL @"http://ptpws-pre.g-bos.cn:71"
+#define BASE_URL @"http://ptpws-pre.g-bos.cn:71"
 #define LOGIN_URL [BASE_URL stringByAppendingString:@"/api/user/login"]
 #define REGISTER_URL [BASE_URL stringByAppendingString:@"/api/user/register"]
 #define LOGOUT_URL [BASE_URL stringByAppendingString:@"/api/user/logout"]
@@ -40,7 +40,7 @@
 #define GETOIL_URL [BASE_URL stringByAppendingString:@"/api/oil/getoillist"]
 #define DELETEOIL_URL [BASE_URL stringByAppendingString:@"/api/oil/deleteoil"]
 #define GETOILTOTAL_URL [BASE_URL stringByAppendingString:@"/api/oil/getoiltotallist"]
-#define GETTASK_URL [BASE_URL stringByAppendingString:@"/api/task/gettasklist"]
+#define GETTASK_URL [BASE_URL stringByAppendingString:@"/api/task/gettasklistwithattach"]
 #define CONFIRMTASK_URL [BASE_URL stringByAppendingString:@"/api/task/confirmtask"]
 #define GETORG_URL [BASE_URL stringByAppendingString:@"/api/org/getorglist"]
 #define GETORGMESSAGE_URL [BASE_URL stringByAppendingString:@"/api/org/getorgmessagelist"]
@@ -53,7 +53,7 @@
 #define APPLYORG_URL [BASE_URL stringByAppendingString:@"/api/org/apply"]
 #define CANCELAPPLYORG_URL [BASE_URL stringByAppendingString:@"/api/org/cancel"]
 #define GETORGMESSAGEDETAIL_URL [BASE_URL stringByAppendingString:@"/api/org/getorgmessage"]
-#define GETTASKDETAIL_URL [BASE_URL stringByAppendingString:@"/api/task/gettask"]
+#define GETTASKDETAIL_URL [BASE_URL stringByAppendingString:@"/api/task/gettaskwithattach"]
 
 #define CREATEORG_URL [BASE_URL stringByAppendingString:@"/api/org/create"]
 #define DISSOLVEORG_URL [BASE_URL stringByAppendingString:@"/api/org/dissolve"]
@@ -64,7 +64,7 @@
 #define GETVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/getdrivinglicense"]
 #define SAVEVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/savedrivinglicense"]
 #define GETVEHICLEDETECTIONINFO [BASE_URL stringByAppendingString:@"/api/vehicle/getvehiclemonitor"]
-#define SAVENEWTASK [BASE_URL stringByAppendingString:@"/api/task/savetask"]
+#define SAVENEWTASK [BASE_URL stringByAppendingString:@"/api/task/savetaskwithattach"]
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define DOCUMENT_PATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]
