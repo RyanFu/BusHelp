@@ -31,23 +31,25 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self fetchTaskCount];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
 }
 
 -(void)fetchTaskCount
 {
     [CommonFunctionController showAnimateMessageHUD];
-    if ([CommonFunctionController checkNetworkWithNotify:NO]) {
-        [DataRequest fetchTaskCountWithSuccess:^(NSDictionary *taskCountDictionary) {
-            spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
+    if ([CommonFunctionController checkNetworkWithNotify:NO])
+    {
+        [DataRequest getSpotTaskCount:^(id data){
+            spotTaskCount=[data integerValue];
             [self.FunctionTable reloadData];
             [CommonFunctionController hideAllHUD];
         } failure:^(NSString *message){
             [CommonFunctionController showHUDWithMessage:message success:NO];
+
         }];
     }else{
         [CommonFunctionController showHUDWithMessage:@"网络未连接" success:NO];
     }
+    
 
 }
 

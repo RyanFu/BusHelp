@@ -702,7 +702,8 @@ static NSTimeInterval const sceonds = 60;
 + (void)getSpotTaskCount:(void(^)())success failure:(void (^)(NSString *message))failure
 {
     [self POST:GETSPOTTASKCOUNT parameters:nil success:^(id data){
-        success(data);
+        NSString *spotTaskCount=[data objectForKey:@"task_num"];
+        success(spotTaskCount);
     } failure:failure];
 }
 @end

@@ -55,7 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    funclist=[NSArray arrayWithObjects:@"系统消息",@"通知", nil];
+    funclist=[NSArray arrayWithObjects:@"消息盒子",@"通知", nil];
     self.messageTable.tableFooterView=[[UIView alloc]init];
     
     
