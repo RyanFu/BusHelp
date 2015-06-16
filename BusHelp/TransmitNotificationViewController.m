@@ -102,7 +102,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    textView.text=@"";
+    self.placeholderLabel.hidden=YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -2692,7 +2692,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="添加内容" translatesAutoresizingMaskIntoConstraints="NO" id="URu-gX-vV1">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URu-gX-vV1">
                                         <rect key="frame" x="13" y="41" width="294" height="396"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -2709,14 +2709,26 @@
                                             <constraint firstAttribute="height" constant="1" id="bFQ-RS-Lc5"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XG5-B5-2Fx">
+                                        <rect key="frame" x="18" y="46" width="68" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="QN3-VL-yHw"/>
+                                            <constraint firstAttribute="width" constant="68" id="crZ-jj-HlE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="URu-gX-vV1" firstAttribute="top" secondItem="ti6-la-xk8" secondAttribute="top" constant="41" id="1bu-Cs-Msa"/>
+                                    <constraint firstItem="XG5-B5-2Fx" firstAttribute="leading" secondItem="ti6-la-xk8" secondAttribute="leading" constant="18" id="4n1-P8-aF6"/>
                                     <constraint firstItem="iOf-SL-7JK" firstAttribute="leading" secondItem="hTy-ZM-edR" secondAttribute="trailing" constant="3" id="4qT-Gs-j3V"/>
                                     <constraint firstItem="qAO-xc-fQG" firstAttribute="top" secondItem="ti6-la-xk8" secondAttribute="top" constant="37" id="52v-H0-DtT"/>
                                     <constraint firstAttribute="trailing" secondItem="URu-gX-vV1" secondAttribute="trailing" constant="13" id="5ye-Yr-4Qy"/>
                                     <constraint firstAttribute="bottom" secondItem="URu-gX-vV1" secondAttribute="bottom" constant="22" id="Chg-Ii-6cd"/>
+                                    <constraint firstItem="XG5-B5-2Fx" firstAttribute="top" secondItem="qAO-xc-fQG" secondAttribute="bottom" constant="8" id="H2F-T5-IOh"/>
                                     <constraint firstItem="hTy-ZM-edR" firstAttribute="top" secondItem="ti6-la-xk8" secondAttribute="top" constant="7" id="Iea-U8-4f5"/>
                                     <constraint firstItem="URu-gX-vV1" firstAttribute="top" secondItem="qAO-xc-fQG" secondAttribute="bottom" constant="3" id="Jsy-MB-2ad"/>
                                     <constraint firstItem="hTy-ZM-edR" firstAttribute="leading" secondItem="ti6-la-xk8" secondAttribute="leading" constant="18" id="Wob-Qi-mL5"/>
@@ -2756,6 +2768,7 @@
                     <connections>
                         <outlet property="ContentText" destination="URu-gX-vV1" id="lNX-JG-ien"/>
                         <outlet property="ThemeField" destination="iOf-SL-7JK" id="Aod-Jc-jUB"/>
+                        <outlet property="placeholderLabel" destination="XG5-B5-2Fx" id="8md-3U-uJl"/>
                         <outlet property="receiverLabel" destination="LjG-H6-Lvx" id="x9F-ey-vje"/>
                         <segue destination="wKO-4j-OXl" kind="push" identifier="ToSelectUsers" id="WRn-1q-Bn9"/>
                     </connections>

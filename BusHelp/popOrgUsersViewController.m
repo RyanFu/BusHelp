@@ -51,8 +51,14 @@
 -(void)confirm
 {
 //    NSLog(@"%@",selectArray);
-    _confirmBlock(selectArray,_org.orgID);
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    if (selectArray.count) {
+        _confirmBlock(selectArray,_org.orgID);
+        [self.navigationController popViewControllerAnimated:YES];
+    }else
+    {
+        [CommonFunctionController showHUDWithMessage:@"请先选择接收人" detail:nil];
+    }
 }
 
 - (void)leftBarButtonItemPressed:(UIBarButtonItem *)barButtonItem {

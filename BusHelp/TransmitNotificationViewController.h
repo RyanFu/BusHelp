@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *receiverLabel;
 @property (weak, nonatomic) IBOutlet UITextField *ThemeField;
 @property (weak, nonatomic) IBOutlet UITextView *ContentText;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 - (IBAction)addUser:(id)sender;
 
 @end

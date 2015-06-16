@@ -57,7 +57,7 @@
 
 #define CREATEORG_URL [BASE_URL stringByAppendingString:@"/api/org/create"]
 #define DISSOLVEORG_URL [BASE_URL stringByAppendingString:@"/api/org/dissolve"]
-#define GetOrgAllUsers [BASE_URL stringByAppendingString:@"/api/user/list"]
+#define GetOrgAllUsers [BASE_URL stringByAppendingString:@"/api/user/listwithdevice"]
 #define POSTNOTIFICATION [BASE_URL stringByAppendingString:@"/api/org/sendmessage"]
 #define SAVEVEHICLEMILEAGE [BASE_URL stringByAppendingString:@"/api/mil/savedailymileage"]
 #define GETVEHICLEMONTHLIST [BASE_URL stringByAppendingString:@"/api/mil/getmonthmillist"]
