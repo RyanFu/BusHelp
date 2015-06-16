@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *helperLabel;
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *vehicleNumberLabel;
 @property (weak, nonatomic) IBOutlet SwipeView *attachmentSwipeView;
 @property (weak, nonatomic) IBOutlet RoundCornerButton *confirmButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *confirmButtonTopConstraint;
@@ -111,6 +112,7 @@
         self.helperLabel.text = task.helper;
         self.beginTimeLabel.text = task.beginTime;
         self.endTimeLabel.text = task.endTime;
+        self.vehicleNumberLabel.text=task.vehicleNumber;
         _imageArray = task.attachmentList;
         if ([CommonFunctionController checkValueValidate:_imageArray] == nil) {
             self.swipeViewHeightConstraint.constant = 0;

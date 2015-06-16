@@ -2,7 +2,7 @@
 //  Task.h
 //  BusHelp
 //
-//  Created by Tony Zeng on 15/3/6.
+//  Created by Paul on 15/6/16.
 //  Copyright (c) 2015年 夜枫尘. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * taskID;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * updateTime;
+@property (nonatomic, retain) NSString * vehicleNumber;
 @property (nonatomic, retain) Org *belongsToOrg;
 
 @end

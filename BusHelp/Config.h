@@ -65,6 +65,8 @@
 #define SAVEVEHICLEDRIVINGLICENSE [BASE_URL stringByAppendingString:@"/api/vehicle/savedrivinglicense"]
 #define GETVEHICLEDETECTIONINFO [BASE_URL stringByAppendingString:@"/api/vehicle/getvehiclemonitor"]
 #define SAVENEWTASK [BASE_URL stringByAppendingString:@"/api/task/savetaskwithattach"]
+#define GETSPOTTASKCOUNT [BASE_URL stringByAppendingString:@"/api/task/getnewtasknum"]
+
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define DOCUMENT_PATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]

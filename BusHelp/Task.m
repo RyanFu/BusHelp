@@ -2,7 +2,7 @@
 //  Task.m
 //  BusHelp
 //
-//  Created by Tony Zeng on 15/3/6.
+//  Created by Paul on 15/6/16.
 //  Copyright (c) 2015年 夜枫尘. All rights reserved.
 //
 
@@ -22,6 +22,7 @@
 @dynamic taskID;
 @dynamic title;
 @dynamic updateTime;
+@dynamic vehicleNumber;
 @dynamic belongsToOrg;
 
 @end

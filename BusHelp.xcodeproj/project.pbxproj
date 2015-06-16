@@ -15,7 +15,6 @@
 		915DB6161AA824290098019F /* SvUDIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6151AA824290098019F /* SvUDIDTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		915DB61A1AA83A490098019F /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6191AA83A490098019F /* UserInfoViewController.m */; };
 		915DB6231AA99ECD0098019F /* OilTotal.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6221AA99ECD0098019F /* OilTotal.m */; };
-		915DB6261AA9D0960098019F /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6251AA9D0960098019F /* Task.m */; };
 		915DB6291AAD3A2F0098019F /* CheckVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6281AAD3A2F0098019F /* CheckVersionInfo.m */; };
 		915DB6311AAD40990098019F /* AttachmentDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6301AAD40990098019F /* AttachmentDownload.m */; };
 		915DB6341AAD44ED0098019F /* AttachmentImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 915DB6331AAD44ED0098019F /* AttachmentImageView.m */; };
@@ -235,6 +234,7 @@
 		DA92FFBA1AFA02B1000AD59F /* Sql_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFB91AFA02B1000AD59F /* Sql_Utils.m */; };
 		DA92FFBC1AFA03AB000AD59F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */; };
 		DAA1279F1B0B000900E3A2B4 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA1279E1B0B000900E3A2B4 /* AuthenticationViewController.m */; };
+		DAABA7DA1B2FB8D900CC9828 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABA7D91B2FB8D900CC9828 /* Task.m */; };
 		DAABC59F1B0C25F400C29D10 /* VehicleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */; };
 		DAABC5A21B0C2B4600C29D10 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A11B0C2B4600C29D10 /* BaseView.m */; };
 		DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A41B0C324500C29D10 /* BatteryView.m */; };
@@ -285,8 +285,6 @@
 		915DB6191AA83A490098019F /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		915DB6211AA99ECD0098019F /* OilTotal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OilTotal.h; sourceTree = "<group>"; };
 		915DB6221AA99ECD0098019F /* OilTotal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OilTotal.m; sourceTree = "<group>"; };
-		915DB6241AA9D0960098019F /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
-		915DB6251AA9D0960098019F /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		915DB6271AAD3A2F0098019F /* CheckVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckVersionInfo.h; sourceTree = "<group>"; };
 		915DB6281AAD3A2F0098019F /* CheckVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckVersionInfo.m; sourceTree = "<group>"; };
 		915DB62F1AAD40990098019F /* AttachmentDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentDownload.h; sourceTree = "<group>"; };
@@ -670,6 +668,9 @@
 		DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DAA1279D1B0B000900E3A2B4 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		DAA1279E1B0B000900E3A2B4 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusHelp3.xcdatamodel; sourceTree = "<group>"; };
+		DAABA7D81B2FB8D900CC9828 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		DAABA7D91B2FB8D900CC9828 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		DAABC59D1B0C25F400C29D10 /* VehicleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleDetailViewController.h; sourceTree = "<group>"; };
 		DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleDetailViewController.m; sourceTree = "<group>"; };
 		DAABC5A01B0C2B4600C29D10 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -1283,8 +1284,8 @@
 				B06C75D71AA89174006CF437 /* Oil.m */,
 				915DB6211AA99ECD0098019F /* OilTotal.h */,
 				915DB6221AA99ECD0098019F /* OilTotal.m */,
-				915DB6241AA9D0960098019F /* Task.h */,
-				915DB6251AA9D0960098019F /* Task.m */,
+				DAABA7D81B2FB8D900CC9828 /* Task.h */,
+				DAABA7D91B2FB8D900CC9828 /* Task.m */,
 				B0E344EC1AB09945005F314F /* Station.h */,
 				B0E344ED1AB09945005F314F /* Station.m */,
 				B0E344E91AB09944005F314F /* OilType.h */,
@@ -1880,6 +1881,7 @@
 				DACE95FB1B16F6800054D822 /* StationAnnotationView.m in Sources */,
 				DACE95FA1B16F6800054D822 /* StationMapViewController.m in Sources */,
 				91ABF4BF1AA1A25100264F19 /* OrgTableViewCell.m in Sources */,
+				DAABA7DA1B2FB8D900CC9828 /* Task.m in Sources */,
 				B063E6711A9764BE00685CF4 /* SplashViewTwo.m in Sources */,
 				DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */,
 				B06C75E71AA89175006CF437 /* Org.m in Sources */,
@@ -1906,7 +1908,6 @@
 				B05449F11A9B2A1600C08C77 /* ViolationPageView.m in Sources */,
 				DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */,
 				DA6452601B031BEA0061F855 /* CalendarDayModel.m in Sources */,
-				915DB6261AA9D0960098019F /* Task.m in Sources */,
 				DA0CAD7E1B1843BB00ECADC6 /* AddTaskViewController.m in Sources */,
 				DA6452621B031BEA0061F855 /* CalendarLogic.m in Sources */,
 				915DB6161AA824290098019F /* SvUDIDTools.m in Sources */,
@@ -2268,10 +2269,11 @@
 		B02790A21A9045360079F358 /* BusHelp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */,
 				DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */,
 				B02790A31A9045360079F358 /* BusHelp.xcdatamodel */,
 			);
-			currentVersion = DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */;
+			currentVersion = DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */;
 			path = BusHelp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -328,4 +328,7 @@
 //保存新建任务信息
 + (void)saveNewTask:(NSString *)task_id org_id:(NSString *)org_id task_title:(NSString *)task_title task_content:(NSString *)task_content task_manager:(NSString *)task_manager task_begin_time:(NSString *)task_begin_time task_end_time:(NSString *)task_end_time vehicle_ids:(NSString *)vehicle_ids imageArray:(NSArray *)imageArray success:(void (^)())success failure:(void (^)(NSString *message))failure;
 
+//获取未接受任务count
++ (void)getSpotTaskCount:(void (^)())success failure:(void (^)(NSString *message))failure;
+
 @end
