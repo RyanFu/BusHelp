@@ -66,6 +66,7 @@
 #define GETVEHICLEDETECTIONINFO [BASE_URL stringByAppendingString:@"/api/vehicle/getvehiclemonitor"]
 #define SAVENEWTASK [BASE_URL stringByAppendingString:@"/api/task/savetaskwithattach"]
 #define GETSPOTTASKCOUNT [BASE_URL stringByAppendingString:@"/api/task/getnewtasknum"]
+#define GETMESSAGENUMBER [BASE_URL stringByAppendingString:@"/api/org/getmessagenum"]
 
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]

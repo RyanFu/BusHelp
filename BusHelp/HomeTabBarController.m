@@ -67,17 +67,17 @@
 //        [(UITabBarItem *)self.tabBar.items[0] setBadgeValue:badgeValue];
 //    });
     
-    NSInteger orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
-    NSString *badgeValue1 = nil;
-
-    if (orgMessageNotReadCount != 0) {
-        badgeValue1 = @(orgMessageNotReadCount).stringValue;
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [(UITabBarItem *)self.tabBar.items[0] setBadgeValue:badgeValue1];
-
-    });
+//    NSInteger orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
+//    NSString *badgeValue1 = nil;
+//
+//    if (orgMessageNotReadCount != 0) {
+//        badgeValue1 = @(orgMessageNotReadCount).stringValue;
+//    }
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [(UITabBarItem *)self.tabBar.items[0] setBadgeValue:badgeValue1];
+//
+//    });
     
 //    NSInteger spotTaskCount = [DataFetcher fetchTaskCountByStatus:TaskStatusSpot];
 //    NSString *badgeValue2 = nil;

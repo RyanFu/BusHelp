@@ -14,6 +14,7 @@
 #import "DataRequest.h"
 #import "CommonFunctionController.h"
 #import "CreatOrJionViewController.h"
+#import "UIView+MGBadgeView.h"
 
 @interface MessageViewController ()
 {
@@ -25,6 +26,8 @@
     NSString *messagecategory;
     NSString *tabbarTitle;
     Org *_org;
+    NSInteger messageboxNum;
+    NSInteger notificationNum;
 
 }
 @end
@@ -49,7 +52,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
+    [self fetchMessageNumber];
 
 }
 - (void)viewDidLoad {
@@ -68,6 +72,28 @@
         hasadd=flag;
         [weakself performSegueWithIdentifier:@"MessageToTransmitNotification" sender:nil];
     };
+    
+}
+
+-(void)fetchMessageNumber
+{
+    [CommonFunctionController showAnimateMessageHUD];
+    if ([CommonFunctionController checkNetworkWithNotify:NO])
+    {
+        [DataRequest getMessageNumber:^(id data){
+            messageboxNum=[[data objectForKey:@"messagebox_num"] integerValue];
+            notificationNum=[[data objectForKey:@"notice_num"] integerValue];
+            [messageTable reloadData];
+
+            [CommonFunctionController hideAllHUD];
+        } failure:^(NSString *message){
+            [CommonFunctionController showHUDWithMessage:message success:NO];
+            
+        }];
+    }else{
+        [CommonFunctionController showHUDWithMessage:@"网络未连接" success:NO];
+    }
+    
     
 }
 
@@ -141,10 +167,40 @@
     cell.FunctionImage.backgroundColor=[UIColor clearColor];
     switch (indexPath.row) {
         case 0:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+            if(messageboxNum==0)
+            {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+                [cell.FunctionImage.badgeView setBadgeValue:0];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+            }
+            else {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+                [cell.FunctionImage.badgeView setBadgeValue:messageboxNum];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+            }
+
             break;
         case 1:
-            cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+            if(notificationNum==0)
+            {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+                [cell.FunctionImage.badgeView setBadgeValue:0];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+            }
+            else {
+                cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+                [cell.FunctionImage.badgeView setBadgeValue:notificationNum];
+                [cell.FunctionImage.badgeView setOutlineWidth:0];
+                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+            }
+
             break;
             
         default:

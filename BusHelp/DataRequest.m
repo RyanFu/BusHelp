@@ -706,4 +706,12 @@ static NSTimeInterval const sceonds = 60;
         success(spotTaskCount);
     } failure:failure];
 }
+
++ (void)getMessageNumber:(void (^)())success failure:(void (^)(NSString *message))failure
+{
+    [self POST:GETMESSAGENUMBER parameters:nil success:^(id data){
+        success(data);
+    } failure:failure];
+
+}
 @end

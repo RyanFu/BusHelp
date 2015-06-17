@@ -212,7 +212,7 @@ static NSInteger const listCount = 20;
         }
         [DataRequest fetchOrgWithSuccess:^(NSArray *orgArray) {
             _orgArray = orgArray;
-            NSLog(@"%@",_orgArray);
+//            NSLog(@"%@",_orgArray);
             [self reloadOrgData:request];
         } failure:^(NSString *message){
             [self endRefreshWithMessage:message];

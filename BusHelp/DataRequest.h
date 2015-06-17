@@ -331,4 +331,7 @@
 //获取未接受任务count
 + (void)getSpotTaskCount:(void (^)())success failure:(void (^)(NSString *message))failure;
 
+//获取"消息盒子"和"通知数"总数
++ (void)getMessageNumber:(void (^)())success failure:(void (^)(NSString *message))failure;
+
 @end

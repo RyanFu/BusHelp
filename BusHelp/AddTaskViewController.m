@@ -53,7 +53,14 @@
     {
         [self setupOrgWithRequest:YES];
     }
+
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self setStatusBar];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -214,6 +221,8 @@
 {
     NSLog(@"负责人");
     [self hidePickerView:YES];
+    [self.taskTitle resignFirstResponder];
+    [self.taskContent resignFirstResponder];
     [Name_multistring setString:@""];
     [Userid_multistring setString:@""];
     [self performSegueWithIdentifier:@"AddTaskToManagers" sender:self];
@@ -224,6 +233,8 @@
 {
     NSLog(@"选择车辆");
     [self hidePickerView:YES];
+    [self.taskTitle resignFirstResponder];
+    [self.taskContent resignFirstResponder];
     [vehicleids_Mutistring setString:@""];
     [vehicleNumbers_Mutistring setString:@""];
     [self performSegueWithIdentifier:@"AddTaskToVehicles" sender:self];
@@ -403,10 +414,9 @@
         [_addImageArray addObject:key];
     }
     [picker dismissViewControllerAnimated:YES completion:^{
-        [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:22.0f/255.0f green:164.0f/255.0f blue:220.0f/255.0f alpha:1.0f]];
+        [self setStatusBar];
         [self shouldShowSwipeView];
+        
     }];
 }
 
@@ -432,5 +442,10 @@
     }
 }
 
-
+-(void)setStatusBar
+{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:22.0f/255.0f green:164.0f/255.0f blue:220.0f/255.0f alpha:1.0f]];
+}
 @end
