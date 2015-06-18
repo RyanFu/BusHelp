@@ -140,7 +140,6 @@
 		B06C75D21AA8850B006CF437 /* ShieldVehicleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75D11AA8850B006CF437 /* ShieldVehicleTableViewController.m */; };
 		B06C75D51AA88644006CF437 /* ShieldVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75D41AA88644006CF437 /* ShieldVehicleTableViewCell.m */; };
 		B06C75D81AA89174006CF437 /* Oil.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75D71AA89174006CF437 /* Oil.m */; };
-		B06C75DB1AA89175006CF437 /* OrgMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75DA1AA89175006CF437 /* OrgMessage.m */; };
 		B06C75E71AA89175006CF437 /* Org.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75E61AA89175006CF437 /* Org.m */; };
 		B06C75EA1AA89175006CF437 /* RequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75E91AA89175006CF437 /* RequestInfo.m */; };
 		B06C75F01AA89175006CF437 /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = B06C75EF1AA89175006CF437 /* Month.m */; };
@@ -233,6 +232,8 @@
 		DA92FFB61AFA01EB000AD59F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFB11AFA01EB000AD59F /* FMResultSet.m */; };
 		DA92FFBA1AFA02B1000AD59F /* Sql_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92FFB91AFA02B1000AD59F /* Sql_Utils.m */; };
 		DA92FFBC1AFA03AB000AD59F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */; };
+		DA99DEF61B32A3CC004C45C4 /* OrgMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA99DEF51B32A3CC004C45C4 /* OrgMessage.m */; };
+		DA99DEF91B32A539004C45C4 /* OrgMessageUrlPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA99DEF81B32A539004C45C4 /* OrgMessageUrlPathViewController.m */; };
 		DAA1279F1B0B000900E3A2B4 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA1279E1B0B000900E3A2B4 /* AuthenticationViewController.m */; };
 		DAABA7DA1B2FB8D900CC9828 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABA7D91B2FB8D900CC9828 /* Task.m */; };
 		DAABC59F1B0C25F400C29D10 /* VehicleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */; };
@@ -499,8 +500,6 @@
 		B06C75D41AA88644006CF437 /* ShieldVehicleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldVehicleTableViewCell.m; sourceTree = "<group>"; };
 		B06C75D61AA89174006CF437 /* Oil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oil.h; sourceTree = "<group>"; };
 		B06C75D71AA89174006CF437 /* Oil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oil.m; sourceTree = "<group>"; };
-		B06C75D91AA89175006CF437 /* OrgMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMessage.h; sourceTree = "<group>"; };
-		B06C75DA1AA89175006CF437 /* OrgMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMessage.m; sourceTree = "<group>"; };
 		B06C75E51AA89175006CF437 /* Org.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Org.h; sourceTree = "<group>"; };
 		B06C75E61AA89175006CF437 /* Org.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Org.m; sourceTree = "<group>"; };
 		B06C75E81AA89175006CF437 /* RequestInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestInfo.h; sourceTree = "<group>"; };
@@ -666,6 +665,11 @@
 		DA92FFB81AFA02B1000AD59F /* Sql_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sql_Utils.h; sourceTree = "<group>"; };
 		DA92FFB91AFA02B1000AD59F /* Sql_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sql_Utils.m; sourceTree = "<group>"; };
 		DA92FFBB1AFA03AB000AD59F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DA99DEF31B32A310004C45C4 /* BusHelp4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusHelp4.xcdatamodel; sourceTree = "<group>"; };
+		DA99DEF41B32A3CC004C45C4 /* OrgMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMessage.h; sourceTree = "<group>"; };
+		DA99DEF51B32A3CC004C45C4 /* OrgMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMessage.m; sourceTree = "<group>"; };
+		DA99DEF71B32A539004C45C4 /* OrgMessageUrlPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgMessageUrlPathViewController.h; sourceTree = "<group>"; };
+		DA99DEF81B32A539004C45C4 /* OrgMessageUrlPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgMessageUrlPathViewController.m; sourceTree = "<group>"; };
 		DAA1279D1B0B000900E3A2B4 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		DAA1279E1B0B000900E3A2B4 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusHelp3.xcdatamodel; sourceTree = "<group>"; };
@@ -1177,6 +1181,8 @@
 				DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */,
 				DA0CAD821B18683B00ECADC6 /* TaskPickVehiclesViewController.h */,
 				DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */,
+				DA99DEF71B32A539004C45C4 /* OrgMessageUrlPathViewController.h */,
+				DA99DEF81B32A539004C45C4 /* OrgMessageUrlPathViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1278,8 +1284,8 @@
 				DA442F2F1B0DB24B00AC6BC7 /* Vehicle.m */,
 				DA442F2B1B0DB23000AC6BC7 /* Violation.h */,
 				DA442F2C1B0DB23000AC6BC7 /* Violation.m */,
-				B06C75D91AA89175006CF437 /* OrgMessage.h */,
-				B06C75DA1AA89175006CF437 /* OrgMessage.m */,
+				DA99DEF41B32A3CC004C45C4 /* OrgMessage.h */,
+				DA99DEF51B32A3CC004C45C4 /* OrgMessage.m */,
 				B06C75D61AA89174006CF437 /* Oil.h */,
 				B06C75D71AA89174006CF437 /* Oil.m */,
 				915DB6211AA99ECD0098019F /* OilTotal.h */,
@@ -1836,7 +1842,6 @@
 				B06C75D21AA8850B006CF437 /* ShieldVehicleTableViewController.m in Sources */,
 				DA7245F51B04D1AB00431299 /* NSArray+JSONModel.m in Sources */,
 				B02791681A9435210079F358 /* NSDate+custom.m in Sources */,
-				B06C75DB1AA89175006CF437 /* OrgMessage.m in Sources */,
 				B0980ED71AAC4097005E4984 /* AgreementViewController.m in Sources */,
 				B06969601A95876E00D5C07D /* CommonFunctionController.m in Sources */,
 				DA6452771B034A780061F855 /* SelectVehicleViewController.m in Sources */,
@@ -1844,6 +1849,7 @@
 				91864F5C1AB2A4D5004DEC9F /* FSImageLoader.m in Sources */,
 				B02791621A93629F0079F358 /* OilItem.m in Sources */,
 				B099443A1A985F6F00C5C90C /* ViolationViewController.m in Sources */,
+				DA99DEF61B32A3CC004C45C4 /* OrgMessage.m in Sources */,
 				DACE95A01B16DA430054D822 /* UrlInfo.m in Sources */,
 				B02790A41A9045360079F358 /* BusHelp.xcdatamodeld in Sources */,
 				91864F3D1AB1A643004DEC9F /* OilTotalItem.m in Sources */,
@@ -1868,6 +1874,7 @@
 				DACE95A21B16DA430054D822 /* StationBaseViewController.m in Sources */,
 				DABD20E01AF07D1200848013 /* FunctionViewController.m in Sources */,
 				DA7245F91B04D1AB00431299 /* JSONKeyMapper.m in Sources */,
+				DA99DEF91B32A539004C45C4 /* OrgMessageUrlPathViewController.m in Sources */,
 				DA7245F21B04D1AB00431299 /* JSONModelArray.m in Sources */,
 				B00E03B61AC2E2DA00A8355B /* HelpViewController.m in Sources */,
 				B063E6761A97655100685CF4 /* SplashViewThree.m in Sources */,
@@ -2269,11 +2276,12 @@
 		B02790A21A9045360079F358 /* BusHelp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DA99DEF31B32A310004C45C4 /* BusHelp4.xcdatamodel */,
 				DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */,
 				DA442F2A1B0DAFD700AC6BC7 /* BusHelp2.xcdatamodel */,
 				B02790A31A9045360079F358 /* BusHelp.xcdatamodel */,
 			);
-			currentVersion = DAABA7D71B2FB41E00CC9828 /* BusHelp3.xcdatamodel */;
+			currentVersion = DA99DEF31B32A310004C45C4 /* BusHelp4.xcdatamodel */;
 			path = BusHelp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

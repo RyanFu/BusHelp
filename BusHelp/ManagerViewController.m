@@ -20,6 +20,7 @@
 #import "HelpView.h"
 #import "UITableView+WJAdditions.h"
 #import <ShareSDK/ShareSDK.h>
+#import "OrgMessageUrlPathViewController.h"
 
 static NSInteger const listCount = 20;
 
@@ -591,7 +592,12 @@ static NSInteger const listCount = 20;
 //    }
     
     OrgMessage *orgMessage = (OrgMessage *)_orgMessageArray[indexPath.section];
-    [self pushOrgMessageDetail:orgMessage];
+    if (orgMessage.urlPath) {
+        [self pushOrgMessageUrlPath:orgMessage];
+    }else
+    {
+        [self pushOrgMessageDetail:orgMessage];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -603,6 +609,15 @@ static NSInteger const listCount = 20;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;
+}
+
+-(void)pushOrgMessageUrlPath:(OrgMessage *)orgMessage
+{
+    _isDetailBack = YES;
+    OrgMessageUrlPathViewController *urlPathViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([OrgMessageUrlPathViewController class])];
+    urlPathViewController.orgMessage=orgMessage;
+    [self.tabBarController.navigationController pushViewController:urlPathViewController animated:YES];
+
 }
 
 @end

@@ -4256,6 +4256,51 @@
             </objects>
             <point key="canvasLocation" x="8214" y="1676"/>
         </scene>
+        <!--Org Message Url Path View Controller-->
+        <scene sceneID="2mm-Js-tOp">
+            <objects>
+                <viewController storyboardIdentifier="OrgMessageUrlPathViewController" id="9zU-vs-xew" customClass="OrgMessageUrlPathViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0NP-T7-OpO"/>
+                        <viewControllerLayoutGuide type="bottom" id="sb2-7U-Ico"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E3q-bn-xQk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-1y-b34">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9zU-vs-xew" id="vH6-5U-qNX"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dnI-He-F4n">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rUg-1y-b34" firstAttribute="bottom" secondItem="sb2-7U-Ico" secondAttribute="top" id="GEw-QY-AmN"/>
+                            <constraint firstItem="dnI-He-F4n" firstAttribute="top" secondItem="0NP-T7-OpO" secondAttribute="bottom" constant="254" id="HD4-yR-UWB"/>
+                            <constraint firstItem="rUg-1y-b34" firstAttribute="top" secondItem="E3q-bn-xQk" secondAttribute="top" id="Yin-hz-blv"/>
+                            <constraint firstAttribute="trailing" secondItem="rUg-1y-b34" secondAttribute="trailing" id="ZMD-3j-1yR"/>
+                            <constraint firstItem="sb2-7U-Ico" firstAttribute="top" secondItem="dnI-He-F4n" secondAttribute="bottom" constant="274" id="Zrz-Do-ina"/>
+                            <constraint firstItem="dnI-He-F4n" firstAttribute="leading" secondItem="E3q-bn-xQk" secondAttribute="leadingMargin" constant="134" id="bmZ-gj-h9t"/>
+                            <constraint firstItem="rUg-1y-b34" firstAttribute="leading" secondItem="E3q-bn-xQk" secondAttribute="leading" id="lu2-Lz-HEO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dnI-He-F4n" secondAttribute="trailing" constant="134" id="oB8-lr-hho"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="TaskDetaiWebView" destination="rUg-1y-b34" id="AIS-W2-BrT"/>
+                        <outlet property="activityIndicatorView" destination="dnI-He-F4n" id="iKg-3R-4Qw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4E-wS-vWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8594" y="1676"/>
+        </scene>
         <!--Shield Vehicle Table View Controller-->
         <scene sceneID="Imu-lZ-lIN">
             <objects>

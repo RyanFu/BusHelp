@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Month" representedClassName="Month" syncable="YES">
+        <attribute name="month" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="12" defaultValueString="1" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_month"/>
+            </userInfo>
+        </attribute>
+        <attribute name="number" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_month_number"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToOilTotal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OilTotal" inverseName="hasMonth" inverseEntity="OilTotal" syncable="YES"/>
+    </entity>
+    <entity name="Oil" representedClassName="Oil" syncable="YES">
+        <attribute name="attachmentList" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="attachment_list"/>
+            </userInfo>
+        </attribute>
+        <attribute name="avgNumber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dataType" optional="YES" attributeType="Integer 16" minValueString="1000" maxValueString="1002" defaultValueString="1000" syncable="YES"/>
+        <attribute name="isSubmit" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="mileage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_mileage"/>
+            </userInfo>
+        </attribute>
+        <attribute name="money" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_money"/>
+            </userInfo>
+        </attribute>
+        <attribute name="number" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="oilID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_price"/>
+            </userInfo>
+        </attribute>
+        <attribute name="stationName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="station_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="typeName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_type_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updateTime" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="update_time"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToVehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="hasOil" inverseEntity="Vehicle" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="oilID"/>
+        </userInfo>
+    </entity>
+    <entity name="OilTotal" representedClassName="OilTotal" syncable="YES">
+        <attribute name="avgNumber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_avg_number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="mileageSumNumber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="mileage_sum_number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="vehicleID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_id"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToVehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="hasOilTotal" inverseEntity="Vehicle" syncable="YES"/>
+        <relationship name="hasMonth" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Month" inverseName="belongsToOilTotal" inverseEntity="Month" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oil_month_list"/>
+            </userInfo>
+        </relationship>
+        <userInfo>
+            <entry key="relatedByAttribute" value="vehicleID"/>
+        </userInfo>
+    </entity>
+    <entity name="OilType" representedClassName="OilType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Org" representedClassName="Org" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="orgID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userType" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="user_type"/>
+            </userInfo>
+        </attribute>
+        <attribute name="vehicleList" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_list"/>
+            </userInfo>
+        </attribute>
+        <relationship name="hasOrgMessage" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrgMessage" inverseName="belongsToOrg" inverseEntity="OrgMessage" syncable="YES"/>
+        <relationship name="hasTask" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="belongsToOrg" inverseEntity="Task" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="orgID"/>
+        </userInfo>
+    </entity>
+    <entity name="OrgMessage" representedClassName="OrgMessage" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_message_action"/>
+            </userInfo>
+        </attribute>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_message_content"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isRead" optional="YES" attributeType="String" defaultValueString="N" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_read"/>
+            </userInfo>
+        </attribute>
+        <attribute name="orgMessageID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_message_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="org_message_title"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updateTime" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="update_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="urlPath" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="url_path"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToOrg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Org" inverseName="hasOrgMessage" inverseEntity="Org" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="orgMessageID"/>
+        </userInfo>
+    </entity>
+    <entity name="RequestInfo" representedClassName="RequestInfo" syncable="YES">
+        <attribute name="orgLastUpdateTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orgMessageLastUpdateTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskLastUpdateTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Station" representedClassName="Station" syncable="YES">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="attachmentList" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="attachment_list"/>
+            </userInfo>
+        </attribute>
+        <attribute name="beginTime" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_begin_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_content"/>
+            </userInfo>
+        </attribute>
+        <attribute name="endTime" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_end_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="helper" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_helper"/>
+            </userInfo>
+        </attribute>
+        <attribute name="manager" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_manager"/>
+            </userInfo>
+        </attribute>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_status"/>
+            </userInfo>
+        </attribute>
+        <attribute name="taskID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="task_title"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updateTime" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="update_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="vehicleNumber" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_nos"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToOrg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Org" inverseName="hasTask" inverseEntity="Org" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="taskID"/>
+        </userInfo>
+    </entity>
+    <entity name="Vehicle" representedClassName="Vehicle" syncable="YES">
+        <attribute name="engineNumber" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_engine_number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="identify_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numberType" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_number_type"/>
+            </userInfo>
+        </attribute>
+        <attribute name="oilLastUpdateTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vehicleID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="vinNumber" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="vehicle_vin_number"/>
+            </userInfo>
+        </attribute>
+        <relationship name="hasOil" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Oil" inverseName="belongsToVehicle" inverseEntity="Oil" syncable="YES"/>
+        <relationship name="hasOilTotal" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="OilTotal" inverseName="belongsToVehicle" inverseEntity="OilTotal" syncable="YES"/>
+        <relationship name="hasViolation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Violation" inverseName="belongsToVehicle" inverseEntity="Violation" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="vehicleID"/>
+        </userInfo>
+    </entity>
+    <entity name="Violation" representedClassName="Violation" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_address"/>
+            </userInfo>
+        </attribute>
+        <attribute name="money" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_money"/>
+            </userInfo>
+        </attribute>
+        <attribute name="reason" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_reason"/>
+            </userInfo>
+        </attribute>
+        <attribute name="score" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_score"/>
+            </userInfo>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_time"/>
+            </userInfo>
+        </attribute>
+        <attribute name="violationID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="violation_id"/>
+            </userInfo>
+        </attribute>
+        <relationship name="belongsToVehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="hasViolation" inverseEntity="Vehicle" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="violationID"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Month" positionX="-81" positionY="245" width="128" height="88"/>
+        <element name="Oil" positionX="-180" positionY="-99" width="128" height="255"/>
+        <element name="OilTotal" positionX="79" positionY="207" width="128" height="118"/>
+        <element name="OilType" positionX="-180" positionY="54" width="128" height="58"/>
+        <element name="Org" positionX="-29" positionY="371" width="128" height="148"/>
+        <element name="OrgMessage" positionX="16" positionY="-90" width="128" height="165"/>
+        <element name="RequestInfo" positionX="-171" positionY="63" width="128" height="88"/>
+        <element name="Station" positionX="-189" positionY="45" width="128" height="90"/>
+        <element name="Task" positionX="-234" positionY="234" width="128" height="225"/>
+        <element name="Vehicle" positionX="-389" positionY="-28" width="128" height="210"/>
+        <element name="Violation" positionX="-218" positionY="324" width="128" height="148"/>
+    </elements>
+</model>

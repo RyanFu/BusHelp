@@ -162,7 +162,7 @@
     }
     cell.money.text=[NSString stringWithFormat:@"-%i",totalMoney];
     cell.score.text=[NSString stringWithFormat:@"-%i",totalScore];
-    cell.untreatedNumber.text=[NSString stringWithFormat:@"%i",_violationArray.count];
+    cell.untreatedNumber.text=[NSString stringWithFormat:@"%lu",(unsigned long)_violationArray.count];
     
     return cell;
 }
