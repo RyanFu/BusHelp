@@ -42,7 +42,7 @@
 - (void)setupNavigationBar
 {
     [super setupNavigationBar];
-    self.navigationItem.title=@"消息内容";
+    self.navigationItem.title=self.orgMessage.title;
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];

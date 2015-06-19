@@ -214,7 +214,7 @@
     switch (indexPath.row) {
         case 0:
             messagecategory=@"1001,2001,3001,5001";
-            tabbarTitle=@"系统消息";
+            tabbarTitle=@"消息盒子";
             [self performSegueWithIdentifier:@"MessageToManger" sender:self];
             break;
         case 1:

@@ -18,6 +18,25 @@ static NSTimeInterval const sceonds = 60;
 
 @implementation DataRequest
 
+//处理后台数据库<null>数据
++ (NSDictionary *)cleanNullString:(id)data
+{
+    NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *str=[[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSString *tempstring=@"\"\"";
+    str=[str stringByReplacingOccurrencesOfString:@"null" withString:tempstring];
+    NSData *mydata = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    id object = [NSJSONSerialization JSONObjectWithData:mydata
+                 
+                                                options:NSJSONReadingAllowFragments
+                 
+                                                  error:&error];
+    NSDictionary *dic=[[NSDictionary alloc]init];
+    dic=object;
+    return dic;
+}
+
 + (NSDictionary *)baseRequestParametersWithDictionary:(NSDictionary *)otherDictionary {
     NSDictionary *dictionary = @{@"device_id" : [UserSettingInfo fetchDeviceID]};
     NSMutableDictionary *parametersDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionary];
@@ -631,6 +650,14 @@ static NSTimeInterval const sceonds = 60;
     } failure:failure];
 }
 
++ (void)getOrgAllUserWithDevice:(NSString *)ordID success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure
+{
+    [self POST:GetOrgAllUsersWithDevice parameters:@{@"org_id" : ordID} success:^(id data) {
+        success(data);
+    } failure:failure];
+
+}
+
 + (void)postNotification:(NSString *)receiver_id org_id:(NSString *)org_id message_title:(NSString *)message_title message_content:(NSString *)message_content success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure
 {
     [self POST:POSTNOTIFICATION parameters:@{@"receiver_id" : receiver_id, @"org_id" : org_id, @"message_title" : message_title, @"message_content" : message_content} success:^(id data) {
@@ -649,7 +676,8 @@ static NSTimeInterval const sceonds = 60;
 + (void)fetchVehicleMonthList:(NSString *)vehicle_ids month:(NSString *)month org_id:(NSString *)org_id success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure
 {
     [self POST:GETVEHICLEMONTHLIST parameters:@{@"vehicle_ids" : vehicle_ids, @"month" : month, @"org_id" : org_id} success:^(id data) {
-        success(data);
+        NSDictionary *dic=[self cleanNullString:data];
+        success(dic);
     } failure:failure];
 
 }

@@ -76,23 +76,28 @@
     if ([CommonFunctionController checkValueValidate:month]&&[CommonFunctionController checkValueValidate:vehicle.vehicleID]&&[CommonFunctionController checkValueValidate:org.orgID]) {
         [DataRequest fetchVehicleMonthList:vehicle.vehicleID month:month org_id:org.orgID success:^(id data){
             NSArray *dataArray=[[NSArray alloc]initWithArray:data];
+            NSMutableArray *key=[[NSMutableArray alloc]init];
+            NSMutableArray *value=[[NSMutableArray alloc]init];
+            [key removeAllObjects];
+            [value removeAllObjects];
             if (dataArray.count>0) {
-                NSDictionary *dic=[data objectAtIndex:0];
-                MileageItem *mileModel=[[MileageItem alloc]initWithDictionary:dic error:nil];
-//                NSLog(@"%@",mileModel.mil_month_list);
-                NSMutableArray *key=[[NSMutableArray alloc]init];
-                NSMutableArray *value=[[NSMutableArray alloc]init];
-                [key removeAllObjects];
-                [value removeAllObjects];
-                for (int i=0; i<mileModel.mil_month_list.count;i++) {
-                    MileageDailyItem *dailyitem=[mileModel.mil_month_list objectAtIndex:i];
-                    [key addObject:dailyitem.date];
-                    [value addObject:dailyitem.mileage];
+                for (int i=0; i<dataArray.count; i++) {
+                    NSDictionary *dic=[data objectAtIndex:i];
+                    MileageItem *mileModel=[[MileageItem alloc]initWithDictionary:dic error:nil];
+                   
+                    
+                    NSLog(@"%lu",(unsigned long)mileModel.mil_month_list.count);
+                    for (int i=0; i<mileModel.mil_month_list.count;i++) {
+                        MileageDailyItem *dailyitem=[mileModel.mil_month_list objectAtIndex:i];
+                        [key addObject:dailyitem.date];
+                        [value addObject:dailyitem.mileage];
+                    }
+                    NSDictionary *resultdic=[NSDictionary dictionaryWithObjects:value forKeys:key];
+                    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
+                    [[NSUserDefaults standardUserDefaults]setObject:resultdic forKey:@"DailyMile"];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
                 }
-                NSDictionary *resultdic=[NSDictionary dictionaryWithObjects:value forKeys:key];
-                [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"DailyMile"];
-                [[NSUserDefaults standardUserDefaults]setObject:resultdic forKey:@"DailyMile"];
-                [[NSUserDefaults standardUserDefaults]synchronize];
+                
 //                NSLog(@"%@",resultdic);
                 [self setAirPlaneToDay:100 ToDateforString:@"2015-5-1"];//日历初始化方法
                 [CommonFunctionController hideAllHUD];

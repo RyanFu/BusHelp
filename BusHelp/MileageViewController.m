@@ -208,7 +208,6 @@
 }
 
 
-
 - (IBAction)getAddressAction:(id)sender {
     [locationManager startUpdatingLocation];
     self.activityindicator.hidden=NO;
@@ -220,6 +219,7 @@
 }
 
 - (IBAction)submitAction:(id)sender {
+    [self.mileageLabel resignFirstResponder];
     if ([CommonFunctionController checkValueValidate:self.mileageLabel.text]&&[CommonFunctionController checkValueValidate:self.vehicleNumber.titleLabel.text]) {
         [self setupOrgWithRequest:YES];
         

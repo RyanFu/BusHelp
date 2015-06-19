@@ -307,6 +307,10 @@
 //获取组织所有成员
 + (void)getOrgAllUser:(NSString *)ordID success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure;
 
+//获取组织所有成员withDevice
++ (void)getOrgAllUserWithDevice:(NSString *)ordID success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure;
+
+
 //发送通知
 + (void)postNotification:(NSString *)receiver_id org_id:(NSString *)org_id message_title:(NSString *)message_title message_content:(NSString *)message_content success:(void (^)(NSDictionary *dictionary))success failure:(void (^)(NSString *message))failure;
 

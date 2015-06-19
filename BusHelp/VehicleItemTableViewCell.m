@@ -62,6 +62,11 @@
         [self.checkVehicleDetailButton setTitle:@"车辆认证" forState:UIControlStateNormal];
         self.checkVehicleDetailButton.hidden=YES;
 
+    }else
+    {
+        self.identifyImage.hidden=YES;
+        self.checkVehicleDetailButton.hidden=YES;
+
     }
 
 }

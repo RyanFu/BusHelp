@@ -93,7 +93,7 @@
 -(void)getOrgAllUsers:(BOOL)request
 {
     if (request && [CommonFunctionController checkNetworkWithNotify:NO]) {
-        [DataRequest getOrgAllUser:_org.orgID success:^(id data){
+        [DataRequest getOrgAllUserWithDevice:_org.orgID success:^(id data){
             contactlist=data;
 //            NSLog(@"%@",contactlist);
             
