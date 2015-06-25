@@ -13,6 +13,8 @@
 //#import "StationDetailsViewController.h"
 #import "Math.h"
 
+const double x_pi = 3.14159265358979324 * 3000.0 / 180.0;
+
 @interface StationMapViewController ()
 {
     CLLocationManager *locationManager;
@@ -62,7 +64,17 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
-    [self alert:MSG_ALERT_ALLOW_LOCATION view:self.view animated:YES afterDelay:3];
+    
+    switch([error code]) {
+        case kCLErrorDenied:
+            [self alert:MSG_ALERT_ALLOW_LOCATION view:self.view animated:YES afterDelay:3];
+            break;
+        case kCLErrorLocationUnknown:
+            break;
+        default:
+            break;
+    }
+
 
 }
 
@@ -94,8 +106,8 @@
 {
     double x = coordinate.latitude-0.0065;
     double y = coordinate.longitude-0.006;
-    double z = sqrt(x * x + y * y) - 0.00002 * sin(y * M_PI);
-    double theta = atan2(y, x) - 0.000003 * cos(x * M_PI);
+    double z = sqrt(x * x + y * y) - 0.00002 * sin(y * x_pi);
+    double theta = atan2(y, x) - 0.000003 * cos(x * x_pi);
     coordinate.latitude = z * cos(theta);
     coordinate.longitude = z * sin(theta);
     return coordinate;
@@ -106,8 +118,8 @@
 {
     double x = coordinate.latitude;
     double y = coordinate.longitude;
-    double z = sqrt(x * x + y * y) + 0.00002 * sin(y * M_PI);
-    double theta = atan2(y, x) + 0.000003 * cos(x * M_PI);
+    double z = sqrt(x * x + y * y) + 0.00002 * sin(y * x_pi);
+    double theta = atan2(y, x) + 0.000003 * cos(x * x_pi);
     coordinate.latitude = z * cos(theta)+0.0065;
     coordinate.longitude = z * sin(theta)+0.006;
     return coordinate;

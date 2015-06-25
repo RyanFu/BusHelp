@@ -592,7 +592,7 @@ static NSInteger const listCount = 20;
 //    }
     
     OrgMessage *orgMessage = (OrgMessage *)_orgMessageArray[indexPath.section];
-    if (orgMessage.urlPath) {
+    if (orgMessage.urlPath.length) {
         [self pushOrgMessageUrlPath:orgMessage];
     }else
     {

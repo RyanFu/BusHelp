@@ -42,7 +42,6 @@
 - (void)setupNavigationBar
 {
     [super setupNavigationBar];
-    self.navigationItem.title=self.orgMessage.title;
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-back"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
@@ -58,6 +57,7 @@
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    self.title=[self.TaskDetaiWebView stringByEvaluatingJavaScriptFromString:@"document.title"];//获取当前页面的title
     self.activityIndicatorView.hidesWhenStopped=YES;
     [self.activityIndicatorView stopAnimating];
 
