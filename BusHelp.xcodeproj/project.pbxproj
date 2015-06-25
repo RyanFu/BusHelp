@@ -178,7 +178,6 @@
 		DA0CAD7E1B1843BB00ECADC6 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD7D1B1843BB00ECADC6 /* AddTaskViewController.m */; };
 		DA0CAD811B185F4000ECADC6 /* TaskManagerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */; };
 		DA0CAD841B18683B00ECADC6 /* TaskPickVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */; };
-		DA1E13DE1B256CC70049E859 /* UIView+MGBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */; };
 		DA4184CA1AFC99CF00639637 /* TransmitNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */; };
 		DA4184D31AFCB3DE00639637 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4184D11AFCB3DE00639637 /* ContactsTableViewCell.m */; };
 		DA4184D41AFCB3DE00639637 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4184D21AFCB3DE00639637 /* ContactsTableViewCell.xib */; };
@@ -239,6 +238,7 @@
 		DAABC59F1B0C25F400C29D10 /* VehicleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC59E1B0C25F400C29D10 /* VehicleDetailViewController.m */; };
 		DAABC5A21B0C2B4600C29D10 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A11B0C2B4600C29D10 /* BaseView.m */; };
 		DAABC5A51B0C324500C29D10 /* BatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABC5A41B0C324500C29D10 /* BatteryView.m */; };
+		DAB26FC31B3BF2AF00DA60B1 /* UIView+MGBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26FC11B3BF2AF00DA60B1 /* UIView+MGBadgeView.m */; };
 		DABD20E01AF07D1200848013 /* FunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD20DF1AF07D1200848013 /* FunctionViewController.m */; };
 		DABEF1A21AF8752A00F72C13 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A11AF8752A00F72C13 /* MessageViewController.m */; };
 		DABEF1A61AF8900A00F72C13 /* popoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF1A41AF8900A00F72C13 /* popoverViewController.m */; };
@@ -565,8 +565,6 @@
 		DA0CAD801B185F4000ECADC6 /* TaskManagerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManagerListViewController.m; sourceTree = "<group>"; };
 		DA0CAD821B18683B00ECADC6 /* TaskPickVehiclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskPickVehiclesViewController.h; sourceTree = "<group>"; };
 		DA0CAD831B18683B00ECADC6 /* TaskPickVehiclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskPickVehiclesViewController.m; sourceTree = "<group>"; };
-		DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MGBadgeView.m"; sourceTree = "<group>"; };
-		DA1E13DD1B256CC70049E859 /* UIView+MGBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadgeView.h"; sourceTree = "<group>"; };
 		DA4184C81AFC99CF00639637 /* TransmitNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitNotificationViewController.h; sourceTree = "<group>"; };
 		DA4184C91AFC99CF00639637 /* TransmitNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitNotificationViewController.m; sourceTree = "<group>"; };
 		DA4184D01AFCB3DE00639637 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewCell.h; sourceTree = "<group>"; };
@@ -681,6 +679,8 @@
 		DAABC5A11B0C2B4600C29D10 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		DAABC5A31B0C324500C29D10 /* BatteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryView.h; sourceTree = "<group>"; };
 		DAABC5A41B0C324500C29D10 /* BatteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryView.m; sourceTree = "<group>"; };
+		DAB26FC11B3BF2AF00DA60B1 /* UIView+MGBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MGBadgeView.m"; sourceTree = "<group>"; };
+		DAB26FC21B3BF2AF00DA60B1 /* UIView+MGBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadgeView.h"; sourceTree = "<group>"; };
 		DABD20DE1AF07D1200848013 /* FunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionViewController.h; sourceTree = "<group>"; };
 		DABD20DF1AF07D1200848013 /* FunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionViewController.m; sourceTree = "<group>"; };
 		DABEF1A01AF8752A00F72C13 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -1390,8 +1390,8 @@
 		DA1E13DB1B256CA90049E859 /* BadgeView */ = {
 			isa = PBXGroup;
 			children = (
-				DA1E13DC1B256CC70049E859 /* UIView+MGBadgeView.m */,
-				DA1E13DD1B256CC70049E859 /* UIView+MGBadgeView.h */,
+				DAB26FC11B3BF2AF00DA60B1 /* UIView+MGBadgeView.m */,
+				DAB26FC21B3BF2AF00DA60B1 /* UIView+MGBadgeView.h */,
 			);
 			name = BadgeView;
 			sourceTree = "<group>";
@@ -1900,7 +1900,6 @@
 				DA6083F51AF20B1100903D27 /* FunctionTableViewCell.m in Sources */,
 				B02790A11A9045360079F358 /* AppDelegate.m in Sources */,
 				B063E66B1A9762F300685CF4 /* UIView+custom.m in Sources */,
-				DA1E13DE1B256CC70049E859 /* UIView+MGBadgeView.m in Sources */,
 				DA7245F41B04D1AB00431299 /* JSONModelError.m in Sources */,
 				B02791561A931EDD0079F358 /* DataFetcher.m in Sources */,
 				B0E344EB1AB09944005F314F /* OilType.m in Sources */,
@@ -1962,6 +1961,7 @@
 				B06C75EA1AA89175006CF437 /* RequestInfo.m in Sources */,
 				DA7245F81B04D1AB00431299 /* JSONModel+networking.m in Sources */,
 				B05449E61A9ABC7F00C08C77 /* VehicleManagerViewController.m in Sources */,
+				DAB26FC31B3BF2AF00DA60B1 /* UIView+MGBadgeView.m in Sources */,
 				DACE959F1B16DA430054D822 /* BaseInfo.m in Sources */,
 				B0980ED21AAC27F9005E4984 /* OrgMessageDetailViewController.m in Sources */,
 				DA92FFBA1AFA02B1000AD59F /* Sql_Utils.m in Sources */,

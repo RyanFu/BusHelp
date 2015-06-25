@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="popoverViewController">
@@ -31,18 +31,31 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message-dialog" translatesAutoresizingMaskIntoConstraints="NO" id="qe9-xG-zzN">
                     <rect key="frame" x="209" y="27" width="22" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="22" id="DSc-qH-Z3q"/>
-                        <constraint firstAttribute="height" constant="19" id="jfC-1R-KXm"/>
+                        <constraint firstAttribute="width" constant="22" id="Cqp-7K-ovk"/>
+                        <constraint firstAttribute="height" constant="19" id="zl3-HJ-AE3"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i44-rw-OAs">
-                    <rect key="frame" x="241" y="20" width="60" height="30"/>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="发送通知">
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送通知" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spm-zc-RZL">
+                    <rect key="frame" x="239" y="24" width="68" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Tw5-pz-85m"/>
+                        <constraint firstAttribute="width" constant="68" id="gcP-1L-5om"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oh9-Dh-6Dz">
+                    <rect key="frame" x="201" y="20" width="106" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3XP-2f-BVo"/>
+                        <constraint firstAttribute="width" constant="106" id="kvD-pO-Qg6"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="postNotification:" destination="-1" eventType="touchUpInside" id="bYG-BN-Oqt"/>
+                        <action selector="postNotification:" destination="-1" eventType="touchUpInside" id="lCM-h3-tgZ"/>
                     </connections>
                 </button>
             </subviews>
@@ -50,15 +63,17 @@
             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="nvG-qS-tHV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="14a-k1-vaZ"/>
-                <constraint firstAttribute="trailing" secondItem="i44-rw-OAs" secondAttribute="trailing" constant="19" id="5yq-km-EDk"/>
+                <constraint firstItem="Spm-zc-RZL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="1fJ-4N-RrV"/>
+                <constraint firstAttribute="trailing" secondItem="Oh9-Dh-6Dz" secondAttribute="trailing" constant="13" id="2dg-xm-NtX"/>
                 <constraint firstAttribute="trailing" secondItem="nvG-qS-tHV" secondAttribute="trailing" id="8Z8-7b-M4G"/>
-                <constraint firstItem="i44-rw-OAs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="8rB-Ch-BmF"/>
                 <constraint firstItem="W4v-Rw-3e9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="Ly1-7M-P1z"/>
                 <constraint firstAttribute="bottom" secondItem="nvG-qS-tHV" secondAttribute="bottom" id="PFL-Xv-2KJ"/>
                 <constraint firstItem="nvG-qS-tHV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pd5-V5-t8F"/>
-                <constraint firstItem="i44-rw-OAs" firstAttribute="leading" secondItem="qe9-xG-zzN" secondAttribute="trailing" constant="10" id="uNU-E0-pN5"/>
+                <constraint firstItem="Spm-zc-RZL" firstAttribute="bottom" secondItem="qe9-xG-zzN" secondAttribute="bottom" constant="-1" id="WHt-t3-46Y"/>
+                <constraint firstItem="Spm-zc-RZL" firstAttribute="leading" secondItem="qe9-xG-zzN" secondAttribute="trailing" constant="8" id="qXV-Oo-lUL"/>
                 <constraint firstAttribute="trailing" secondItem="W4v-Rw-3e9" secondAttribute="trailing" constant="6" id="uo7-I0-C4C"/>
-                <constraint firstItem="qe9-xG-zzN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="yD0-WV-yvZ"/>
+                <constraint firstAttribute="trailing" secondItem="Spm-zc-RZL" secondAttribute="trailing" constant="13" id="wGz-Tk-Q0y"/>
+                <constraint firstItem="Oh9-Dh-6Dz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="zcF-cD-P7D"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -19,7 +19,6 @@
 @interface MessageViewController ()
 {
     NSArray *funclist;
-    NSInteger orgMessageNotReadCount;
     UIBarButtonItem *rightBarButtonItem;
     BOOL hasadd;
     popoverViewController *pop;
@@ -38,22 +37,25 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self setupNavigationBar];
-    orgMessageNotReadCount = [DataFetcher fetchNotReadOrgMessageCount];
-    [messageTable reloadData];
     if ([DataFetcher fetchAllOrg].count) {
         _org=[[DataFetcher fetchAllOrg] firstObject];
         [self setupNavigationBar];
 
     }else
     {
-        [self setupOrgWithRequest:YES];
+        if ([UserSettingInfo checkIsLogin]) {
+            [self setupOrgWithRequest:YES];
+
+        }
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
 //    [[NSNotificationCenter defaultCenter] postNotificationName:updateBadgeValueKey object:nil];
-    [self fetchMessageNumber];
+    if ([UserSettingInfo checkIsLogin]) {
+        [self fetchMessageNumber];
+    }
 
 }
 - (void)viewDidLoad {
@@ -68,9 +70,12 @@
     pop=[[popoverViewController alloc]initWithNibName:@"popoverViewController" bundle:nil];
     [pop.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     __weak id weakself=self;
-    pop.dismiss=^(BOOL flag){
+    pop.dismissAndPush=^(BOOL flag){
         hasadd=flag;
         [weakself performSegueWithIdentifier:@"MessageToTransmitNotification" sender:nil];
+    };
+    pop.dismiss=^(BOOL flag){
+        hasadd=flag;
     };
     
 }
@@ -165,46 +170,41 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.FunctionLabel.text=[funclist objectAtIndex:indexPath.row];
     cell.FunctionImage.backgroundColor=[UIColor clearColor];
-    switch (indexPath.row) {
-        case 0:
-            if(messageboxNum==0)
-            {
-                cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
-                [cell.FunctionImage.badgeView setBadgeValue:0];
-                [cell.FunctionImage.badgeView setOutlineWidth:0];
-                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
-                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
-            }
-            else {
-                cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
-                [cell.FunctionImage.badgeView setBadgeValue:messageboxNum];
-                [cell.FunctionImage.badgeView setOutlineWidth:0];
-                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
-                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
-            }
 
-            break;
-        case 1:
-            if(notificationNum==0)
-            {
-                cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
-                [cell.FunctionImage.badgeView setBadgeValue:0];
-                [cell.FunctionImage.badgeView setOutlineWidth:0];
-                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
-                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
-            }
-            else {
-                cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
-                [cell.FunctionImage.badgeView setBadgeValue:notificationNum];
-                [cell.FunctionImage.badgeView setOutlineWidth:0];
-                [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
-                [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
-            }
+    if(indexPath.row==0)
+    {
+        if(messageboxNum==0)
+        {
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+            [cell.FunctionImage.badgeView setBadgeValue:0];
+            [cell.FunctionImage.badgeView setOutlineWidth:0];
+            [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+        }
+        else {
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-systemmessage"];
+            [cell.FunctionImage.badgeView setBadgeValue:messageboxNum];
+            [cell.FunctionImage.badgeView setOutlineWidth:0];
+            [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+        }
+        [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
 
-            break;
-            
-        default:
-            break;
+    }
+    if (indexPath.row==1) {
+        if(notificationNum==0)
+        {
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+            [cell.FunctionImage.badgeView setBadgeValue:0];
+            [cell.FunctionImage.badgeView setOutlineWidth:0];
+            [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+        }
+        else {
+            cell.FunctionImage.image=[UIImage imageNamed:@"cell-notification"];
+            [cell.FunctionImage.badgeView setBadgeValue:notificationNum];
+            [cell.FunctionImage.badgeView setOutlineWidth:0];
+            [cell.FunctionImage.badgeView setBadgeColor:[UIColor redColor]];
+        }
+        [cell.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
+
     }
     return cell;
 }

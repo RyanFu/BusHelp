@@ -11,23 +11,23 @@
 
 @implementation MGBadgeView
 
-static float const kMGBadgeViewInnerSpaceFromBorder = 3;
+static float const kMGBadgeViewInnerSpaceFromBorder = 7.0;
 static int const kMGBadgeViewTag = 9876;
 
 #define BADGE_SIDE_OFFSET kMGBadgeViewInnerSpaceFromBorder + _outlineWidth
-#define BADGE_TOTAL_OFFSET BADGE_SIDE_OFFSET * 1.0
+#define BADGE_TOTAL_OFFSET BADGE_SIDE_OFFSET * 2.0
 
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if(self = [super initWithFrame:frame]) {
         
-        _font = [UIFont boldSystemFontOfSize:12.0];
+        _font = [UIFont boldSystemFontOfSize:13.0];
         _badgeColor = [UIColor blueColor];
         _textColor = [UIColor whiteColor];
         _outlineColor = [UIColor whiteColor];
-        _outlineWidth = 1.0;
-        _minDiameter = 22.0;
-        _position = MGBadgePositionBest;
+        _outlineWidth = 2.0;
+        _minDiameter = 15.0;
+        _position = MGBadgePositionTopRight;
         _displayIfZero = NO;
         
         self.backgroundColor = [UIColor clearColor];
@@ -82,7 +82,7 @@ static int const kMGBadgeViewTag = 9876;
         if(badgeValue != 0 || _displayIfZero) {
             [self mg_updateBadgeViewSize];
         
-            if(_position == MGBadgePositionBest)
+            if(_position == MGBadgePositionTopRight)
                 [self mg_updateBadgeViewPosition];
         
         } else {
@@ -105,7 +105,7 @@ static int const kMGBadgeViewTag = 9876;
     if (_minDiameter != minDiameter) {
         _minDiameter = minDiameter;
         
-        if(_position == MGBadgePositionBest)
+        if(_position == MGBadgePositionTopRight)
             [self mg_updateBadgeViewPosition];
         
         [self setNeedsDisplay];
@@ -137,7 +137,7 @@ static int const kMGBadgeViewTag = 9876;
     if(_outlineWidth != outlineWidth) {
         _outlineWidth = outlineWidth;
         
-        if(_position == MGBadgePositionBest)
+        if(_position == MGBadgePositionTopRight)
             [self mg_updateBadgeViewPosition];
         
         [self setNeedsDisplay];
@@ -150,7 +150,7 @@ static int const kMGBadgeViewTag = 9876;
         
         [self mg_updateBadgeViewSize];
         
-        if(_position == MGBadgePositionBest)
+        if(_position == MGBadgePositionTopRight)
             [self mg_updateBadgeViewPosition];
 
         
@@ -166,7 +166,7 @@ static int const kMGBadgeViewTag = 9876;
             if(_displayIfZero) {
                 [self mg_updateBadgeViewSize];
                 
-                if(_position == MGBadgePositionBest)
+                if(_position == MGBadgePositionTopRight)
                     [self mg_updateBadgeViewPosition];
             } else {
                 self.frame = CGRectZero;

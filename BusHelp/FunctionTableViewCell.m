@@ -7,11 +7,13 @@
 //
 
 #import "FunctionTableViewCell.h"
+#import "UIView+MGBadgeView.h"
 
 @implementation FunctionTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.FunctionImage.badgeView setPosition:MGBadgePositionTopRight];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

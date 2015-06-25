@@ -10,6 +10,8 @@
 
 @interface popoverViewController : UIViewController<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (strong,nonatomic)void (^dismissAndPush)(BOOL flag);
 @property (strong,nonatomic)void (^dismiss)(BOOL flag);
+
 - (IBAction)postNotification:(id)sender;
 @end

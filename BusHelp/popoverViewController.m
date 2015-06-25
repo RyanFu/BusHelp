@@ -48,7 +48,7 @@
 
 - (IBAction)postNotification:(id)sender {
     [self.view removeFromSuperview];
-    _dismiss(NO);
+    _dismissAndPush(NO);
 
 }
 @end
